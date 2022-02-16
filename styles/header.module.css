@@ -1,0 +1,29 @@
+.headerContainer {
+  background-color: black;
+  color: white;
+  height: 100px;
+  font-size: 1em;
+  flex-direction: row;
+  display: flex;
+  gap: 4em;
+  justify-content: flex-end;
+  padding: 0 4em;
+}
+
+.navLinks{
+  height: inherit;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: center;
+}
+
+.socialMediaIcons{
+  height: inherit;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: center;
+}

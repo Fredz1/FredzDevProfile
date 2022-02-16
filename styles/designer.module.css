@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan&family=ZCOOL+KuaiLe&display=swap');
+
+.designerContainer{
+  padding: 0 5em;
+  padding-top: 1rem;
+  font-size: 3em;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  gap: 2em;
+  justify-content: center;
+  align-items: center;
+}
+
+.frontEndText{
+  font-family: 'ZCOOL KuaiLe', cursive;
+}
+
+.fullstackText{
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  justify-content: center;
+}
+
+.image{
+  width: 415px;
+  height: 560px;
+  padding: 0 0.5em;
+}

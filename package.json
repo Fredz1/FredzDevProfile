@@ -1,0 +1,21 @@
+{
+  "name": "devprofile",
+  "version": "1.0.0",
+  "description": "Developer Profile Of Frederick Williams",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "now-build": "next build"
+  },
+  "keywords": [],
+  "author": "Frederick Williams",
+  "license": "ISC",
+  "dependencies": {
+    "next": "^12.0.10",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}
