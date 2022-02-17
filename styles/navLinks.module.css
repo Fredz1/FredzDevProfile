@@ -1,0 +1,8 @@
+.navLinks{
+  height: inherit;
+  width: fit-content;
+  display: flex;
+  flex-direction: row;
+  gap: 1em;
+  align-items: center;
+}

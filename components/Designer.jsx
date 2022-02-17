@@ -15,8 +15,8 @@ const Designer = () => {
         <div className={style.fullstackText}>
           <p className={style.frontEndText}>Full</p><p>Stack</p>
         </div>
-        <div  className={style.image}>
-          <Image src={splitProfile} layout='responsive'/>
+        <div className={style.image}>
+          <Image src={splitProfile} layout='responsive' priority/>
         </div>
       </div>
       <p>backEnd</p>

@@ -1,4 +1,4 @@
-.headerContainer {
+.footerContainer{
   background-color: black;
   color: white;
   height: 100px;
@@ -6,15 +6,12 @@
   flex-direction: row;
   display: flex;
   gap: 4em;
-  justify-content: flex-end;
-  padding: 0 4em; 
+  justify-content: space-between;
+  padding: 0 4em;
+  margin-top: 2em;
 }
 
-.socialMediaIcons{
-  height: inherit;
-  width: fit-content;
+.copywrite{
   display: flex;
-  flex-direction: row;
-  gap: 1em;
   align-items: center;
 }

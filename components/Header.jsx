@@ -1,6 +1,11 @@
+// style
 import style from '../styles/header.module.css'
-import Link from 'next/link'
+
+// modules
 import Image from 'next/image'
+
+// components
+import NavLinks from './NavLinks'
 
 // assets
 import facebookIcon from '../public/socialMediaIcons/facebook.png'
@@ -8,24 +13,13 @@ import linkedInIcon from '../public/socialMediaIcons/linkedin.png'
 import github from '../public/socialMediaIcons/github.png'
 import logo from '../public/fredLogo.png'
 
+
 const Header = () => {
   return (
     <div className={style.headerContainer}>
-      <div className={style.navLinks}>
-        <Link href='/about' >
-          <a>about</a>
-        </Link>
-        <Link href='/portfolio' >
-          <a>portfolio</a>
-        </Link>
-        <Link href='/blog' >
-          <a>blog</a>
-        </Link>
-        <Link href='/contact' >
-          <a>contact</a>
-        </Link>
-      </div>
+      <NavLinks />
       <div className={style.socialMediaIcons}>
+
         <Image src={facebookIcon} />
         <Image src={linkedInIcon} />
         <Image src={github} />
