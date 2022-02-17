@@ -11,7 +11,6 @@ import NavLinks from './NavLinks'
 import facebookIcon from '../public/socialMediaIcons/facebook.png'
 import linkedInIcon from '../public/socialMediaIcons/linkedin.png'
 import github from '../public/socialMediaIcons/github.png'
-import logo from '../public/fredLogo.png'
 
 
 const Header = () => {

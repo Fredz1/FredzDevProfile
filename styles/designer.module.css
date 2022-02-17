@@ -1,14 +1,14 @@
 @import url('https://fonts.googleapis.com/css2?family=Spartan&family=ZCOOL+KuaiLe&display=swap');
 
 .designerContainer{
-  padding: 0 5em;
-  padding-top: 1rem;
+  padding: 1rem 5em;
   font-size: 3em;
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   gap: 2em;
   justify-content: center;
   align-items: center;
+  border-bottom: 1px solid black;
 }
 
 .frontEndText{

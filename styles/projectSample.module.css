@@ -1,0 +1,11 @@
+.projectSampleContainer{
+  padding: 0 2em;
+  margin: 2em 0;
+}
+
+.headline{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1em;
+}
