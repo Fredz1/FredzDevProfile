@@ -18,7 +18,13 @@ const ProjectCard = ({projectInfo}) => {
         {projectInfo.Name}
       </h4>
       <div>
-        <Image src={projectInfo.image || placeholder} layout='fill'/>
+        {
+          projectInfo.image ?
+            <Image src={projectInfo.image} height={100} width={100}/>
+            :
+            <Image src={placeholder} height={100} width={100}/>
+
+        }
       </div>
     </div>
   )

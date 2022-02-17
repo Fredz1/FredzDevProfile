@@ -30,4 +30,8 @@ const randomiser = num => {
   return list
 }
 
-export {randomiser}
+const getAllProjects = () => {
+  return projectList
+}
+
+export {randomiser, getAllProjects}
