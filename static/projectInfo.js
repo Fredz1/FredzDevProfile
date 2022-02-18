@@ -26,6 +26,13 @@ const projectList = [
     URL: null,
     description: 'Company template with paralax scrolling and many more areas',
     image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/companyTemplate.png?raw=true'
+  },
+  {
+    Name: 'Minesweeper',
+    githubLink: 'https://github.com/Fredz1/CompanyTemplate',
+    URL: 'https://aqueous-escarpment-38345.herokuapp.com/',
+    description: 'Minesweeper with flexible ',
+    image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/mineSweeperImg.png?raw=true'
   }
 ]
 
