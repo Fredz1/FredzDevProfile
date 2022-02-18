@@ -19,12 +19,20 @@ const projectList = [
     URL: null,
     description: 'Basic basic basic task app',
     image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/taskappImg.png?raw=true'
+  },
+  {
+    Name: 'Company Template',
+    githubLink: 'https://github.com/Fredz1/CompanyTemplate',
+    URL: null,
+    description: 'Company template with paralax scrolling and many more areas',
+    image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/companyTemplate.png?raw=true'
   }
 ]
 
 const randomiser = num => {
   // edge case elimination
-  if (num >= projectList.length) return projectList
+  if (num >= projectList.length || num === 'all') return projectList
+  
 
   const list = []
 

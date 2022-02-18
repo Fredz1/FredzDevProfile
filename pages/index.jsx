@@ -6,7 +6,7 @@ const index = () => {
   return (
     <div >
       <Designer />
-      <ProjectSample />
+      <ProjectSample num={2}/>
     </div>
   )
 }

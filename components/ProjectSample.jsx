@@ -15,13 +15,13 @@ import { randomiser } from '../static/projectInfo'
 import ProjectCard from './ProjectCard'
 
 // HOOK
-const ProjectSample = () => {
+const ProjectSample = ({num}) => {
 
   const [list, setList] = useState(null)
 
   useEffect(
     async () => {
-      const items = randomiser(2)
+      const items = randomiser(num)
       setList(items)
     },[]
   )
