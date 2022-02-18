@@ -16,11 +16,10 @@ const projectList = [
   {
     Name: 'reactTaskApp',
     githubLink: 'https://github.com/Fredz1/reactTaskApp',
-    URL: 'https://github.com/Fredz1/reactTaskApp',
+    URL: null,
     description: 'Basic basic basic task app',
     image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/taskappImg.png?raw=true'
   }
-
 ]
 
 const randomiser = num => {

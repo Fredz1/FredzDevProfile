@@ -4,6 +4,7 @@ import style from '../styles/projectSample.module.css'
 // modules
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
+
 // assets
 import line from '../public/line.svg'
 
@@ -18,17 +19,12 @@ const ProjectSample = () => {
 
   const [list, setList] = useState(null)
 
-
   useEffect(
     async () => {
-      const items = randomiser(3)
+      const items = randomiser(2)
       setList(items)
-    }
+    },[]
   )
-
-
-  
-
 
   return (
     <div className={style.projectSampleContainer} >
@@ -36,15 +32,15 @@ const ProjectSample = () => {
         <Image src={line} /><p>Some of my work</p><Image src={line} />
       </div>
       {/* project area */}
-      <div>
+      <div className={style.projectDisplay}>
       {
         !list ? 
         null
         :
         list.map(
-          el => {
+          (el, index) => {
             return(
-              <ProjectCard projectInfo={el} key={el.URL} />
+              <ProjectCard projectInfo={el} key={index} />
             )
           }
         )

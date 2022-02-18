@@ -1,8 +1,10 @@
-
+import PortfolioHead from "../components/PortfolioHead"
 
 const portfolio = () => {
   return (
-    <div>portfolio</div>
+    <div>
+      <PortfolioHead />
+    </div>
   )
 }
 

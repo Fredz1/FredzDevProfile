@@ -9,6 +9,7 @@
   justify-content: space-between;
   padding: 0 4em;
   margin-top: 2em;
+  position: relative;
 }
 
 .copywrite{

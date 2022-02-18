@@ -1,0 +1,32 @@
+.portfolioHeadContainer{
+  display: flex;
+  flex-direction: row;
+  padding: 0 3em;
+
+}
+
+.textContainer{
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.textContainer > h2{
+  border: 1px solid red;
+  font-size: 4em;
+  flex-grow: 2;
+
+}
+
+.textContainer > h4{
+  border: 1px solid red;
+
+  font-size: 1.5em;
+  flex-grow: 3;
+}
+
+.image{
+  width: 50%;
+
+  margin: 5em;
+}
