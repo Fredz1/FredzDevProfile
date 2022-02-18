@@ -4,14 +4,23 @@ const projectList = [
     githubLink: 'https://github.com/Fredz1/FredzDevProfile',
     URL: 'https://fredz-dev-profile.vercel.app/',
     description: 'My Developer Profile. Built in next.js',
-    image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/myDevProfileImg.png'
+    image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/myDevProfileImg.png?raw=true'
   },
   {
     Name: 'iStoreSearcher',
     githubLink: 'https://github.com/Fredz1/capStone-Project-2',
     URL: 'https://istoresearcher.herokuapp.com/',
-    description: 'Basic Istore searcher for you. You can also favorite '
+    description: 'Basic Istore searcher for you. You can also favorite ',
+    image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/myDevProfileImg.png?raw=true'
+  },
+  {
+    Name: 'reactTaskApp',
+    githubLink: 'https://github.com/Fredz1/reactTaskApp',
+    URL: 'https://github.com/Fredz1/reactTaskApp',
+    description: 'Basic basic basic task app',
+    image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/taskappImg.png?raw=true'
   }
+
 ]
 
 const randomiser = num => {

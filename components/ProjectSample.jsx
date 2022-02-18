@@ -21,7 +21,7 @@ const ProjectSample = () => {
 
   useEffect(
     async () => {
-      const items = randomiser(2)
+      const items = randomiser(3)
       setList(items)
     }
   )

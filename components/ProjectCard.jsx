@@ -23,7 +23,6 @@ const ProjectCard = ({projectInfo}) => {
             <Image src={projectInfo.image} height={100} width={100}/>
             :
             <Image src={placeholder} height={100} width={100}/>
-
         }
       </div>
     </div>
