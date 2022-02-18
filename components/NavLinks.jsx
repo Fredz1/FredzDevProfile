@@ -7,6 +7,9 @@ import Link from 'next/link'
 const NavLinks = () => {
   return (
     <div className={style.navLinks}>
+      <Link href='/' >
+        <a>home</a>
+      </Link>
       <Link href='/about' >
         <a>about</a>
       </Link>
