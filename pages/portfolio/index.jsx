@@ -1,6 +1,6 @@
 // modules
-import PortfolioHead from "../components/PortfolioHead"
-import ProjectSample from "../components/ProjectSample"
+import PortfolioHead from "../../components/PortfolioHead"
+import ProjectSample from "../../components/ProjectSample"
 
 const portfolio = () => {
   return (

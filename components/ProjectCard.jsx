@@ -3,6 +3,7 @@ import style from '../styles/projectCard.module.css'
 
 // modules
 import Image from 'next/image'
+import Link from 'next/link'
 
 //assets
 import placeholder from '../public/projectThumbs/placeholder.png'
@@ -17,7 +18,7 @@ const ProjectCard = ({projectInfo}) => {
         {projectInfo.Name}
       </h4>
       
-      <div className={style.imageConatainer}>
+      <div className={style.imageContainer}>
         {
           projectInfo.image ?
             <Image quality={30} height={290} width={515} src={projectInfo.image}/>
@@ -26,8 +27,25 @@ const ProjectCard = ({projectInfo}) => {
         }
       </div>
       <div className={style.projectCardButtons}>
-        <button>Goto site</button>
-        <button>More Info</button>
+        {
+          projectInfo.URL ? 
+            <button>
+              <a href={projectInfo.URL} target="_blank">
+                Preview
+              </a>
+            </button> 
+            : 
+            <p>
+              No Preview
+            </p>
+        }
+        <button>
+          <Link href={`/portfolio/${projectInfo.Name}`}>
+            <a>
+              More Info
+            </a>
+          </Link>
+        </button>
       </div>
       
     </div>

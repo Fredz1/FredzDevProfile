@@ -4,21 +4,27 @@ const projectList = [
     githubLink: 'https://github.com/Fredz1/FredzDevProfile',
     URL: 'https://fredz-dev-profile.vercel.app/',
     description: 'My Developer Profile. Built in next.js',
-    image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/myDevProfileImg.png?raw=true'
+    image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/myDevProfileImg.png?raw=true',
+    tech: ['Next.js'],
+    features: ['Next.js 12', 'figma']
+    
   },
   {
     Name: 'iStoreSearcher',
     githubLink: 'https://github.com/Fredz1/capStone-Project-2',
     URL: 'https://istoresearcher.herokuapp.com/',
     description: 'Basic Istore searcher for you. You can also favorite ',
-    image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/myDevProfileImg.png?raw=true'
+    image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/myDevProfileImg.png?raw=true',
+    tech: ['React.js']
   },
   {
     Name: 'reactTaskApp',
     githubLink: 'https://github.com/Fredz1/reactTaskApp',
     URL: null,
     description: 'Basic basic basic task app',
-    image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/taskappImg.png?raw=true'
+    image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/taskappImg.png?raw=true',
+    tech: ['Next.js'],
+    features: ['Next.js 12', 'figma']
   },
   {
     Name: 'Company Template',
@@ -57,4 +63,12 @@ const getAllProjects = () => {
   return projectList
 }
 
-export {randomiser, getAllProjects}
+const getOne = projectName => {
+  const projectData = projectList.find(
+    el => el.Name === projectName
+  )
+
+  return projectData
+}
+
+export {randomiser, getAllProjects, getOne}

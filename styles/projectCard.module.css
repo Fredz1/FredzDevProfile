@@ -1,11 +1,12 @@
 .projectCardContainer{
-  background-color: white;
   border-radius: 0.25em;
   padding: 0.25em;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
+  display: block;
+  
 }
 
-.imageConatainer{
+.imageContainer{
   margin-top: 10px;
   width: 100%;
   max-height: 100%;
@@ -15,9 +16,12 @@
 }
 
 .projectCardButtons{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  padding: 0.1em;
-  align-content: center;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-self: stretch;
+  justify-items: stretch;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  user-select: none;
 }
