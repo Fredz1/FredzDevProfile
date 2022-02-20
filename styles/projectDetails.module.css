@@ -1,0 +1,28 @@
+.projectDetails{
+  padding: 0 5em;
+}
+
+.projectDetailsContainer{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.projectDetailsContainerTextArea{
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+.projectDetailsContainerTextArea h2{
+  font-size: 4em;
+}
+
+.projectDetailsContainerTextArea h4{
+  font-size: 1em;
+}
+
+.headerImage{
+  max-width: 100px;
+  position: relative;
+  width: 50%;
+  border: 1px solid red;
+}
