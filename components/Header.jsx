@@ -3,6 +3,7 @@ import style from '../styles/header.module.css'
 
 // modules
 import Image from 'next/image'
+import Link from 'next/link'
 
 // components
 import NavLinks from './NavLinks'
@@ -19,12 +20,25 @@ const Header = () => {
       <NavLinks />
       <div className={style.socialMediaIcons}>
 
-        <Image src={facebookIcon} />
-        <Image src={linkedInIcon} />
-        <Image src={github} />
+      <Link href={'https://www.facebook.com/fredwil25/'}>
+        <a target='_blank'> 
+          <Image src={facebookIcon} />
+        </a>
+      </Link>
+
+      <Link href={'https://www.linkedin.com/in/frederick-williams-b2215730/'}>
+        <a target='_blank'> 
+          <Image src={linkedInIcon} />
+        </a>
+      </Link>
+
+      <Link href={'https://github.com/Fredz1'}>
+        <a target='_blank'> 
+          <Image src={github} />
+        </a>
+      </Link>
 
       </div>
-
     </div>
   )
 }
