@@ -5,24 +5,36 @@
 .projectDetailsContainer{
   display: grid;
   grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid black;
+  padding: 3em 0;
 }
 
 .projectDetailsContainerTextArea{
   display: grid;
-  grid-template-rows: 1fr 1fr;
+  place-self: center;
 }
 
 .projectDetailsContainerTextArea h2{
   font-size: 4em;
 }
 
-.projectDetailsContainerTextArea h4{
-  font-size: 1em;
+.headerImage{
+  position: relative;
 }
 
-.headerImage{
-  max-width: 100px;
-  position: relative;
-  width: 50%;
-  border: 1px solid red;
+.projectDetailsDiscription{
+  margin: 2em 0;
+
+}
+
+.projectDetailsDiscription h4{
+  font-size: 2em;
+}
+
+.projectDetailsHeading{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 2em;
+  padding: 1em 0;
 }
