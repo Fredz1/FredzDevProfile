@@ -2,7 +2,7 @@
 import style from '../styles/techDisplay.module.css'
 
 // assets
-import techIcons from '../static/techIcons.js'
+import { techIcons,axios } from '../static/techIcons.js'
 
 // modules
 import Image from 'next/image'
@@ -13,9 +13,10 @@ const TechDisplay = ({data}) => {
   const [imgPath, setImgPath] = useState('')
 
   useEffect(() => {
+    const [key] = Object.entries(techIcons)
+    console.log(axios)
+    setImgPath(key)
     
-    console.log(techIcons.data)
-    console.log(techIcons)
 
   }, [data])
 

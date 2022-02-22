@@ -10,7 +10,7 @@ import reactJS from '../public/techIcons/ReactIcon.svg'
 
 
 
-const pathToIcons = {
+const techIcons = {
   axios,
   css3,
   expressJS,
@@ -22,4 +22,5 @@ const pathToIcons = {
   reactJS
 }
 
-export default pathToIcons
+
+export {techIcons, axios}
