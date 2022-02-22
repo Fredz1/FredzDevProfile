@@ -21,9 +21,9 @@ const ProjectCard = ({projectInfo}) => {
       <div className={style.imageContainer}>
         {
           projectInfo.image ?
-            <Image quality={30} height={290} width={515} src={projectInfo.image}/>
+            <Image quality={30} height={290} width={515} src={projectInfo.image} alt={`${projectInfo.Name}`} />
             :
-            <Image src={placeholder} height={361} width={642}/>
+            <Image src={placeholder} height={361} width={642} alt='project card'/>
         }
       </div>
       <div className={style.projectCardButtons}>

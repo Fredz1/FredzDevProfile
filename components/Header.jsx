@@ -22,19 +22,19 @@ const Header = () => {
 
       <Link href={'https://www.facebook.com/fredwil25/'}>
         <a target='_blank'> 
-          <Image src={facebookIcon} />
+          <Image src={facebookIcon} alt='facebook link'/>
         </a>
       </Link>
 
       <Link href={'https://www.linkedin.com/in/frederick-williams-b2215730/'}>
         <a target='_blank'> 
-          <Image src={linkedInIcon} />
+          <Image src={linkedInIcon} alt='LinkedIn link'/>
         </a>
       </Link>
 
       <Link href={'https://github.com/Fredz1'}>
         <a target='_blank'> 
-          <Image src={github} />
+          <Image src={github} alt='github link'/>
         </a>
       </Link>
 

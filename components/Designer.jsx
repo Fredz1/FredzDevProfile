@@ -16,7 +16,7 @@ const Designer = () => {
           <p className={style.frontEndText}>Full</p><p>Stack</p>
         </div>
         <div className={style.image}>
-          <Image src={splitProfile} layout='responsive' quality={10} priority/>
+          <Image src={splitProfile} layout='responsive' quality={10} priority alt='Dev Profile Image'/>
         </div>
       </div>
       <p>backEnd</p>

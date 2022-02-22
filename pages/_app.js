@@ -1,6 +1,7 @@
 // Style
 import '../styles/globals.css'
 
+// components
 import Layout from '../layouts/Layout'
 
 const MyApp = ({Component, pageProps}) => {

@@ -29,7 +29,7 @@ const ProjectSample = ({num}) => {
   return (
     <div className={style.projectSampleContainer} >
       <div className={style.headline} >
-        <Image src={line} /><p>Some of my work</p><Image src={line} />
+        <Image src={line} alt='line'/><p>Some of my work</p><Image src={line} alt='line'/>
       </div>
       {/* project area */}
       <div className={style.projectDisplay}>
