@@ -90,7 +90,7 @@ const index = () => {
                 data.tech.map(
                   (el, index) => {
                     return(
-                      <TechDisplay list={el} key={index}/>
+                      <TechDisplay tech={el} key={index}/>
                     )
                   }
                 )

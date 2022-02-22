@@ -5,7 +5,7 @@ const projectList = [
     URL: 'https://fredz-dev-profile.vercel.app/',
     description: 'My Developer Profile. Built in next.js',
     image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/myDevProfileImg.png?raw=true',
-    tech: ['Next.js'],
+    tech: ['nextJS'],
     
   },
   {
@@ -14,7 +14,7 @@ const projectList = [
     URL: 'https://istoresearcher.herokuapp.com/',
     description: 'Basic Istore searcher for you. You can also favorite ',
     image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/myDevProfileImg.png?raw=true',
-    tech: ['React.js']
+    tech: ['axios', 'reactJS']
   },
   {
     Name: 'reactTaskApp',
@@ -22,7 +22,7 @@ const projectList = [
     URL: null,
     description: 'Basic basic basic task app',
     image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/taskappImg.png?raw=true',
-    tech: ['ReactJs', 'MongoDB', 'ExpressJS', 'MongoDB', 'bcrypt', 'JsonWebToken', 'axios', 'Nodemon']
+    tech: ['reactJS', 'mongoDB', 'expressJS', 'jwt', 'axios', 'nodemon']
   },
   {
     Name: 'Company Template',
@@ -30,7 +30,7 @@ const projectList = [
     URL: null,
     description: 'Company template with paralax scrolling and many more areas',
     image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/companyTemplate.png?raw=true',
-    tech: ['Html5', 'CSS']
+    tech: ['html5', 'css3']
   },
   {
     Name: 'Minesweeper',
@@ -38,7 +38,7 @@ const projectList = [
     URL: 'https://aqueous-escarpment-38345.herokuapp.com/',
     description: 'Minesweeper with flexible ',
     image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/mineSweeperImg.png?raw=true',
-    tech: ['React', 'CSS']
+    tech: ['reactJS', 'css3']
   },
   {
     Name: 'World Stats',
@@ -46,7 +46,7 @@ const projectList = [
     URL: 'https://world-stats-next-js-v2.vercel.app/',
     description: 'Interesting facts and stats from any country in the world.  This is still a working in progress probably for the foreable future.',
     image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/worldStatsThumb.png?raw=true',
-    tech: ['Next.js']
+    tech: ['nextJS']
   }
 ]
 
