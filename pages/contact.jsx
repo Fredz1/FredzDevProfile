@@ -11,6 +11,9 @@ const contact = () => {
         <title>
           Contact Me
         </title>
+        <meta name="description" content="Contact details of Fred Williams" />
+        <meta name="keywords" content="Developer, Profile, FullStack Web Development, Contact" />
+        <meta name="author" content="Frederick Williams" />
       </Head>
       <ContactHead />
     </div>

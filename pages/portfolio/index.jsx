@@ -12,6 +12,9 @@ const portfolio = () => {
         <title>
           Portfolio
         </title>
+        <meta name="description" content="FullStack Web Developers Portfolio Of Frederick Williams" />
+        <meta name="keywords" content="Developer, Portfolio, FullStack Web Development" />
+        <meta name="author" content="Frederick Williams" />
       </Head>
       <PortfolioHead />
       <ProjectSample num={'all'}/>

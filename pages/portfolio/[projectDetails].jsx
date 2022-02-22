@@ -6,6 +6,7 @@ import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 import Image from 'next/image'
 import Link from 'next/link'
+import Head from 'next/head'
 
 // data
 import {projectList}  from '../../static/projectInfo.js'
@@ -40,6 +41,10 @@ const index = () => {
 
   return (
     <div className={style.projectDetails}>
+      {/* Head Data */}
+      <Head>
+        <title>{loading ? 'Loading' : data.Name}</title>
+      </Head>
       {/* Header */}
       <div className={style.projectDetailsContainer}>
         <div className={style.projectDetailsContainerTextArea}>
