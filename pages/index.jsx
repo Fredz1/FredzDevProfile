@@ -13,6 +13,9 @@ const index = () => {
         <title>
           Fred Williams Dev Profile
         </title>
+        <meta name="description" content="FullStack Web Developers Profile Of Frederick Williams" />
+        <meta name="keywords" content="Developer, Profile, FullStack Web Development" />
+        <meta name="author" content="Frederick Williams" />
       </Head>
       <Designer />
       <ProjectSample num={2}/>

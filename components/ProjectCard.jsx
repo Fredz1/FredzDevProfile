@@ -30,7 +30,7 @@ const ProjectCard = ({projectInfo}) => {
         {
           projectInfo.URL ? 
             <button>
-              <a href={projectInfo.URL} target="_blank">
+              <a href={projectInfo.URL} target="_blank" aria-label='preview'>
                 Preview
               </a>
             </button> 
@@ -41,7 +41,7 @@ const ProjectCard = ({projectInfo}) => {
         }
         <button>
           <Link href={`/portfolio/${projectInfo.Name}`}>
-            <a>
+            <a aria-label='Project information'>
               More Info
             </a>
           </Link>

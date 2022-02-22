@@ -8,19 +8,19 @@ const NavLinks = () => {
   return (
     <div className={style.navLinks}>
       <Link href='/' >
-        <a>home</a>
+        <a aria-label='home'>home</a>
       </Link>
       <Link href='/about' >
-        <a>about</a>
+        <a aria-label='about'>about</a>
       </Link>
       <Link href='/portfolio' >
-        <a>portfolio</a>
+        <a aria-label='portfolio'>portfolio</a>
       </Link>
       <Link href='/blog' >
-        <a>blog</a>
+        <a aria-label='blog'>blog</a>
       </Link>
       <Link href='/contact' >
-        <a>contact</a>
+        <a aria-label='contact'>contact</a>
       </Link>
     </div>
   )

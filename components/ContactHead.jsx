@@ -24,19 +24,19 @@ const ContactHead = () => {
         </h4>
         <div className={style.socialLinks}>
           <Link href='https://www.facebook.com/fredwil25/'>
-            <a>
+            <a aria-label='LinkedIn'>
               <Image src={facebookIcon} width={48} height={48} quality={30}/>
               <p>facebook</p>
             </a>
           </Link>
           <Link href='https://www.linkedin.com/in/frederick-williams-b2215730/'>
-            <a>
+            <a aria-label='LinkedIn'>
               <Image src={linkedInIcon} width={48} height={48} quality={30}/>
               <p>LinkedIn</p>
             </a>
           </Link>
           <Link href='https://github.com/Fredz1'>
-            <a>
+            <a aria-label='LinkedIn'>
               <Image src={githubIcon} width={48} height={48} quality={30}/>
               <p>gitHub</p>
             </a>
