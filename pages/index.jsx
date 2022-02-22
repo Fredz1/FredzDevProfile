@@ -3,7 +3,7 @@ import Designer from "../components/Designer"
 import ProjectSample from "../components/ProjectSample"
 
 // modules
-import Head from 'next/'
+import Head from 'next/head'
 
 
 const index = () => {
