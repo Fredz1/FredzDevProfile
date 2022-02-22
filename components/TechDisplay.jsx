@@ -2,26 +2,27 @@
 import style from '../styles/techDisplay.module.css'
 
 // assets
-import pathToIcons from '/static/techIcons.js'
+import techIcons from '../static/techIcons.js'
 
 // modules
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
-const TechDisplay = ({tech}) => {
+const TechDisplay = ({data}) => {
 
   const [imgPath, setImgPath] = useState('')
 
   useEffect(() => {
-    const path = pathToIcons.tech
-    setImgPath(path)
-  }, [tech])
+    
+    console.log(techIcons.data)
+    console.log(techIcons)
 
+  }, [data])
 
   return (
     <div>
-      {tech}
-      <img src={imgPath} height={20} alt={`${tech} logo`} />
+      {data}
+      <img src={imgPath} height={20} width={20} />
     </div>
   )
 }
