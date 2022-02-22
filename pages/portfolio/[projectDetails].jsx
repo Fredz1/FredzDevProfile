@@ -44,6 +44,9 @@ const index = () => {
       {/* Head Data */}
       <Head>
         <title>{loading ? 'Loading' : data.Name}</title>
+        <meta name="description" content={`${loading ? 'Loading' : data.Name} Project`} />
+        <meta name="keywords" content="Developer, Profile, FullStack Web Development" />
+        <meta name="author" content="Frederick Williams" />
       </Head>
       {/* Header */}
       <div className={style.projectDetailsContainer}>
@@ -58,16 +61,16 @@ const index = () => {
         <div className={style.headerImage}>
           {
             loading ? 
-              <Image src={placeholder} height={400} quality={30} objectFit='contain' />
+              <Image src={placeholder} height={400} quality={30} objectFit='contain' alt='placeholder'/>
               :
-              <><img src={data.image}  width='100%' /></>
+              <><img src={data.image}  width='100%' alt='screenshot of project' /></>
           }
         </div>
       </div>
       <div>
         <div className={style.projectDetailsDiscription}>
           <div className={style.projectDetailsHeading}>
-            <Image src={line} /><h4>Description</h4><Image src={line}/>
+            <Image src={line} alt='line'/><h4>Description</h4><Image src={line} alt='line'/>
           </div>
           <p>
             {
@@ -77,7 +80,7 @@ const index = () => {
         </div>
         <div className={style.projectDetailsDiscription}>
           <div className={style.projectDetailsHeading}>
-            <Image src={line} /><h4>Tech</h4><Image src={line}/>
+            <Image src={line} alt='line' /><h4>Tech</h4><Image src={line} alt='line' />
           </div>
           <div>
             {

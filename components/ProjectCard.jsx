@@ -31,7 +31,7 @@ const ProjectCard = ({projectInfo}) => {
           projectInfo.URL ? 
             <button>
               <a href={projectInfo.URL} target="_blank" aria-label='preview'>
-                Preview
+                goto {`${projectInfo.Name}`}
               </a>
             </button> 
             : 
@@ -40,8 +40,8 @@ const ProjectCard = ({projectInfo}) => {
             </p>
         }
         <button>
-          <Link href={`/portfolio/${projectInfo.Name}`}>
-            <a aria-label='Project information'>
+          <Link href={`/portfolio/${projectInfo.Name}`} aria-label='Project information'>
+            <a>
               More Info
             </a>
           </Link>
