@@ -82,7 +82,7 @@ const index = () => {
           <div className={style.projectDetailsHeading}>
             <Image src={line} alt='line' /><h4>Tech</h4><Image src={line} alt='line' />
           </div>
-          <div>
+          <div className={style.projectDetailsTechArea}>
             {
               loading? 
                 'Loading' 

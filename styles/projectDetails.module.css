@@ -37,3 +37,8 @@
   gap: 2em;
   padding: 1em 0;
 }
+
+.projectDetailsTechArea{
+  display: grid;
+  grid-auto-flow: column;
+}
