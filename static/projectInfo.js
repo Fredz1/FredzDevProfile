@@ -22,7 +22,7 @@ const projectList = [
     URL: null,
     description: 'Basic basic basic task app',
     image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/taskappImg.png?raw=true',
-    tech: ['reactJS', 'mongoDB', 'expressJS', 'jwt', 'axios', 'nodemon']
+    tech: ['reactJS', 'mongoDB', 'expressJS', 'jwt', 'axios']
   },
   {
     Name: 'Company Template',

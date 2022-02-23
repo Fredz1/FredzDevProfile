@@ -2,7 +2,15 @@
 import style from '../styles/techDisplay.module.css'
 
 // assets
-import { techIcons,axios } from '../static/techIcons.js'
+import placeholder from '../public/projectThumbs/placeholder.png'
+import axios from '../public/techIcons/axiosIcon.png'
+import css3 from '../public/techIcons/CSS3Icon.png'
+import expressJS from '../public/techIcons/expressjsIcon.png'
+import html5 from '../public/techIcons/HTML5Icon.png'
+import jwt from '../public/techIcons/jwtIcon.png'
+import mongoDB from '../public/techIcons/mongodbIcon.png'
+import nextJS from '../public/techIcons/NextjsIcon.png'
+import reactJS from '../public/techIcons/ReactIcon.png'
 
 // modules
 import Image from 'next/image'
@@ -10,20 +18,44 @@ import { useEffect, useState } from 'react'
 
 const TechDisplay = ({data}) => {
 
-  const [imgPath, setImgPath] = useState('')
+  const [image, setImage] = useState(placeholder)
+
 
   useEffect(() => {
-    const [key] = Object.entries(techIcons)
-    console.log(axios)
-    setImgPath(key)
+    switch(data){
+      case 'axios':
+        setImage(axios)
+        break
+      case 'css3':
+        setImage(css3)
+        break
+      case 'expressJS':
+        setImage(expressJS)
+        break
+      case 'html5':
+        setImage(html5)
+        break
+      case 'jwt':
+        setImage(jwt)
+        break
+      case 'mongoDB':
+        setImage(mongoDB)
+        break
+      case 'nextJS':
+        setImage(nextJS)
+        break
+      case 'reactJS':
+        setImage(reactJS)
+        break
+    }
     
-
-  }, [data])
+  }, [data]);
+  
 
   return (
-    <div>
-      {data}
-      <img src={imgPath} height={20} width={20} />
+    <div className={style.techDisplayContainer} >
+      <p>{data}</p>
+      <Image src={image} height={28} width={28}/>
     </div>
   )
 }

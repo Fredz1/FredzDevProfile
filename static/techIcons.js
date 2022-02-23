@@ -8,19 +8,23 @@ import nextJS from '../public/techIcons/NextjsIcon.svg'
 import nodemon from '../public/techIcons/nodemonIcon.svg'
 import reactJS from '../public/techIcons/ReactIcon.svg'
 
+import Image from 'next/image'
+
+const TechIcon = props => {
 
 
-const techIcons = {
-  axios,
-  css3,
-  expressJS,
-  html5,
-  jwt,
-  mongoDB,
-  nextJS,
-  nodemon,
-  reactJS
+
+  
+
+  return(
+    <>
+      {name}
+      <Image src={} width={16} height={16}/>
+    </>
+  )
 }
 
 
-export {techIcons, axios}
+
+
+export default TechIcon
