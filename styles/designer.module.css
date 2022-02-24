@@ -2,11 +2,10 @@
 
 .designerContainer{
   padding: 1rem 5em;
-  font-size: 3em;
+  font-size: 5em;
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 2em;
-  justify-content: space-evenly;
+  grid-auto-flow: column;
+  justify-content: space-around;
   align-items: center;
   border-bottom: 1px solid black;
 }

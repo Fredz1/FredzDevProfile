@@ -13,6 +13,8 @@ import githubIcon from '../public/socialMediaIcons/githubSocialMediaColor.png'
 
 
 const ContactHead = () => {
+
+  const iconSize = 44
   return (
     <div className={style.contactHeadContainer}>
       <div className={style.textContainer}>
@@ -25,19 +27,19 @@ const ContactHead = () => {
         <div className={style.socialLinks}>
           <Link href='https://www.facebook.com/fredwil25/'>
             <a aria-label='LinkedIn'>
-              <Image src={facebookIcon} width={48} height={48} quality={30}/>
+              <Image src={facebookIcon} width={iconSize} height={iconSize} quality={30}/>
               <p>facebook</p>
             </a>
           </Link>
           <Link href='https://www.linkedin.com/in/frederick-williams-b2215730/'>
             <a aria-label='LinkedIn'>
-              <Image src={linkedInIcon} width={48} height={48} quality={30}/>
+              <Image src={linkedInIcon} width={iconSize} height={iconSize} quality={30}/>
               <p>LinkedIn</p>
             </a>
           </Link>
           <Link href='https://github.com/Fredz1'>
             <a aria-label='LinkedIn'>
-              <Image src={githubIcon} width={48} height={48} quality={30}/>
+              <Image src={githubIcon} width={iconSize} height={iconSize} quality={30}/>
               <p>gitHub</p>
             </a>
           </Link>

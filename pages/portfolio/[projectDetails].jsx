@@ -14,6 +14,12 @@ import {projectList}  from '../../static/projectInfo.js'
 // assets
 import line from '../../public/line.svg'
 import placeholder from '../../public/projectThumbs/placeholder.png'
+import companyTemplateThumb from '../../public/projectThumbs/companyTemplate.png'
+import mineSweeperImg from '../../public/projectThumbs/mineSweeperImg.png'
+import myDevProfileImg from '../../public/projectThumbs/myDevProfileImg.png'
+import taskappImg from '../../public/projectThumbs/taskappImg.png'
+import worldStatsThumb from '../../public/projectThumbs/worldStatsThumb.png'
+
 
 // components
 import TechDisplay from '../../components/TechDisplay'
@@ -23,6 +29,7 @@ const index = () => {
 
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
+  const [image, setImage] = useState(placeholder)
   
   const { query: { projectDetails } } = useRouter()
 
@@ -34,9 +41,23 @@ const index = () => {
       setLoading(false) 
       setData(projectData) 
     }
-    return 
-      
-    
+
+    switch(projectDetails){
+      case 'My Dev Profile':
+      return setImage(myDevProfileImg)
+      case 'iStoreSearcher':
+      return setImage(placeholder)
+      case 'reactTaskApp':
+      return setImage(taskappImg)
+      case 'Company Template':
+      return setImage(companyTemplateThumb)
+      case 'Minesweeper':
+      return setImage(mineSweeperImg)
+      case 'World Stats':
+      return setImage(worldStatsThumb)
+      default:
+      return setImage(placeholder)
+    }
   }, [projectDetails])
 
   return (
@@ -59,12 +80,7 @@ const index = () => {
           
         </div>
         <div className={style.headerImage}>
-          {
-            loading ? 
-              <Image src={placeholder} height={400} quality={30} objectFit='contain' alt='placeholder'/>
-              :
-              <><img src={data.image}  width='100%' alt='screenshot of project' /></>
-          }
+          <Image src={image} height={900} quality={30} alt={`Screen shot of ${projectDetails && projectDetails.Name}`} />
         </div>
       </div>
       <div>

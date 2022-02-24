@@ -3,7 +3,7 @@ const projectList = [
     Name: 'My Dev Profile',
     githubLink: 'https://github.com/Fredz1/FredzDevProfile',
     URL: 'https://fredz-dev-profile.vercel.app/',
-    description: 'My Developer Profile. Built in next.js',
+    description: 'My Developer Profile. Built in next.js. Using latest nextJS 12 and react 17. Future plans are to build out the blog and do blogging stuff on the blog. Next would be to host my profile on a VPS.  Also need to do some more SEO. The mobile styling is sortof done-ish and and and and and..... Check back for more. Oh and one last thing.  My modeling pics need to be added to the site aswell.',
     image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/myDevProfileImg.png?raw=true',
     tech: ['nextJS'],
     
@@ -12,7 +12,7 @@ const projectList = [
     Name: 'iStoreSearcher',
     githubLink: 'https://github.com/Fredz1/capStone-Project-2',
     URL: 'https://istoresearcher.herokuapp.com/',
-    description: 'Basic Istore searcher for you. You can also favorite ',
+    description: 'Basic Istore searcher for you. You can also favorite.   ',
     image: 'https://github.com/Fredz1/FredzDevProfile/blob/main/public/projectThumbs/myDevProfileImg.png?raw=true',
     tech: ['axios', 'reactJS']
   },

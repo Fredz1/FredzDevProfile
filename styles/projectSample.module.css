@@ -9,6 +9,7 @@
   justify-content: center;
   gap: 1.5em;
   margin-bottom: 1em;
+  font-size: 2em;
 }
 
 .projectDisplay{
@@ -18,3 +19,4 @@
   gap: 2em;
   flex-wrap: wrap;
 }
+
