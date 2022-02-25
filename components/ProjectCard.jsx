@@ -7,12 +7,13 @@ import Link from 'next/link'
 import { useState, useEffect } from 'react'
 
 //assets
-import placeholder from '../public/projectThumbs/placeholder.png'
+import placeholder        from '../public/projectThumbs/placeholder.png'
 import companyTemplateImg from '../public/projectThumbs/companyTemplate.png'
-import MinesweeperImg from '../public/projectThumbs/mineSweeperImg.png'
-import myDevProfileImg from '../public/projectThumbs/myDevProfileImg.png'
-import taskApp from '../public/projectThumbs/taskappImg.png'
-import worldStatsThumb from '../public/projectThumbs/worldStatsThumb.png'
+import MinesweeperImg     from '../public/projectThumbs/mineSweeperImg.png'
+import myDevProfileImg    from '../public/projectThumbs/myDevProfileImg.png'
+import taskApp            from '../public/projectThumbs/taskappImg.png'
+import worldStatsThumb    from '../public/projectThumbs/worldStatsThumb.png'
+import iStoreSearcher     from '../public/projectThumbs/istoreSearcherImg.png'
 
 
 // HOOK
@@ -26,7 +27,7 @@ const ProjectCard = ({projectInfo}) => {
         setDisplayImage(myDevProfileImg)
         break
       case 'iStoreSearcher':
-        setDisplayImage(placeholder)
+        setDisplayImage(iStoreSearcher)
         break
       case 'reactTaskApp':
         setDisplayImage(taskApp)
@@ -60,7 +61,7 @@ const ProjectCard = ({projectInfo}) => {
           projectInfo && projectInfo.URL ? 
             <button>
               <a href={projectInfo.URL} target="_blank" aria-label='preview'>
-                goto {`${projectInfo.Name}`}
+                {`${projectInfo.Name}`}
               </a>
             </button> 
             : 

@@ -9,7 +9,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 
 // data
-import {projectList}  from '../../static/projectInfo.js'
+import { projectList }  from '../../static/projectInfo.js'
 
 // assets
 import line from '../../public/line.svg'
@@ -19,7 +19,7 @@ import mineSweeperImg from '../../public/projectThumbs/mineSweeperImg.png'
 import myDevProfileImg from '../../public/projectThumbs/myDevProfileImg.png'
 import taskappImg from '../../public/projectThumbs/taskappImg.png'
 import worldStatsThumb from '../../public/projectThumbs/worldStatsThumb.png'
-
+import iStoreSearcher from '../../public/projectThumbs/worldStatsThumb.png'
 
 // components
 import TechDisplay from '../../components/TechDisplay'
@@ -46,7 +46,7 @@ const index = () => {
       case 'My Dev Profile':
       return setImage(myDevProfileImg)
       case 'iStoreSearcher':
-      return setImage(placeholder)
+      return setImage(iStoreSearcher)
       case 'reactTaskApp':
       return setImage(taskappImg)
       case 'Company Template':
@@ -82,7 +82,7 @@ const index = () => {
         </div>
 
         <div className={style.headerImage}>
-          <Image src={image} height={900} quality={30} alt={`Screen shot of ${projectDetails && projectDetails.Name}`} />
+          <Image src={image} quality={20} objectFit='fill' alt={`Screen shot of ${projectDetails && projectDetails.Name}`} />
         </div>
 
       </div>

@@ -11,12 +11,11 @@ const projectList = [
       'This seems to be a todo list. So ill just say that Ill do a little chat thing aswell'
     ],
     tech: ['nextJS'],
-    
   },
   {
     Name: 'iStoreSearcher',
     githubLink: 'https://github.com/Fredz1/capStone-Project-2',
-    URL: 'https://istoresearcher.herokuapp.com/',
+    URL: null,
     description: [
       'Basic Istore searcher for you. You can also favorite.'
     ],
