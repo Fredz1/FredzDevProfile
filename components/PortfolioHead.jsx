@@ -22,7 +22,7 @@ const PortfolioHead = () => {
         </p>
       </div>
       <div className='image'>
-        <Image src={cartoonMe} height={600} width={600} quality={30} objectFit='contain' alt='fred as a cartoon'/>
+        <Image src={cartoonMe} height={500} quality={30} objectFit='contain' alt='fred as a cartoon'/>
       </div>
     </div>
   )

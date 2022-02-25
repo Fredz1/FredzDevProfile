@@ -1,15 +1,14 @@
 // Style
-import style from '../../styles/underContruction.module.css'
+import style from '../styles/underContruction.module.css'
 
 
 // Assets
-import underContructionImage from '../../public/underConstructionImage.png'
+import underContructionImage from '../public/underConstructionImage.png'
 
 // Modules
 import Image from 'next/image'
 
-// Hook
-const index = () => {
+const about = () => {
   return (
     <div className={style.underContructionContainer} >
       <Image src={underContructionImage} height={400} objectFit='contain' />
@@ -17,4 +16,4 @@ const index = () => {
   )
 }
 
-export default index
+export default about
