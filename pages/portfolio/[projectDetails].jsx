@@ -39,7 +39,7 @@ const index = () => {
     )
     if (projectData) {
       setLoading(false) 
-      setData(projectData) 
+      setData(projectData)
     }
 
     switch(projectDetails){
@@ -71,6 +71,7 @@ const index = () => {
       </Head>
       {/* Header */}
       <div className={style.projectDetailsContainer}>
+        {/* Project Headbanner */}
         <div className={style.projectDetailsContainerTextArea}>
           <h2>
             {
@@ -79,21 +80,41 @@ const index = () => {
           </h2>
           
         </div>
+
         <div className={style.headerImage}>
           <Image src={image} height={900} quality={30} alt={`Screen shot of ${projectDetails && projectDetails.Name}`} />
         </div>
+
       </div>
+        {/* End of Project Headbanner */}
+        
       <div>
+
+        {/* project description section */}
         <div className={style.projectDetailsDiscription}>
           <div className={style.projectDetailsHeading}>
-            <Image src={line} alt='line'/><h4>Description</h4><Image src={line} alt='line'/>
+            <Image src={line} alt='line'/>
+            <h4>Description</h4>
+            <Image src={line} alt='line'/>
           </div>
-          <p>
+          <div>
             {
-              loading ? 'Loading' : data.description
+              data && data.description ? 
+                data.description.map(
+                  (el, index) => {
+                    return(
+                      <p key={index}>
+                        {el}
+                      </p>
+                    )
+                  }
+                )
+                : 
+                'Loading' 
             }
-          </p>
+          </div>
         </div>
+        {/* End of project description section */}
         <div className={style.projectDetailsDiscription}>
           <div className={style.projectDetailsHeading}>
             <Image src={line} alt='line' /><h4>Tech</h4><Image src={line} alt='line' />

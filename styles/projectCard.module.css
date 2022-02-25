@@ -2,14 +2,15 @@
   border-radius: 0.25em;
   padding: 0.25em;
   box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.2);
-  display: block;
-  
+  display: grid;
+  grid-template-rows: minmax(1em, 1.5em) minmax(1em, min-width) minmax(1em, 2em);
+  grid-template-columns: minmax(300px, 400px);
 }
 
 .imageContainer{
   margin-top: 10px;
-  width: 100%;
-  max-height: 100%;
+  width: inherit;
+  max-height: min-content;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -17,7 +18,7 @@
 
 .projectCardButtons{
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   place-self: stretch;
   justify-items: stretch;
   justify-content: center;
