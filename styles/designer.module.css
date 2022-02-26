@@ -1,17 +1,18 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Spartan&family=ZCOOL+KuaiLe&display=swap'); */
 
-/* @font-face{
+@font-face{
   font-family: ZCOOL KuaiLe;
   src: url('../public/fonts/ZCOOL_KuaiLe/ZCOOLKuaiLe-Regular.ttf');
   font-display: swap;
-} */
+}
 
 .designerContainer{
   font-size: 7vw;
   display: grid;
-  grid-template-columns: 1fr 1fr 3fr;
-  align-items: center;
-  justify-content: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: stretch;
+  place-content: center;
+  height: 20rem;
 }
 
 .frontEndText{
