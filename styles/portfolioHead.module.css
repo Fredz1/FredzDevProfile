@@ -19,7 +19,7 @@
   justify-content: center;
 }
 
-.textContainer > h4{
+.textContainer > h3{
   font-size: 2em;
   flex-grow: 3;
   display: grid;

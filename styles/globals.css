@@ -1,7 +1,8 @@
-@font-face{
+/* @font-face{
   font-family: Spartan;
-  src: url('../public/fonts/Spartan/Spartan-VariableFont_wght.ttf')
-}
+  src: url('../public/fonts/Spartan/Spartan-VariableFont_wght.ttf');
+  font-display: swap;
+} */
 
 *{
   margin: 0;

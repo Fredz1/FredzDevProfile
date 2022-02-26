@@ -14,9 +14,9 @@ const PortfolioHead = () => {
         <h2>
           portfolio.
         </h2>
-        <h4>
+        <h3>
           Some of my work
-        </h4>
+        </h3>
         <p>
           I may not have the biggest or greatest portfolio, but, I can tell you that I can actually do this everyday.
         </p>
