@@ -6,14 +6,15 @@ import Layout from '../layouts/Layout'
 import Head from 'next/head'
 
 const MyApp = ({Component, pageProps}) => {
+  
   return (
     <Layout>
       <Head>
-        <meta name='application-name' content='PWA App' />
+        <meta name='application-name' content='Fred Dev Portfolio' />
         <meta name='apple-mobile-web-app-capable' content='yes' />
         <meta name='apple-mobile-web-app-status-bar-style' content='default' />
-        <meta name='apple-mobile-web-app-title' content='PWA App' />
-        <meta name='description' content='Best PWA App in the world' />
+        <meta name='apple-mobile-web-app-title' content='Fred Dev Portfolio' />
+        <meta name='description' content='Fred Dev Portfolio' />
         <meta name='format-detection' content='telephone=no' />
         <meta name='mobile-web-app-capable' content='yes' />
         <meta name='msapplication-config' content='/icons/browserconfig.xml' />
@@ -31,8 +32,6 @@ const MyApp = ({Component, pageProps}) => {
         <link rel='manifest' href='/manifest.json' />
         <link rel='mask-icon' href='/icons/safari-pinned-tab.svg' color='#5bbad5' />
         <link rel='shortcut icon' href='/favicon.ico' />
-        <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:300,400,500' />
-            
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:url' content='https://yourdomain.com' />
         <meta name='twitter:title' content='PWA App' />
