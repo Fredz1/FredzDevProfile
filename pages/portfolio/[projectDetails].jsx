@@ -31,6 +31,7 @@ const index = () => {
   const [loading, setLoading] = useState(true)
   const [image, setImage] = useState(placeholder)
   
+  // get URL Params
   const { query: { projectDetails } } = useRouter()
 
   useEffect(() => {

@@ -18,3 +18,8 @@
   gap: 1em;
   align-items: center;
 }
+
+.socialMediaIcons > *:hover{
+  transform: translateY(-0.15em);
+  transition: all 0.2s ease;
+}

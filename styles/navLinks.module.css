@@ -9,11 +9,28 @@
 
 .navLinks > *:hover{
   transform: translateY(-0.15em);
+  transition: all 0.3s ease;
+}
+
+.navLinks > *:focus:active{
+  color: greenyellow;
+  transition: all 5ms ease;
 }
 
 .navLinks > *{
   height: 100%;
   display: grid;
   align-items: center;
-  transition: all 0.3s ease;
+  
+}
+
+@media all and (max-width: 700px){
+  .navLinks{
+    height: inherit;
+    width: min-content;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 0.5em;
+    align-items: center;
+  }
 }

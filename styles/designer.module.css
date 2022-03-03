@@ -7,11 +7,11 @@
 }
 
 .designerContainer{
-  font-size: 7vw;
+  font-size: 2vw;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  align-items: stretch;
-  place-content: center;
+  align-items: center;
+  place-items: center;
   height: 20rem;
 }
 
@@ -28,7 +28,22 @@
 
 .image{
   position: relative;
-  width: 50%;
-  height: 50%;
+  width: 100%;
+  height: auto;
   padding: 0 0.5em;
+}
+
+@media all and (max-width: 700px){
+  .image{
+    display: none;
+  }
+
+  .designerContainer{
+    font-size: 5vw;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    place-items: center;
+    height: 20rem;
+  }
 }
