@@ -54,7 +54,7 @@ const ProjectCard = ({projectInfo}) => {
       </h4>
       
       <div className={style.imageContainer}>
-        <Image quality={30} src={displayImage} objectFit='fill' alt={`${projectInfo.Name}`} />
+        <Image quality={10} src={displayImage} objectFit='fill' alt={`${projectInfo.Name}`} />
       </div>
       <div className={style.projectCardButtons}>
         {
