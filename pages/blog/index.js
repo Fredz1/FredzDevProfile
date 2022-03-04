@@ -12,7 +12,7 @@ import Image from 'next/image'
 const index = () => {
   return (
     <div className={style.underContructionContainer} >
-      <Image src={underContructionImage} height={400} objectFit='contain' />
+      <Image src={underContructionImage} height={400} objectFit='contain' alt='under construction notification'/>
     </div>
   )
 }

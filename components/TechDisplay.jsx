@@ -16,6 +16,7 @@ import reactJS from '../public/techIcons/ReactIcon.png'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
+// HOOK
 const TechDisplay = ({data}) => {
 
   const [image, setImage] = useState(placeholder)
@@ -55,7 +56,7 @@ const TechDisplay = ({data}) => {
   return (
     <div className={style.techDisplayContainer} >
       <p>{data}</p>
-      <Image src={image} height={28} width={28}/>
+      <Image src={image} height={28} width={28} alt={data}/>
     </div>
   )
 }

@@ -60,7 +60,7 @@ const ProjectCard = ({projectInfo}) => {
         {
           projectInfo && projectInfo.URL ? 
             <button>
-              <a href={projectInfo.URL} target="_blank" aria-label='preview'>
+              <a href={projectInfo.URL} rel='noreferrer' target="_blank" aria-label='preview'>
                 {`${projectInfo.Name}`}
               </a>
             </button> 
@@ -70,7 +70,7 @@ const ProjectCard = ({projectInfo}) => {
             </p>
         }
         <button>
-          <a href={projectInfo.githubLink} target="_blank" aria-label='preview'>
+          <a href={projectInfo.githubLink} rel='noreferrer' target="_blank" aria-label='preview'>
             github
           </a>
         </button> 

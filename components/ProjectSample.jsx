@@ -9,7 +9,7 @@ import { useEffect, useState } from 'react'
 import line from '../public/line.svg'
 
 // static data
-import { randomiser } from '../static/projectInfo'
+import { randomiser } from '../public/projectInfo'
 
 // component
 import ProjectCard from './ProjectCard'
@@ -20,10 +20,10 @@ const ProjectSample = ({num}) => {
   const [list, setList] = useState(null)
 
   useEffect(
-    async () => {
+    () => {
       const items = randomiser(num)
       setList(items)
-    },[]
+    },[num]
   )
 
   return (

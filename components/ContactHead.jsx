@@ -47,7 +47,7 @@ const ContactHead = () => {
         </div>
       </div>
       <div className='image'>
-        <Image src={cartoonMe} height={600} width={600} quality={30} alt={'Linkedin profile Icon'} alt={'Developer cartoon'}/>
+        <Image src={cartoonMe} height={600} width={600} quality={30} alt={'Linkedin profile Icon'} />
       </div>
     </div>
   )

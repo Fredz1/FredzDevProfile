@@ -9,7 +9,7 @@ import Link from 'next/link'
 import Head from 'next/head'
 
 // data
-import { projectList }  from '../../static/projectInfo.js'
+import { projectList }  from '../../public/projectInfo.js'
 
 // assets
 import line from '../../public/line.svg'
@@ -25,7 +25,7 @@ import iStoreSearcher from '../../public/projectThumbs/worldStatsThumb.png'
 import TechDisplay from '../../components/TechDisplay'
 
 // HOOK
-const index = () => {
+const Index = () => {
 
   const [data, setData] = useState(null)
   const [loading, setLoading] = useState(true)
@@ -102,9 +102,9 @@ const index = () => {
             {
               data && data.description ? 
                 data.description.map(
-                  (el, index) => {
+                  (el, Index) => {
                     return(
-                      <p key={index}>
+                      <p key={Index}>
                         {el}
                       </p>
                     )
@@ -126,9 +126,9 @@ const index = () => {
                 'Loading' 
                 : 
                 data.tech.map(
-                  (el, index) => {
+                  (el, Index) => {
                     return(
-                      <TechDisplay data={el} key={index}/>
+                      <TechDisplay data={el} key={Index}/>
                     )
                   }
                 )
@@ -140,4 +140,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index
