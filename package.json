@@ -7,16 +7,22 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
     "build": "next build",
+    "buildExport": "next build && next export",
     "start": "next start",
-    "now-build": "next build"
+    "now-build": "next build",
+    "lint": "next lint"
   },
   "keywords": [],
   "author": "Frederick Williams",
   "license": "ISC",
   "dependencies": {
     "next": "^12.1.0",
-    "next-pwa": "^5.4.4",
+    "next-pwa": "^5.4.5",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "eslint": "8.10.0",
+    "eslint-config-next": "12.1.0"
   }
 }

@@ -5,7 +5,7 @@ module.exports = withPWA(
   {
     pwa:{
       dest: 'public',
-      disable: process.env.NODE_ENV === 'development',
+      disable: process.env.NODE_ENV !== 'production'? true : false,
       register: true,
       scope: '/',
       sw: 'service-worker.js',
@@ -15,14 +15,13 @@ module.exports = withPWA(
       domains: ['github.com']
     },
     poweredByHeader: false,
-    env:{
-      TEST: 'production'
-    },
     devIndicators: {
-      buildActivityPosition: 'bottom-right'
+      buildActivityPosition: 'bottom-right',
+      autoPrerender: false
     },
-    swcMinify: true
-
+    swcMinify: true,
+    compress: true,
+    reactStrictMode: true
   }
 )
   
