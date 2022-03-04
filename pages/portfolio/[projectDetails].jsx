@@ -66,7 +66,7 @@ const Index = () => {
       {/* Head Data */}
       <Head>
         <title>{loading ? 'Loading' : data.Name}</title>
-        <meta name="description" content={`${loading ? 'Loading' : data.Name} Project`} />
+        <meta name="description" content='Project' />
         <meta name="keywords" content="Developer, Profile, FullStack Web Development" />
         <meta name="author" content="Frederick Williams" />
       </Head>

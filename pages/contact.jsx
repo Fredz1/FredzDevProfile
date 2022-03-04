@@ -6,7 +6,7 @@ import Head from 'next/head'
 
 const contact = () => {
   return (
-    <div lang="en">
+    <div>
     <Head>
       <title>
           Contact Me

@@ -7,7 +7,7 @@ import Head from 'next/head'
 
 const portfolio = () => {
   return (
-    <div lang='en'>
+    <div>
       <Head>
         <title>
           Portfolio

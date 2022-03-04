@@ -8,7 +8,7 @@ import Head from 'next/head'
 
 const index = () => {
   return (
-    <div lang="en">
+    <div>
       <Head>
         <title>
           Fred Williams Dev Profile
