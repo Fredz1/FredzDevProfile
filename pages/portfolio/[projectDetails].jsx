@@ -65,7 +65,7 @@ const Index = () => {
     <div className={style.projectDetails}>
       {/* Head Data */}
       <Head>
-        <title>{loading ? 'Loading' : data.Name}</title>
+        <title>Project</title>
         <meta name="description" content='Project' />
         <meta name="keywords" content="Developer, Profile, FullStack Web Development" />
         <meta name="author" content="Frederick Williams" />

@@ -36,7 +36,7 @@ const MyApp = ({Component, pageProps}) => {
         <meta name='twitter:card' content='summary' />
         <meta name='twitter:url' content='https://fredz-dev-profile.vercel.app/en' />
         <meta name='twitter:title' content='Fredz Dev PWA App' />
-        <meta name='twitter:description' content='Best PWA App in the world' />
+        <meta name='twitter:description' content='Fred Williams Developer Profile and Blog' />
         <meta name='twitter:image' content='https://fredz-dev-profile.vercel.app/enm/icons/android-chrome-192x192.png' />
         <meta name='twitter:creator' content='@Fredwil25' />
         <meta property='og:type' content='website' />
