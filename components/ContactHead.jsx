@@ -4,7 +4,6 @@ import style from '../styles/contactHead.module.css'
 // components
 import Image from 'next/image'
 import Link from 'next/link'
-import Head from 'next/head'
 
 // Assets
 import cartoonMe from '../public/cartoonMe.png'

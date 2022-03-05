@@ -21,8 +21,8 @@ const PortfolioHead = () => {
           I may not have the biggest or greatest portfolio, but, I can tell you that I can actually do this everyday.
         </p>
       </div>
-      <div className='image'>
-        <Image src={cartoonMe} height={500} quality={30} objectFit='contain' alt='fred as a cartoon'/>
+      <div className={style.image}>
+        <Image src={cartoonMe} quality={20} layout='intrinsic' alt='fred as a cartoon'/>
       </div>
     </div>
   )

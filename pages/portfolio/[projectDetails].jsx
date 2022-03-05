@@ -5,7 +5,6 @@ import style from '../../styles/projectDetails.module.css'
 import { useEffect, useState } from "react"
 import { useRouter } from "next/router"
 import Image from 'next/image'
-import Link from 'next/link'
 import Head from 'next/head'
 
 // data
