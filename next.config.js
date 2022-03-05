@@ -33,7 +33,8 @@ module.exports = withPWA(
       register: true,
       scope: '/',
       sw: 'service-worker.js',
-      customWorkerDir: './public/serviceWorker'
+      customWorkerDir: './public/serviceWorker',
+      runtimeCaching
     },
     images: {
       domains: ['github.com']
@@ -57,6 +58,15 @@ module.exports = withPWA(
         siteMap
       }
       return config
+    },
+    async headers () {
+      return[
+        {
+          source: '/:path*',
+          headers: securityHeaders
+        }  
+      ]
+      
     }
   }
 )
