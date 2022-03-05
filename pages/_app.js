@@ -34,17 +34,17 @@ const MyApp = ({Component, pageProps}) => {
         <link rel='mask-icon' href='/icons/safari-pinned-tab.svg' color='#5bbad5' />
         <link rel='shortcut icon' href='/favicon.ico' />
         <meta name='twitter:card' content='summary' />
-        <meta name='twitter:url' content='https://yourdomain.com' />
-        <meta name='twitter:title' content='PWA App' />
+        <meta name='twitter:url' content='https://fredz-dev-profile.vercel.app/en' />
+        <meta name='twitter:title' content='Fredz Dev PWA App' />
         <meta name='twitter:description' content='Best PWA App in the world' />
-        <meta name='twitter:image' content='https://yourdomain.com/icons/android-chrome-192x192.png' />
-        <meta name='twitter:creator' content='@DavidWShadow' />
+        <meta name='twitter:image' content='https://fredz-dev-profile.vercel.app/enm/icons/android-chrome-192x192.png' />
+        <meta name='twitter:creator' content='@Fredwil25' />
         <meta property='og:type' content='website' />
-        <meta property='og:title' content='PWA App' />
-        <meta property='og:description' content='Best PWA App in the world' />
-        <meta property='og:site_name' content='PWA App' />
-        <meta property='og:url' content='https://yourdomain.com' />
-        <meta property='og:image' content='https://yourdomain.com/icons/apple-touch-icon.png' />
+        <meta property='og:title' content='Fredz Dev App' />
+        <meta property='og:description' content='Fredz Dev App showcase' />
+        <meta property='og:site_name' content='Fredz Dev App' />
+        <meta property='og:url' content='https://fredz-dev-profile.vercel.app/en' />
+        <meta property='og:image' content='https://fredz-dev-profile.vercel.app/en/icons/apple-touch-icon.png' />
       </Head>
       <Component {...pageProps} />
     </Layout>

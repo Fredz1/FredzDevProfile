@@ -1,4 +1,5 @@
 const withPWA = require('next-pwa')
+const siteMap = require('./scripts/generate-sitemap.js')
 
 const securityHeaders = [
   {
@@ -49,6 +50,13 @@ module.exports = withPWA(
       locales: ['default', 'en'],
       defaultLocale: 'default',
       localDetection: true
+    },
+    webpack: 
+    (config, {isServer}) => {
+      if(isServer){
+        siteMap
+      }
+      return config
     }
   }
 )
