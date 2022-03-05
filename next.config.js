@@ -33,8 +33,7 @@ module.exports = withPWA(
       register: true,
       scope: '/',
       sw: 'service-worker.js',
-      customWorkerDir: './public/serviceWorker',
-      runtimeCaching
+      customWorkerDir: './public/serviceWorker'      
     },
     images: {
       domains: ['github.com']
