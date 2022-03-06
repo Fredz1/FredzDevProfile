@@ -49,10 +49,6 @@ module.exports = withPWA(
       imageSizes: [16,32,48,64,96,128,256,384],
       domains: ['github']
     },
-    i18n:{
-      locals: ['en', 'de'],
-      default: 'en'
-    },
     webpack: 
     (config, {isServer}) => {
       if(isServer){
