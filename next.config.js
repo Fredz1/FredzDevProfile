@@ -50,7 +50,8 @@ module.exports = withPWA(
       domains: ['github']
     },
     i18n:{
-      locals: ['en']
+      locals: ['en', 'de'],
+      default: 'en'
     },
     webpack: 
     (config, {isServer}) => {
