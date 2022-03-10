@@ -32,8 +32,7 @@ module.exports = withPWA(
       disable: process.env.NODE_ENV !== 'production'? true : false,
       register: true,
       scope: '/',
-      sw: 'service-worker.js',
-      customWorkerDir: './public/serviceWorker'      
+      sw: 'service-worker.js'
     },
     poweredByHeader: false,
     devIndicators: {
