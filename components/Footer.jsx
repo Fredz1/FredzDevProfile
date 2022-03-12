@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <div className={style.footerContainer} >
       <div className={style.copywrite}>
-        &copy; Fred Williams
+        &copy; www.fredmadethis.co.za
       </div>
       <NavLinks />
     </div>

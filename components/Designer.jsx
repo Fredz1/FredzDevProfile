@@ -11,10 +11,9 @@ const Designer = () => {
   return (
     <div className={style.designerContainer}>
 
-      <p className={style.frontEndText}>Frederick</p>
-      <p>Williams</p>
+      <h2>Fred<p className={style.frontEndText}>Made</p>This</h2>
       <div className={style.image}>
-        <Image src={splitProfile} height={250} objectFit='contain' quality={10} priority alt='Developer Profile Image'/>
+        <Image src={splitProfile} objectFit='contain' quality={45} priority alt='Developer Profile Image'/>
       </div>
       
     </div>
