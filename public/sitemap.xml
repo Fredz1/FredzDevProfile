@@ -1,18 +1,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://www.fredmadethis.co.za</loc>
+    <loc>https://www.fredmadethis.co.za/404</loc>
     <lastmod>{new Date().toISOString()}</lastmod>
     <changefreq>hourly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://www.fredmadethis.co.za/portfolio</loc>
-    <lastmod>{new Date().toISOString()}</lastmod>
-    <changefreq>hourly</changefreq>
-    <priority>1.0</priority>
-  </url>
-  <url>
-    <loc>https://www.fredmadethis.co.za/contact</loc>
+    <loc>https://www.fredmadethis.co.za/blog/index</loc>
     <lastmod>{new Date().toISOString()}</lastmod>
     <changefreq>hourly</changefreq>
     <priority>1.0</priority>
