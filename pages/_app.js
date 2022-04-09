@@ -4,7 +4,6 @@ import '../styles/globals.css'
 // components
 import Layout from '../layouts/Layout'
 import Head from 'next/head'
-import Script from 'next/script'
 import { useRouter } from 'next/router'
 import * as gtag from '../scripts/googleTag'
 import { useEffect } from 'react'
@@ -61,28 +60,10 @@ const MyApp = ({Component, pageProps}) => {
         <meta property='og:site_name' content='Fredz Dev App' />
         <meta property='og:url' content='https://fredz-dev-profile.vercel.app/en' />
         <meta property='og:image' content='https://fredz-dev-profile.vercel.app/en/icons/apple-touch-icon.png' />
-
       </Head>
-        <Script 
-          strategy="afterInteractive"
-          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
-        />
-
-        <Script 
-          id="gtag-init"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${gtag.GA_TRACKING_ID}', {
-                page_path: window.location.pathname,
-              });
-            `,
-          }}
-        />
+      
       <Component {...pageProps} />
+      
     </Layout>
   )
 }

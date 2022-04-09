@@ -31,10 +31,11 @@
     }
   ],
   "theme_color" : "#FFFFFF",
-  "background_color" : "#FFFFFF",
-  "start_url": "/",
+  "background_color" : "#000",
+  "start_url": ".",
   "scope":"/",
   "display" : "standalone",
   "orientation": "portrait",
-  "lang" : "en-us"
+  "lang" : "en-us",
+  "prefer_related_applications": false
 }

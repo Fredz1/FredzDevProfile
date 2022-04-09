@@ -1,28 +1,12 @@
 const withPWA = require('next-pwa')
 const siteMap = require('./scripts/generate-sitemap.js')
+const maker = require('./scripts/hashMaker.js')
 
-const securityHeaders = [
-  {
-  key: 'X-DNS-Prefetch-Control',
-  value: 'on'
-  },
-  {
-    key: 'Strict-Transport-Security',
-    value: 'max-age=63072000; includeSubDomains; preload'
-  },
-  {
-    key: 'X-XSS-Protection',
-    value: '1; mode=block'
-  },
-  {
-    key: 'Permissions-Policy',
-    value: 'camera=(), microphone=(), geolocation=()'
-  },
-  {
-    key: 'X-Content-Type-Options',
-    value: 'nosniff'
-  }
-]
+
+const generateCsp = async() => {
+
+  return `default-src 'self' www.googletagmanager.com ; style-src 'self' 'unsafe-inline'; script-src 'sha256-${ maker() }' 'self' www.googletagmanager.com 'unsafe-inline' ; font-src 'self' data:; img-src 'self' www.googletagmanager.com data:;`
+}
 
 
 module.exports = withPWA(
@@ -55,15 +39,17 @@ module.exports = withPWA(
       }
       return config
     },
-    async headers () {
-      return[
-        {
-          source: '/:path*',
-          headers: securityHeaders
-        }  
-      ]
-      
-    }
+    headers: async () => [
+      {
+        source: '/(.*)',
+        headers: [
+          {
+            key: 'Content-Security-Policy',
+            value: await generateCsp()
+          }
+        ]
+      }
+    ]
   }
 )
   
