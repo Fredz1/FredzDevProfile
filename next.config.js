@@ -1,11 +1,11 @@
 const withPWA = require('next-pwa')
 const siteMap = require('./scripts/generate-sitemap.js')
-const maker = require('./scripts/hashMaker.js')
+const nonceHash = require('./scripts/hashMaker.js')
 
 
 const generateCsp = async() => {
 
-  return `default-src 'self' www.googletagmanager.com ; style-src 'self' 'unsafe-inline'; script-src 'sha256-${ maker() }' 'self' www.googletagmanager.com 'unsafe-inline' ; font-src 'self' data:; img-src 'self' www.googletagmanager.com data:;`
+  return `default-src 'self' www.googletagmanager.com ; style-src 'self' 'unsafe-inline'; script-src 'sha256-${ nonceHash }' 'self' www.googletagmanager.com 'unsafe-inline' ; font-src 'self' data:; img-src 'self' www.googletagmanager.com data:;`
 }
 
 

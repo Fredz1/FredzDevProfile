@@ -8,6 +8,7 @@ import Script from 'next/script'
 import { useRouter } from 'next/router'
 import * as gtag from '../scripts/googleTag'
 import { useEffect } from 'react'
+import nonceHash from '../scripts/hashMaker'
 
 const MyApp = ({Component, pageProps}) => {
   
@@ -64,13 +65,16 @@ const MyApp = ({Component, pageProps}) => {
       </Head>
       
       <Script
+        id="gtag-function"
         strategy="afterInteractive"
+        nonce={nonceHash}
         src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_TRACKING_ID}`}
       />
 
       <Script
         id="gtag-init"
         strategy="afterInteractive"
+        nonce={nonceHash}
         dangerouslySetInnerHTML={{
           __html: `
             window.dataLayer = window.dataLayer || [];
