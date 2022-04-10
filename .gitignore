@@ -42,5 +42,5 @@ jspm_packages
 .env.development
 out
 
-service-worker.jscoverage
+service-worker.js
 sitemap.xml

@@ -19,17 +19,12 @@ module.exports = withPWA(
       scope: '/',
       sw: 'service-worker.js'
     },
-    cleanDistDir: true,
     poweredByHeader: false,
     devIndicators: {
       buildActivityPosition: 'bottom-right',
       autoPrerender: false
     },
-    swcMinify: true,
-    analyticsId: process.env.GA_TRACKING_ANALYTICS,
     compress: true,
-    reactStrictMode: true,
-    optimizeFonts: true,
     images: {
       formats: ['image/avif', 'image/webp'],
       deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
