@@ -24,6 +24,9 @@ module.exports = withPWA(
       buildActivityPosition: 'bottom-right',
       autoPrerender: false
     },
+    reactStrictMode: true,
+    optimizeFonts: true,
+    swcMinify: true,
     compress: true,
     images: {
       formats: ['image/avif', 'image/webp'],
