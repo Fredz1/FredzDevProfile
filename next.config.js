@@ -1,14 +1,13 @@
 const withPWA = require('next-pwa')
 const siteMap = require('./scripts/generate-sitemap.js')
-const maker = require('./scripts/hashMaker.js')
 
 
 const generateCsp = async() => {
 
-  const nonceVal = maker()
 
-  return `default-src 'self' www.googletagmanager.com ; style-src 'self' 'unsafe-inline'; script-src 'nonce-${nonceVal}' 'self' www.googletagmanager.com 'unsafe-inline' 'unsafe-eval'; font-src 'self' data:; img-src 'self' www.googletagmanager.com data:;`
+  return `default-src 'self' www.googletagmanager.com ; style-src 'self' 'unsafe-inline'; script-src 'self' www.googletagmanager.com 'unsafe-eval'; font-src 'self' data:; img-src 'self' www.googletagmanager.com data:; script-src-elem 'self' www.googletagmanager.com 'unsafe-inline'; script-src-attr www.googletagmanager.com `
 }
+
 
 
 module.exports = withPWA(
@@ -20,14 +19,17 @@ module.exports = withPWA(
       scope: '/',
       sw: 'service-worker.js'
     },
+    cleanDistDir: true,
     poweredByHeader: false,
     devIndicators: {
       buildActivityPosition: 'bottom-right',
       autoPrerender: false
     },
     swcMinify: true,
+    analyticsId: process.env.GA_TRACKING_ANALYTICS,
     compress: true,
     reactStrictMode: true,
+    optimizeFonts: true,
     images: {
       formats: ['image/avif', 'image/webp'],
       deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],

@@ -6,4 +6,6 @@ const maker = () => {
   return hash
 }
 
+maker()
+
 module.exports = maker
