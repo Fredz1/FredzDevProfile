@@ -32,7 +32,7 @@ module.exports = withPWA(
       domains: ['github']
     },
     webpack: 
-    (config, {isServer}) => {
+    (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
       if(isServer){
         siteMap
       }
