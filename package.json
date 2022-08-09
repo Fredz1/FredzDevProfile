@@ -4,7 +4,6 @@
   "description": "Developer Profile Of Frederick Williams",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "next",
     "build": "next build",
     "buildExport": "next build && next export",
