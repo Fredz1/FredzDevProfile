@@ -1,5 +1,5 @@
 const withPWA = require('next-pwa')
-const siteMap = require('./scripts/generate-sitemap.js')
+//const siteMap = require('./scripts/generate-sitemap.js')
 
 
 const generateCsp = async() => {
@@ -32,13 +32,6 @@ module.exports = withPWA(
       deviceSizes: [640, 750, 828, 1080, 1200, 1920, 2048, 3840],
       imageSizes: [16,32,48,64,96,128,256,384],
       domains: ['github']
-    },
-    webpack: 
-    (config, { buildId, dev, isServer, defaultLoaders, webpack }) => {
-      if(isServer){
-        siteMap
-      }
-      return config
     },
     headers: async () => [
       {
