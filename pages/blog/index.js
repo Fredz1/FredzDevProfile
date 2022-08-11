@@ -1,7 +1,6 @@
 // Style
 import style from '../../styles/underContruction.module.css'
 
-
 // Assets
 import underContructionImage from '../../public/underConstructionImage.png'
 
