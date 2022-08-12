@@ -26,15 +26,6 @@ const MyApp = ({Component, pageProps}) => {
 
   return (
     <Layout>
-      <>
-      {/* Google Tag Manager - Global base code */}
-        <Script
-          id='GTMscript'
-          strategy="afterInteractive"
-          nonce={maker()}
-          dangerouslySetInnerHTML={{__html: `(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);})(window,document,'script','dataLayer', 'GTM-T7BKQWW');`,}}
-        />
-      </>
       <Head>
 
                
@@ -68,7 +59,7 @@ const MyApp = ({Component, pageProps}) => {
         <meta name='twitter:creator' content='@Fredwil25' />
         <meta property='og:type' content='website' />
         <meta property='og:title' content='Fredz Dev App' />
-        <meta property='og:description' content='Fredz Dev App showcase' />
+        <meta property='og:description' content='Fredz Dev App Showcase' />
         <meta property='og:site_name' content='Fredz Dev App' />
         <meta property='og:url' content='https://fredz-dev-profile.vercel.app/en' />
         <meta property='og:image' content='https://fredz-dev-profile.vercel.app/en/icons/apple-touch-icon.png' />
