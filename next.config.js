@@ -1,17 +1,5 @@
-const withPWA = require('next-pwa')
-const runtimeCaching = require('next-pwa/cache')
-
-
-
-module.exports = withPWA(
+module.exports =
   {
-    pwa:{
-      dest: 'public',
-      disable: process.env.NODE_ENV !== 'production'? true : false,
-      register: false,
-      scope: '/',
-      sw: 'service-worker.js'
-    },
     poweredByHeader: false,
     reactStrictMode: true,
     optimizeFonts: true,
@@ -23,6 +11,3 @@ module.exports = withPWA(
       domains: ['github']
     },
   }
-)
-  
-
