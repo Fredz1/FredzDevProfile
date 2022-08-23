@@ -1,6 +1,7 @@
 // components
 import Designer from "../components/Designer"
 import ProjectSample from "../components/ProjectSample"
+import DownloadCV from "../components/DownloadCV"
 
 // modules
 import Head from 'next/head'
@@ -18,6 +19,7 @@ const index = () => {
         <meta name="author" content="Frederick Williams" />
       </Head>
       <Designer />
+      <DownloadCV />
       <ProjectSample num={2}/>
     </div>
   )
