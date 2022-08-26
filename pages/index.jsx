@@ -19,8 +19,8 @@ const index = () => {
         <meta name="author" content="Frederick Williams" />
       </Head>
       <Designer />
-      <DownloadCV />
       <ProjectSample num={2}/>
+      <DownloadCV />
     </div>
   )
 }
