@@ -11,10 +11,8 @@ import facebookIcon from '../public/socialMediaIcons/facebookSocialMediaColor.pn
 import linkedInIcon from '../public/socialMediaIcons/linkedinSocialMediaColor.png'
 import githubIcon from '../public/socialMediaIcons/githubSocialMediaColor.png'
 
-
 const ContactHead = () => {
 
-  const iconSize = 44
   return (
     <div className={style.contactHeadContainer}>
       <div className={style.textContainer}>
