@@ -44,3 +44,7 @@ out
 
 service-worker.js
 sitemap.xml
+
+*.pem
+
+server.txt
