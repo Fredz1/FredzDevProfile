@@ -7,10 +7,8 @@ const DownloadCV = () => {
     <div>
       <h1>Work With Me</h1>
       <p>
-        If you are interested in working with me, click the button below to download my CV.
+        Please see the contact page if you would like to get intouch with me.
       </p>
-      
-        <a media={CVdoc}  target="_blank" rel='noreferrer'>Open</a>
      
     </div>
   )
