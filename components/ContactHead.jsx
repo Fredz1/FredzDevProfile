@@ -25,26 +25,26 @@ const ContactHead = () => {
         <div className={style.socialLinks}>
           <Link href='https://www.facebook.com/fredwil25/'>
             <a aria-label='LinkedIn'>
-              <Image src={facebookIcon} width={iconSize} height={iconSize} quality={30} alt={'Facebook Profile Icon'}/>
+              <Image src={facebookIcon} quality={30} alt={'Facebook Profile Icon'}/>
               <p>facebook</p>
             </a>
           </Link>
           <Link href='https://www.linkedin.com/in/frederick-williams-b2215730/'>
             <a aria-label='LinkedIn'>
-              <Image src={linkedInIcon} width={iconSize} height={iconSize} quality={30} alt={'Linkedin profile Icon'} />
+              <Image src={linkedInIcon} quality={30} alt={'Linkedin profile Icon'} />
               <p>LinkedIn</p>
             </a>
           </Link>
           <Link href='https://github.com/Fredz1'>
             <a aria-label='LinkedIn'>
-              <Image src={githubIcon} width={iconSize} height={iconSize} quality={30} alt={'Github profile Icon'}/>
+              <Image src={githubIcon} quality={30} alt={'Github profile Icon'}/>
               <p>gitHub</p>
             </a>
           </Link>
         </div>
       </div>
       <div className='image'>
-        <Image src={cartoonMe} height={600} width={600} quality={30} alt={'Linkedin profile Icon'} />
+        <Image src={cartoonMe} quality={30} alt={'Linkedin profile Icon'} />
       </div>
     </div>
   )
