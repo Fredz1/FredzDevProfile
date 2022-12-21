@@ -1,5 +1,5 @@
 import React from 'react'
-import CVdoc from '../public/fredsDevProfile.pdf'
+//import CVdoc from '../public/fredsDevProfile.pdf'
 
 const DownloadCV = () => {
   
