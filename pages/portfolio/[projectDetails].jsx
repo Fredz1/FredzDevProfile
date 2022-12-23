@@ -82,7 +82,7 @@ const Index = () => {
         </div>
 
         <div className={style.headerImage}>
-          <Image src={image} quality={20} objectFit='fill' alt={`Screen shot of ${projectDetails && projectDetails.Name}`} />
+          <Image src={image} quality={20} width={150} alt={`Screen shot of ${projectDetails && projectDetails.Name}`} />
         </div>
 
       </div>
@@ -93,7 +93,7 @@ const Index = () => {
         {/* project description section */}
         <div className={style.projectDetailsDiscription}>
           <div className={style.projectDetailsHeading}>
-            <Image src={line} alt='line'/>
+            <Image src={line} width={150} alt='line'/>
             <h4>Description</h4>
             <Image src={line} alt='line'/>
           </div>

@@ -49,13 +49,15 @@ const ProjectCard = ({projectInfo}) => {
 
   return (
     <div className={style.projectCardContainer}>
+
       <h4>
         {projectInfo.Name}
       </h4>
       
       <div className={style.imageContainer}>
-        <Image quality={10} src={displayImage} objectFit='fill' alt={`${projectInfo.Name}`} />
+        <Image quality={10} src={displayImage} width={350} alt={`${projectInfo.Name}`} />
       </div>
+
       <div className={style.projectCardButtons}>
         {
           projectInfo && projectInfo.URL ? 
