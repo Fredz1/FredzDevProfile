@@ -2,8 +2,6 @@
   display: flex;
   flex-direction: row;
   padding: 0 5em;
-  max-width: 50%;
-  max-height: 100%;
 }
 
 .textContainer{

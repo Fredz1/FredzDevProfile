@@ -76,9 +76,7 @@ const ProjectCard = ({projectInfo}) => {
         </button> 
         <button>
           <Link href={`/portfolio/${projectInfo.Name}`} aria-label='Project information'>
-            <a>
-              Details
-            </a>
+            Details
           </Link>
         </button>
       </div>

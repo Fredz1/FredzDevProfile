@@ -15,22 +15,16 @@ const SocialMediaLinks = () => {
   return (
     <div className={style.socialMediaIcons}>
 
-        <Link>
-          <a target='_blank' href={'https://www.facebook.com/fredwil25/'} rel="noreferrer">
-            <Image src={facebookIcon} alt='facebook link'/>
-          </a>
+        <Link href={'https://www.facebook.com/fredwil25/'}>
+          <Image src={facebookIcon} alt='facebook link'/>
         </Link>
 
         <Link href={'https://www.linkedin.com/in/frederick-williams-b2215730/'}>
-          <a target='_blank'> 
-            <Image src={linkedInIcon} alt='LinkedIn link'/>
-          </a>
+          <Image src={linkedInIcon} alt='LinkedIn link'/>
         </Link>
 
         <Link href={'https://github.com/Fredz1'}>
-          <a target='_blank'> 
-            <Image src={github} alt='github link'/>
-          </a>
+          <Image src={github} alt='github link'/>
         </Link>
 
       </div>
