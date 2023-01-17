@@ -1,7 +1,7 @@
 module.exports = {
   apps : [{
         name: "FredsDevProfile",
-        script: "npm run dev",
+        script: "npm start",
         watch: true
   }]
 };

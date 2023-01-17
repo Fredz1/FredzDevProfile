@@ -1,5 +1,6 @@
 // components
 import Designer from "../components/Designer"
+import Header from "../components/Header"
 
 // modules
 import Head from 'next/head'
@@ -7,7 +8,7 @@ import Head from 'next/head'
 
 const index = () => {
   return (
-    <div>
+    <>
       <Head>
         <title>
           Fred Williams Dev Profile
@@ -16,8 +17,9 @@ const index = () => {
         <meta name="keywords" content="Developer, Profile, FullStack Web Development" />
         <meta name="author" content="Frederick Williams" />
       </Head>
+      <Header />
       <Designer />
-    </div>
+    </>
   )
 }
 
