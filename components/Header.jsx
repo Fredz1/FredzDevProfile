@@ -28,7 +28,7 @@ import EmailIcon from '@mui/icons-material/Email';
 
 const Header = () => {
 
-  /* const whatsAppMessage = "https://wa.me/27849669558?text=I%20would%20like%20to%20inquiring%20about%20ae%20tattoo" */
+  /* const whatsAppMessage = "https://wa.me/27761349290?text=I%20would%20like%20to%20enquire%20about%20a%20creating%20website." */
 
   // hide header and display drawer when screen size is smaller than 600px
 
@@ -36,7 +36,7 @@ const Header = () => {
   const screenWidth = useMediaQuery( theme.breakpoints.up('sm') )
 
   const showMenu = {
-    display: screenWidth ? 'block' : 'none',
+    display: screenWidth ? 'block' : 'none'
   }
 
   const showsideMenu = {
@@ -59,7 +59,7 @@ const Header = () => {
     <>
     
       <AppBar
-        position="fixed"
+        position="static"
         sx={ showMenu }
         elevation={ 0 }
       >
@@ -67,34 +67,35 @@ const Header = () => {
           variant='dense'
         >
           <Grid 
-            container 
+            container={true}
             direction='row'
             justifyContent="space-between"
             alignItems="stretch"
             spacing={8}
+            wrap='nowrap'
           >
             {/* Left container */}
             <Grid item>
               <ButtonGroup 
-                size='medium' 
+                size='small' 
                 variant='contained' 
                 disableElevation={ true }
               > 
 
                 <Button variant='text'>
-                  <Link href='#myServices' underline='none' >
+                  <Link href='#myServices' underline='none' color='white'>
                     My Services
                   </Link>
                 </Button>
 
                 <Button variant='text'>
-                  <Link href='#portfolio' underline='none'>
+                  <Link href='#portfolio' underline='none' color='white'>
                     Portfolio
                   </Link>
                 </Button>
 
                 <Button variant='text'>
-                  <Link href='#aboutMe' underline='none'>
+                  <Link href='#aboutMe' underline='none' color='white'>
                     About Me
                   </Link>
                 </Button>
@@ -107,21 +108,23 @@ const Header = () => {
             <Grid item>
 
               <ButtonGroup 
-                size='meduim' 
+                size='small' 
                 variant='contained' 
                 disableElevation={ true }
               >
+
                 <Button variant='text'>
-                  <Link href='#contact' underline='none'>
+                  <Link href='#contact' underline='none' color='white'>
                     Contact
                   </Link>
                 </Button>
 
                 <Button variant='text'>
-                  <Link href='#' underline='none'>
+                  <Link href='#' underline='none' color='white'>
                     Message Me
                   </Link>
                 </Button>
+                
               </ButtonGroup>
 
 

@@ -1,22 +1,92 @@
-// style
-import style from '../styles/designer.module.css'
-
-// components
+// Components
 import Image from 'next/image'
 
-// assets
-import splitProfile from '../public/newSplitPortraitOfFred.png'
+// MUI components
+import { 
+  Container, 
+  Unstable_Grid2 as Grid, 
+  Typography 
+} from '@mui/material'
+
+// Images
+import cartoonMe from '../public/assets/images/cartoonMe.png'
+
+//style
+const style = {
+  image: {
+    height: "100%",
+    width: "100%",
+    overflow: "hidden",
+    maxHeight: "100vh"
+  }
+}
 
 const Designer = () => {
   return (
-    <div className={style.designerContainer}>
+    <Container
+      disableGutters = {true}
+      maxWidth
+    >
+      <Grid 
+        container
+      >
 
-      <h2>Fred<p className={style.frontEndText}>Made</p>This</h2>
-      <div className={style.image}>
-        <Image src={splitProfile} objectFit='contain' quality={45} priority alt='Developer Profile Image'/>
-      </div>
+        <Grid 
+          item
+          md={7}
+          sx={6}
+        >
+          <Grid container direction='column' >
+
+            <Grid item>
+
+              <Typography variant='h1'>
+                Fred 
+              </Typography>
+              <Typography variant='h1'>
+                Made 
+              </Typography>
+              <Typography variant='h1'>
+                This
+              </Typography>
+
+            </Grid>
+            <Grid item>
+              <Typography paragraph={true} align='right' gutterBottom={false}>
+                Clean, simple, and user-friendly web designs for your business. 
+              </Typography>
+              <Typography paragraph={true} align='right' gutterBottom={false}>
+                Let Fred take your online presence to the next level.
+              </Typography>
+            </Grid>
+
+
+
+          </Grid>
+
+          
+
+        </Grid>
+
+        <Grid 
+          item 
+          md={5}
+          xs={6}
+          sx={{backgroundColor: 'black'}}          
+        >
+          <Image 
+            src={cartoonMe} 
+            alt='my avatar' 
+            contain 
+            style={style.image}
+          />
+
+        </Grid>
+
+      </Grid>
+
       
-    </div>
+    </Container>
   )
 }
 
