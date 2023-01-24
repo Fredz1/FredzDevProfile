@@ -24,8 +24,6 @@ const style = {
 const Designer = () => {
   return (
     <Container
-      disableGutters = {true}
-      maxWidth
     >
       <Grid 
         container
@@ -34,7 +32,7 @@ const Designer = () => {
         <Grid 
           item
           md={7}
-          sx={6}
+          xs={6}
         >
           <Grid container direction='column' >
 
@@ -77,7 +75,6 @@ const Designer = () => {
           <Image 
             src={cartoonMe} 
             alt='my avatar' 
-            contain 
             style={style.image}
           />
 
