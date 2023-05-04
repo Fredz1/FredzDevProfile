@@ -1,9 +1,8 @@
-// components
-import Designer from "../components/Designer"
-import Header from "../components/Header"
-
 // modules
 import Head from 'next/head'
+
+// modules
+import TopMenu from '../modules/TopMenu'
 
 
 const index = () => {
@@ -11,14 +10,14 @@ const index = () => {
     <>
       <Head>
         <title>
-          Fred Williams Dev Profile
+          FredMadeThis
         </title>
         <meta name="description" content="FullStack Web Developers Profile Of Frederick Williams" />
         <meta name="keywords" content="Developer, Profile, FullStack Web Development" />
         <meta name="author" content="Frederick Williams" />
       </Head>
-      <Header />
-      <Designer />
+      <TopMenu />
+        
     </>
   )
 }

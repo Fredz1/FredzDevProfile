@@ -1,23 +1,19 @@
-// Style
-import '../styles/globals.css'
-
 // components
 import Head from 'next/head'
 
 //import theme
 import { ThemeProvider } from '@mui/material/styles'
 
+//Theme
+import { myTheme } from '../Theme/customTheme.js'
+
 //Mui styles
 import { CssBaseline } from '@mui/material'
 
-//import theme
-import customTheme from '../styles/theme/Theme'
-
-const MyApp = ({Component, pageProps}) => {
+const App = ( { Component, pageProps } ) => {
   
   return (
     <CssBaseline>
-      <ThemeProvider theme={customTheme} >
         <Head>
           <meta name='application-name' content='Fred Dev Portfolio' />
           <meta name='apple-mobile-web-app-capable' content='yes' />
@@ -44,14 +40,11 @@ const MyApp = ({Component, pageProps}) => {
           <meta property='og:title' content='Fredz Dev App' />
           <meta property='og:description' content='Fredz Dev App Showcase' />
           <meta property='og:site_name' content='Fredz Dev App' />
-          <meta property='og:url' content='https://fredz-dev-profile.vercel.app/en' />
-          <meta property='og:image' content='https://fredz-dev-profile.vercel.app/en/icons/apple-touch-icon.png' />
         </Head>
-      
-        <Component {...pageProps} />
-      </ThemeProvider>
+
+          <Component {...pageProps} />
     </CssBaseline>
   )
 }
 
-export default MyApp
+export default App
