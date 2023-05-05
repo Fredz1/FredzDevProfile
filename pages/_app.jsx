@@ -11,7 +11,7 @@ import { myTheme } from '../Theme/customTheme.js'
 import { CssBaseline } from '@mui/material'
 
 const App = ( { Component, pageProps } ) => {
-  
+
   return (
     <CssBaseline>
         <Head>
@@ -41,7 +41,6 @@ const App = ( { Component, pageProps } ) => {
           <meta property='og:description' content='Fredz Dev App Showcase' />
           <meta property='og:site_name' content='Fredz Dev App' />
         </Head>
-
           <Component {...pageProps} />
     </CssBaseline>
   )
