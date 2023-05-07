@@ -1,9 +1,32 @@
-import { createTheme } from '@mui/material/styles'
+import { createTheme, ThemeProvider } from '@mui/material/styles'
 
-const myTheme = createTheme(
+export const myTheme = createTheme(
   {
-    
+    components: {
+      MuiButton: {
+        variants: [
+          {
+            props: { 
+              variant: 'newButton'
+            },
+            style: {
+              border: '1px solid brown'
+            }
+          }
+        ]
+
+      }
+    }
   }
 )
 
-export default myTheme
+const FredzTheme = ( { children } ) => {
+
+  return (
+    <ThemeProvider theme={myTheme}>
+      {children}
+    </ThemeProvider>
+  )
+}
+
+export default FredzTheme

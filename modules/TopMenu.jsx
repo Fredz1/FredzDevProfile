@@ -1,4 +1,4 @@
-import { Box, Unstable_Grid2 as Grid, Typography } from "@mui/material"
+import { Box, ButtonGroup, Button, Unstable_Grid2 as Grid, Typography } from "@mui/material"
 
 
 
@@ -11,9 +11,21 @@ const TopMenu = () => {
             FredMadeThis
           </Typography>
         </Grid>
-        <Grid>
-          box for nav items
-        </Grid>
+        <ButtonGroup>
+          <Button variant='newButton'>
+            about me
+          </Button>
+          <Button variant='contained'>
+            Projects
+          </Button>
+          <Button variant='contained'>
+            Resume
+          </Button>
+          <Button variant='contained'>
+            Contact
+          </Button>
+        </ButtonGroup>
+        
       </Grid>
     </Box>
   );

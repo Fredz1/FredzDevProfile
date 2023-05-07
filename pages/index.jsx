@@ -3,6 +3,7 @@ import Head from 'next/head'
 
 // modules
 import TopMenu from '../modules/TopMenu'
+import HeroSection from '../modules/HeroSection'
 
 
 const index = () => {
@@ -17,6 +18,7 @@ const index = () => {
         <meta name="author" content="Frederick Williams" />
       </Head>
       <TopMenu />
+      <HeroSection />
         
     </>
   )
