@@ -21,9 +21,6 @@ const TopMenu = () => {
             Projects
           </Button>
           <Button variant='newButton'>
-            Resume
-          </Button>
-          <Button variant='newButton'>
             Contact
           </Button>
         </Grid>
