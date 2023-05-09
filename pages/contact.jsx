@@ -2,8 +2,6 @@
 import { TextField, Button } from '@mui/material'
 
 
-// component
-import ContactHead from '../components/ContactHead'
 
 // modules
 import Head from 'next/head'
@@ -30,8 +28,6 @@ const contact = () => {
       <meta name="keywords" content="Developer, Profile, FullStack Web Development, Contact" />
       <meta name="author" content="Frederick Williams" />
     </Head> 
-
-      <ContactHead />
 
       <div>
 
