@@ -17,10 +17,17 @@ const TopMenu = () => {
           <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
             about me
           </Button>
-          <Button variant='newButton'>
-            Projects
+          <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
+          <Link href="/websites" >
+              websites
+            </Link>
           </Button>
-          <Button variant='newButton'>
+          <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
+            <Link href="/projects" >
+              Projects
+            </Link>
+          </Button>
+          <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
             Contact
           </Button>
         </Grid>

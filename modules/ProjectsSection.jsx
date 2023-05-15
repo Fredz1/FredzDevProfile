@@ -1,6 +1,9 @@
 import { Container, Typography, Unstable_Grid2 as Grid } from "@mui/material"
+import Link from "next/link"
+
 
 const ProjectsSection = () => {
+  
   return (
     <>
       <Container>
@@ -12,7 +15,7 @@ const ProjectsSection = () => {
           </Grid>
           <Grid container>
             <Grid md={6}>
-              Project card one
+              <Link href='/projects/handpong'>Project card 1</Link>
             </Grid>
             <Grid md={6}>
               Project card 2

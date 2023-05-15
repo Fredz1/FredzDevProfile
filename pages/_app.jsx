@@ -38,9 +38,11 @@ const App = ( { Component, pageProps } ) => {
           <meta property='og:description' content='Fredz Dev App Showcase' />
           <meta property='og:site_name' content='Fredz Dev App' />
         </Head>
-        <FredzTheme>
-          <Component {...pageProps} />
-        </FredzTheme>
+        <CssBaseline>
+          <FredzTheme>
+            <Component {...pageProps} />
+          </FredzTheme>
+        </CssBaseline>
     </>
   )
 }
