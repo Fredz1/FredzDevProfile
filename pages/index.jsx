@@ -4,6 +4,7 @@ import Head from 'next/head'
 // modules
 import TopMenu from '../modules/TopMenu'
 import HeroSection from '../modules/HeroSection'
+import Footer from '../modules/Footer'
 
 
 const index = () => {
@@ -19,6 +20,7 @@ const index = () => {
       </Head>
       <TopMenu />
       <HeroSection />
+      <Footer />
         
     </>
   )

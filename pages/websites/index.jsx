@@ -1,5 +1,8 @@
-import { Container, Unstable_Grid2 as Grid } from "@mui/material";
-import WebsitesCard from "../../modules/websitesCard";
+import { Container, Unstable_Grid2 as Grid } from "@mui/material"
+
+import { Link } from "@mui/material"
+
+import WebsitesCard from "../../modules/websitesCard"
 import TopMenu from '../../modules/TopMenu'
 
 const Websites = () => {
@@ -9,7 +12,9 @@ const Websites = () => {
       {/* site option 1 */}
       <Grid container direction='row' spacing={2}>
         <Grid>
-          <WebsitesCard title={'Basic Website'} price={'R2000-R5000'} image='https://picsum.photos/200'/>
+          <Link href="/websites/basic">
+            <WebsitesCard title={'Basic Website'} price={'R2000-R5000'} image='https://picsum.photos/200'/>
+          </Link>
         </Grid>
         <Grid>
           <WebsitesCard title={'Medium Website'} price={'R4000-R7500'} image='https://picsum.photos/200'/>

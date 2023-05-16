@@ -1,25 +1,25 @@
+import TopMenu from '../../modules/TopMenu'
+import Footer from '../../modules/Footer'
+
 import dynamic from 'next/dynamic'
 
-import { Link } from '@mui/material';
+import { Link, Box, Typography } from '@mui/material'
 
 const FaceLandmarksDetection = dynamic(() => import('../../components/FaceLandmarksDetection'), {  ssr: false})
 
 const Tensorflow = () => {
   return (
-    <div>
-            <main>
-                <h2
-                    style={{
-                        fontWeight: "normal"
-                    }}>
-                    <Link style={{ fontWeight: "bold" }} href={'/'}>Home</Link> / Face Landmark Detection 🤓
-                </h2>
-                <code style={{ marginBottom: '1rem' }}>Work in progress...</code>
-                
-                <FaceLandmarksDetection></FaceLandmarksDetection>
-            </main>
-        </div>
-  );
+    <>
+      <TopMenu />
+      <Box>
+        <Typography variant='h4'>             
+          <Link style={{ fontWeight: "bold" }} href={'/'}>Home</Link> / Face Landmark Detection 🤓
+        </Typography>
+        <FaceLandmarksDetection></FaceLandmarksDetection>
+      </Box>
+      <Footer />
+    </>
+  )
 }
 
-export default Tensorflow;
+export default Tensorflow

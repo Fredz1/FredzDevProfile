@@ -83,10 +83,7 @@ export default function FaceLandmarksDetection() {
         <>
             <canvas
                 style={{
-                    transform: "scaleX(-1)",
                     zIndex: 1,
-                    borderRadius: "1rem",
-                    boxShadow: "0 3px 10px rgb(0 0 0)",
                     maxWidth: "85vw"
                 }}
                 id="canvas">
@@ -94,7 +91,6 @@ export default function FaceLandmarksDetection() {
             <video
                 style={{
                     visibility: "hidden",
-                    transform: "scaleX(-1)",
                     position: "absolute",
                     top: 0,
                     left: 0,
