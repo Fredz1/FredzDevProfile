@@ -11,7 +11,7 @@ import { CssBaseline } from '@mui/material'
 const App = ( { Component, pageProps } ) => {
 
   return (
-    <CssBaseline>
+    <>
         <Head>
           <meta name='application-name' content='Fred Dev Portfolio' />
           <meta name='apple-mobile-web-app-capable' content='yes' />
@@ -39,10 +39,12 @@ const App = ( { Component, pageProps } ) => {
           <meta property='og:description' content='Fredz Dev App Showcase' />
           <meta property='og:site_name' content='Fredz Dev App' />
         </Head>
-        <FredzTheme>
-          <Component {...pageProps} />
-        </FredzTheme>
-    </CssBaseline>
+        <CssBaseline>
+          <FredzTheme>
+            <Component {...pageProps} />
+          </FredzTheme>
+        </CssBaseline>
+    </>
   )
 }
 

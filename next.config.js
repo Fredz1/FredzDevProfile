@@ -6,6 +6,9 @@ const nextConfig = {
   compiler: {
     removeConsole: process.env.production ? true : false,
   },
+  images: {
+    domains : ['picsum.photos']
+  }
   
 }
 

@@ -61,8 +61,15 @@ export const myTheme = createTheme(
                 bottom: 0
               },
               '&:hover::after': {
-                width: '75%'
+                width: '75%',
               },
+              '&:hover' : {
+                backgroundColor: 'transparent'
+              },
+              '&:active': {
+                color: 'blue',
+                backgroundColor: 'transparent'
+              }
               /* borderBottom: '1px solid red' */
               
             }
