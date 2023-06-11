@@ -3,6 +3,7 @@ import Head from 'next/head'
 
 //Theme
 import FredzTheme from '../Theme/customTheme'
+import '../Theme/global.css'
 
 //Mui styles
 import { CssBaseline } from '@mui/material'
