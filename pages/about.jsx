@@ -10,7 +10,6 @@ const about = () => {
       container
       direction='column' 
       spacing={10} 
-      justifyContent="center"
       alignItems="center"
       marginTop={5}
       marginBottom={5}
