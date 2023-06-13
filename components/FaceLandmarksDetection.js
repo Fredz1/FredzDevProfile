@@ -8,36 +8,40 @@ import * as faceMesh from '@mediapipe/face_mesh'
 import '@tensorflow-models/face-detection'
 
 tfjsWasm.setWasmPaths(
-    `https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm`)
+  `https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-backend-wasm`
+)
 
 async function setupDetector() {
-    const model = faceLandmarksDetection.SupportedModels.MediaPipeFaceMesh
-    const detector = await faceLandmarksDetection.createDetector(model, {
-        runtime: 'mediapipe',
-        solutionPath: `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh@${faceMesh.VERSION}`,
-        maxFaces: 2,
-        refineLandmarks: true
-    })
-
-    return detector
+  const model = faceLandmarksDetection.SupportedModels.MediaPipeFaceMesh
+  const detector = await faceLandmarksDetection.createDetector(
+    model, {
+      runtime: 'mediapipe',
+      solutionPath: `https://cdn.jsdelivr.net/npm/@mediapipe/face_mesh@${faceMesh.VERSION}`,
+      maxFaces: 1,
+      refineLandmarks: false
+    }
+  )
+  return detector
 }
 
 async function setupVideo() {
-    const video = document.getElementById('video')
-    const stream = await window.navigator.mediaDevices.getUserMedia({ video: true })
+  const video = document.getElementById('video')
+  const stream = await window.navigator.mediaDevices.getUserMedia({ video: true })
 
-    video.srcObject = stream
-    await new Promise((resolve) => {
-        video.onloadedmetadata = () => {
-            resolve()
-        }
-    });
-    video.play()
+  video.srcObject = stream
+  await new Promise(
+    (resolve) => {
+      video.onloadedmetadata = () => {
+        resolve()
+      }
+    }
+  )
+  video.play()
 
     video.width = video.videoWidth
     video.height = video.videoHeight
 
-    return video;
+    return video
 }
 
 async function setupCanvas(video) {

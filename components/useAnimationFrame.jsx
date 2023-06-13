@@ -1,9 +1,9 @@
 import { useEffect, useRef } from "react"
 
 export const useAnimationFrame = (callback, shouldAnimate = false) => {
-    const frameRef = useRef(0);
-    const timeRef = useRef();
-
+    const frameRef = useRef(0)
+    const timeRef = useRef()
+    
     const animate = time => {
         if (timeRef.current != undefined) {
             const deltaTime = time - timeRef.current;
