@@ -34,17 +34,14 @@ const TopMenu = () => {
             </Link>
           </Button>
           <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
-          <Link href="/websites" >
+          <Link href="/websites" underline="none" color='black'>
               websites
             </Link>
           </Button>
           <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
-            <Link href="/projects" >
-              Projects
+            <Link href="/projects" underline="none" color='black'>
+              Contact
             </Link>
-          </Button>
-          <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
-            Contact
           </Button>
         </Grid>
       </Grid>

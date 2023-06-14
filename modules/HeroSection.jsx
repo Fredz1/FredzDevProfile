@@ -1,10 +1,10 @@
-import { Box, Unstable_Grid2 as Grid, Container, Typography, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, LinearProgress } from "@mui/material";
+import { Box, Unstable_Grid2 as Grid, Container, Typography, LinearProgress } from "@mui/material";
 import { Typewriter } from "react-simple-typewriter";
 import { skills } from '../Data/skills'
 
 const HeroSection = () => {
   return (
-    <Box my={10}>
+    <Box my={4}>
       <Container>
           <Grid>
             <Typography variant="h3">
@@ -21,29 +21,33 @@ const HeroSection = () => {
               Fullstack Developer, UX architect and JavaScript engineer
             </Typography>
           </Grid>
-          <Grid width='50%'>
+          <Grid mt={4}>
             <Typography variant="body1">
               Specialities:
             </Typography>
 
-            {
-              skills.map(
-                (el, index) => (
-                  <Container direction='row' key={index}>
-                    <Typography variant="body1">
-                      {el.tech}
-                    </Typography>
-                    <LinearProgress
-                      variant="determinate"
-                      value={el.value}
-                    />
-                  </Container>
+            <Grid container direction='column'>
+              {
+                skills.map(
+                  (el, index) => (
+
+                    <Grid key={index}>
+                      <Typography variant="body1" ml={2} mt={1}>
+                        {el.tech}
+                      </Typography>
+                      <LinearProgress
+                        variant="determinate"
+                        value={el.value}
+                        color="warning"
+                      />
+                    </Grid>
+                  )
                 )
-              )
-            }
+              }
+            </Grid>
           </Grid>
 
-          <Grid>
+          <Grid mt={4}>
             <Typography variant="body1">
               Pressing button with my hands to make magic happen on the internet.
             </Typography>

@@ -36,3 +36,8 @@ export const skills = [
     value: 60
   },
 ]
+
+const socialMediaLinks = {
+  facebook: 'https://www.facebook.com/fredmadethis/',
+  linkedIn: 'https://www.linkedin.com/in/frederick-williams-cpt/'
+}

@@ -4,13 +4,15 @@ import { Link } from "@mui/material"
 
 import WebsitesCard from "../../modules/websitesCard"
 import TopMenu from '../../modules/TopMenu'
+import Footer from '../../modules/Footer'
+
 
 const Websites = () => {
   return (
     <Container>
       <TopMenu />
       {/* site option 1 */}
-      <Grid container direction='row' spacing={2} >
+      <Grid container direction='row' spacing={2} justifyContent='center'>
         <Grid>
           <Link href="/websites/basic">
             <WebsitesCard title={'Basic Website'} price={'R2000-R5000'} image='https://picsum.photos/200'/>
@@ -28,6 +30,7 @@ const Websites = () => {
           <WebsitesCard title={'Mobile Applications'} price={'Contact for order'} image='https://picsum.photos/200'/>
         </Grid>
       </Grid>
+      <Footer />
     </Container>
   );
 }
