@@ -4,21 +4,24 @@ import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined'
 import WhatsAppIcon from '@mui/icons-material/WhatsApp'
 
 const Footer = () => {
+
+  const whatsAppMessage = "https://wa.me/27761349290?text=I%20am%20interested%20in%20working%20with%20a%20you."
+
   return (
     <Container>
-      <Grid container direction='row'gap={4} py={5} >
-        <Grid>
+      <Grid container direction='row'gap={4} py={5} justifyContent='space-around'>
+        <Grid alignItems="center">
           {/* social media */}
-          <Link href='www.facebook.com/fredmadethis'>
+          <Link href='www.facebook.com/fredmadethis' rel="noopener" target="_blank">
             <FacebookOutlinedIcon />
           </Link>
-          <Link href='www.facebook.com/fredmadethis'>
+          <Link href={whatsAppMessage} >
             <WhatsAppIcon />
           </Link>
         </Grid>
 
         <Grid>
-          <Grid container>
+          <Grid container >
           {/* Quick Links */}
             <Button variant="newButton">
               <Typography variant="body2" >
