@@ -1,10 +1,13 @@
 //Mui imports
-import { TextField, Button } from '@mui/material'
-
-
+import { TextField, Button, Container, Unstable_Grid2 as Grid, Typography } from '@mui/material'
 
 // modules
 import Head from 'next/head'
+
+//Components
+import TopMenu from '../modules/TopMenu'
+import Footer from '../modules/Footer'
+
 
 const contact = () => {
 
@@ -19,38 +22,52 @@ const contact = () => {
   }
 
   return (
-    <div>
-    <Head>
-      <title>
-        Contact Me
-      </title>
-      <meta name="description" content="Contact details of Fred Williams" />
-      <meta name="keywords" content="Developer, Profile, FullStack Web Development, Contact" />
-      <meta name="author" content="Frederick Williams" />
-    </Head> 
+    <Container>
+      <Head>
+        <title>
+          Contact Me
+        </title>
+        <meta name="description" content="Contact details of Fred Williams" />
+        <meta name="keywords" content="Developer, Profile, FullStack Web Development, Contact" />
+        <meta name="author" content="Frederick Williams" />
+      </Head> 
+      <TopMenu />
 
-      <div>
+      <Grid container direction='column' md={6} rowGap={2}>
 
+        <Grid>
+          <Typography variant='button'>Name</Typography>
+          <TextField
+            id="outlined"
+            fullWidth
+            value={formDetails.name}
+            onChange={e => formDetails.name = e.target.value}
+            variant='standard'
+          />
+        </Grid>
+
+        <Grid>
+        <Typography variant='button'>Email</Typography>
         <TextField
           id="outlined"
-          label="Your Name"
-          defaultValue=""
-          onChange={() => formDetails.name = this.value}
+          fullWidth
+          value={formDetails.email}
+          onChange={e => formDetails.email = e.target.value}
+          variant='standard'
         />
+        </Grid>
 
+        <Grid>
+        <Typography variant='button'>Message</Typography>
         <TextField
-          id="outlined"
-          label="Email"
-          defaultValue=""
-          onChange={() => formDetails.email = this.value}
-        />
-
-        <TextField
+          fullWidth
           id="outlined-multiline-flexible"
-          label="Your Message"
-          defaultValue=""
-          onChange={() => formDetails.message = this.value}
+          multiline
+          value={formDetails.message}
+          onChange={e => formDetails.message = e.target.value}
+          variant='standard'
         />
+        </Grid>
 
         <Button
            variant='outlined'
@@ -62,11 +79,11 @@ const contact = () => {
 
 
 
-      </div>
+      </Grid>
       
       
-      
-    </div>
+      <Footer />
+    </Container>
   )
 }
 

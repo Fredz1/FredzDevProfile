@@ -2,8 +2,6 @@ import { Container, Box, ButtonGroup, Button, Unstable_Grid2 as Grid, Typography
 import Image from "next/image"
 import Logo from '../public/assets/images/fred-made-this-logo.webp'
 
-
-
 const TopMenu = () => {
 
   return (
@@ -39,7 +37,7 @@ const TopMenu = () => {
             </Link>
           </Button>
           <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
-            <Link href="/projects" underline="none" color='black'>
+            <Link href="/contact" underline="none" color='black'>
               Contact
             </Link>
           </Button>

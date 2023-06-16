@@ -4,6 +4,8 @@ import Image from 'next/image'
 
 import TopMenu from '../../modules/TopMenu'
 
+import websiteData from '../../Data/websites'
+
 const Medium = () => {
   return (
     <Container>
