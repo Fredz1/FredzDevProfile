@@ -73,6 +73,36 @@ export const myTheme = createTheme(
               /* borderBottom: '1px solid red' */
               
             }
+          },
+          {
+            props: { 
+              variant: 'submitButton'
+            },
+            style: {
+              color: 'black',
+              '&::after' : {
+                content: '""',
+                display: 'block',
+                position: 'absolute',
+                height: '1px',
+                width: 0,
+                left: 0,
+                backgroundColor: 'black',
+                transition: 'width 0.5s ease-in-out',
+                bottom: 0
+              },
+              '&:hover::after': {
+                width: '75%',
+              },
+              '&:hover' : {
+                backgroundColor: 'transparent'
+              },
+              '&:active': {
+                color: 'white',
+                backgroundColor: 'transparent'
+              },
+               
+            }
           }
         ]
       }

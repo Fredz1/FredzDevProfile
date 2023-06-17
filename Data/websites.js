@@ -5,7 +5,7 @@ const websites = [
       from: 2500,
       to: 7500
     },
-    description: 'If what you need is something simple then this is for you.',
+    description: 'If what you need is something simple, impactful and appealing then this is for you.',
     includes: [
       'Menu',
       'Contact Form',
