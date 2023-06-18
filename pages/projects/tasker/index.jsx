@@ -1,18 +1,4 @@
-import { Container, Unstable_Grid2 as Grid, Box, Typography, Link} from '@mui/material'
-
-const homeContainer = {
-  backgroundColor: 'red',
-  border: '1px solid black',
-  margin: '0 auto',
-  position: 'absolute',
-  top: '50%',
-  left: '50%',
-  transform: 'translateY(-50%) translateX(-50%)',
-  display: 'grid',
-  gridAutoFlow: 'row',
-  padding: '1em',
-  fontSize: '1.5em',
-}
+import {Link} from '@mui/material'
 
 const Index = () => {
 
@@ -27,7 +13,7 @@ const Index = () => {
 
         <p>If you have already logged in previously</p>
         <p>
-        &rarr; <Link to='/taskDashboard'>Go to Dashboard</Link> &larr;
+        &rarr; <Link  underline='none' href='./tasker/maintasks'>Go to Dashboard</Link> &larr;
         </p>
 
         <p>
@@ -35,7 +21,7 @@ const Index = () => {
         </p>
         
         <p>
-        &rarr; <Link to='/login'>Go to Login Page</Link> &larr;
+        &rarr; <Link underline='none' href='./tasker/login'>Go to Login Page</Link> &larr;
         </p>
 
       </div>

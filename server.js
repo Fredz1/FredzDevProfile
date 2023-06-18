@@ -4,6 +4,8 @@ const cors = require('cors')
 const dotenv = require("dotenv")
 const morgan = require('morgan')
 const multer = require('multer')
+const { checkLoginStatus } = require('./middleware/jwtProtect')
+
 
 const server = express()
 server.set( 'x-powered-by', false )
@@ -41,6 +43,11 @@ server.post(
   (req, res) => {
     console.log(req.body)
   }
+)
+
+server.get(
+  '/api/taskApp/retrieve',
+
 )
 
 
