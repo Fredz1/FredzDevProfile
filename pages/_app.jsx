@@ -1,6 +1,9 @@
 // components
 import Head from 'next/head'
 
+//style
+import '../Theme/taskApp.css'
+
 //Theme
 import FredzTheme from '../Theme/customTheme'
 import '../Theme/global.css'

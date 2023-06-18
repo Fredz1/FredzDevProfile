@@ -9,13 +9,13 @@ const Footer = () => {
 
   return (
     <Container>
-      <Grid container direction='row'gap={4} py={5} justifyContent='space-around'>
-        <Grid alignItems="center">
+      <Grid container direction='row'gap={4} py={5} justifyContent='space-around' >
+        <Grid sx={{display: 'flex',  alignItems: 'center', gap: 2}}>
           {/* social media */}
-          <Link href='www.facebook.com/fredmadethis' rel="noopener" target="_blank">
-            <FacebookOutlinedIcon />
+          <Link href='www.facebook.com/fredmadethis' rel="noopener" target="_blank" sx={{display: 'flex',  alignItems: 'center'}}>
+            <FacebookOutlinedIcon  />
           </Link>
-          <Link href={whatsAppMessage} >
+          <Link href={whatsAppMessage} justifyItems='center' sx={{display: 'flex',  alignItems: 'center'}}>
             <WhatsAppIcon />
           </Link>
         </Grid>
