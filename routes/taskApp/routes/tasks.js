@@ -1,5 +1,5 @@
 const router = require('express').Router()
-const { getUserTasks, updateTasks } = require('../controller/dbController')
+const { getUserTasks, updateTasks } = require('../controllers/dbController')
 
 /* 
   NOTE: req.body.id is set in jwtController on successful validation.

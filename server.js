@@ -4,7 +4,8 @@ const cors = require('cors')
 const dotenv = require("dotenv")
 const morgan = require('morgan')
 const multer = require('multer')
-const { checkLoginStatus } = require('./middleware/jwtProtect')
+const { checkLoginStatus } = require('./routes/taskApp/middleware/jwtProtect')
+const connectMongo = require('./util/connectMongo')
 
 
 const server = express()
@@ -15,6 +16,8 @@ server.use( cors( { origin: true, credentials: true, optionsSuccessStatus: 200 }
 server.use( express.json() )
 server.use( express.urlencoded( { extended: true } ) )
 dotenv.config()
+//connect to DB
+connectMongo()
 
 const storage = multer.diskStorage({})
 
@@ -47,7 +50,8 @@ server.post(
 
 server.get(
   '/api/taskApp/retrieve',
-
+  checkLoginStatus,
+  require('./routes/taskApp/routes/tasks')
 )
 
 

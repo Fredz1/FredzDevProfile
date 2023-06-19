@@ -11,7 +11,7 @@ const MainTasks = () => {
   const [taskList, setTaskList] = useState([])
 
   /* 
-    @desc: if user jwt does not authenticate user will get sent to Login.
+    @desc: if users jwt does not authenticate user will get sent to Login.
     @desc: call is made whenever setTasklist is run
     @desc: Put in useCallback hool to prevent uneccercary requests when page rerenders
   */
