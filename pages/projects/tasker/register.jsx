@@ -1,10 +1,11 @@
 import { useState } from "react"
+import { useRouter } from 'next/router'
 import axios from 'axios'
 
 const Register = () => {
 
   // useNavigate to push client to login page
-  //const nav = useNavigate()
+  const router = useRouter()
 
   // State
   const [name, setName] = useState('')
@@ -14,8 +15,9 @@ const Register = () => {
 
 
   const register = async () => {
+
     const { data } = await axios.post(
-      '/api/user/register',
+      'http://localhost:3001/apiv2/taskApp/user/register',
       {
         name,
         surname,
@@ -23,7 +25,8 @@ const Register = () => {
         password
       }
     )
-    data === 'success' ? nav('/login') : alert('Probelm with you registration please try again or contact admin')
+    console.log(data)
+    data.success ? router.push('/projects/tasker/login') : alert('Probelm with you registration please try again or contact admin')
   }
 
   return (

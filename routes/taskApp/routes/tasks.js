@@ -14,6 +14,7 @@ router.get(
   '/retrieve',
   async (req, res) => {
 
+    console.log('route hit')
     // the dbController only returns the tasks
     const tasks = await getUserTasks(req.body.id)
 
@@ -43,7 +44,6 @@ router.post(
     } catch(e){
       res.send('cannot update db')
     }
-    
   }
 )
 

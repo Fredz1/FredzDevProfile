@@ -1,5 +1,6 @@
-import { useEffect, useState, useCallback } from "react"
+import { useEffect, useState } from "react"
 import axios from 'axios'
+import { useRouter } from 'next/router'
 
 // Component imports
 import TaskItem from './components/TaskItem'
@@ -8,6 +9,8 @@ import SidePanel from "./components/SidePanel"
 
 const MainTasks = () => {
 
+  const router = useRouter()
+
   const [taskList, setTaskList] = useState([])
 
   /* 
@@ -15,18 +18,16 @@ const MainTasks = () => {
     @desc: call is made whenever setTasklist is run
     @desc: Put in useCallback hool to prevent uneccercary requests when page rerenders
   */
-  const getData = useCallback( async () => {
+
+  const getData = async () => {
     const { data } = await axios.get(
-      '/api/tasks/retrieve'
+      'http://localhost:3001/apiv2/taskApp/tasks/retrieve'
     )
-    data[0] === 'redirect to home' ? 
-      navigate('/login')
-      :
-      setTaskList([...data])
-    },
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    [setTaskList]
-  )
+    data.success ? 
+      setTaskList(data.response):
+      router.push('/projects/tasker')
+    }
+  
 
   /* 
     @desc: logout client and handle any problems if log out failes.

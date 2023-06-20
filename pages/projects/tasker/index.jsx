@@ -13,7 +13,7 @@ const Index = () => {
 
         <p>If you have already logged in previously</p>
         <p>
-        &rarr; <Link  underline='none' href='./tasker/maintasks'>Go to Dashboard</Link> &larr;
+        &rarr; <Link underline='none' href='./tasker/maintasks'>Go to Dashboard</Link> &larr;
         </p>
 
         <p>

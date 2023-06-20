@@ -9,10 +9,10 @@ require('dotenv').config()
 /* 
   desc: request is ended if no cookie is available in the header or cookie validation fails
 */
-const checkLoginStatus = (req, res, next) => {
+const checkLoginStatus = ( req, res, next ) => {
   try{
     // check for header
-    if (!req.headers.cookie) return res.send(['redirect to home'])
+    if (!req.headers.cookie) return res.json({success: false, response: 'Not logged in'})
 
     // Token is  split and array returned
     const token = req.headers.cookie.split('=')
@@ -27,7 +27,7 @@ const checkLoginStatus = (req, res, next) => {
     
     next()
   }catch(e){
-    // if cookie vaerification fails 
+    // if cookie verification fails 
     res.send(['cannot verify you'])
   }
   

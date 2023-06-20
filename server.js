@@ -4,8 +4,8 @@ const cors = require('cors')
 const dotenv = require("dotenv")
 const morgan = require('morgan')
 const multer = require('multer')
-const { checkLoginStatus } = require('./routes/taskApp/middleware/jwtProtect')
 const connectMongo = require('./util/connectMongo')
+const { checkLoginStatus } = require('./routes/taskApp/middleware/jwtProtect')
 
 
 const server = express()
@@ -40,19 +40,18 @@ let transporter = nodemailer.createTransport({
   }
 })
 
-server.post(
-  '/api/contact',
-  upload,
-  (req, res) => {
-    console.log(req.body)
-  }
+server.use(
+  '/apiv2/taskApp/user/',
+  require('./routes/taskApp/routes/user')
 )
 
-server.get(
-  '/api/taskApp/retrieve',
+server.use(
+  '/apiv2/taskApp/tasks',
   checkLoginStatus,
   require('./routes/taskApp/routes/tasks')
 )
+
+
 
 
 

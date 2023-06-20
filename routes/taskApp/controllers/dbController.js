@@ -22,7 +22,7 @@ const addUser = async input => {
     // null is returned by mongoDB if problems saving client.
     if(!add) throw 'db error'
 
-    return 'saved'
+    return true
 
   }catch(e){
     return e

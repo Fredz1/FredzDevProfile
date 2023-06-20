@@ -24,7 +24,7 @@ const user = new mongoose.Schema(
     ]
   },
   {
-    collection: 'Task9'
+    collection: 'TaskApp'
   }
 )
 
