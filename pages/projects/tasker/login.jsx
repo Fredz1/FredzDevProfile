@@ -15,15 +15,19 @@ const Login = () => {
     @desc: if user is valid send them to dashboard else alert them to incorrect details entered
   */
   const login = async () => {
-    const { data } = await axios.post(
+    const data  = await axios.post(
       'http://localhost:3001/apiv2/taskApp/user/login',
       {
         email,
         password
+      },
+      {
+        credentials: "include"
       }
     )
+    console.log(data)
     // request returns truethy or falsey
-    data.success ? router.push('/projects/tasker/maintasks') : alert(data.response)
+    data.success ? router.push('/projects/tasker/maintasks') : alert(data.response) || alert('failed')
   }
 
 

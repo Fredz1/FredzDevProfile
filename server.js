@@ -1,20 +1,28 @@
 const express = require('express')
+const https = require('https')
+const fs = require('fs')
 const nodemailer = require('nodemailer')
 const cors = require('cors')
 const dotenv = require("dotenv")
 const morgan = require('morgan')
 const multer = require('multer')
+const cookieParser = require('cookie-parser');
 const connectMongo = require('./util/connectMongo')
 const { checkLoginStatus } = require('./routes/taskApp/middleware/jwtProtect')
+const key = fs.readFileSync('./cert/CA/localhost/localhost.decrypted.key')
+const cert = fs.readFileSync('./cert/CA/localhost/localhost.crt')
 
 
 const server = express()
+
 server.set( 'x-powered-by', false )
 server.set( 'trust proxy',  'loopback' )
 server.use( morgan('dev') )
 server.use( cors( { origin: true, credentials: true, optionsSuccessStatus: 200 } ) )
+server.use( cookieParser() )
 server.use( express.json() )
 server.use( express.urlencoded( { extended: true } ) )
+
 dotenv.config()
 //connect to DB
 connectMongo()
@@ -53,7 +61,7 @@ server.use(
 
 
 
-
+const app = https.createServer({ key, cert }, server);
 
 // set server to listen for new requests
 server.listen(

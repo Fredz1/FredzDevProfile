@@ -37,30 +37,23 @@ router.post(
   
       // on passwordValidate result JWT is set and sent in cookie
       if (passwordValidate){
-        // JWToken in created in response and set with authValue
-        return res.cookie(
-          'auth',
-          // JWtoken created
-          // _id must be converted toString as initial request returns an unusable Object
-          jwtController.newToken(_id.toString()),
+        // JWToken created
+        // _id must be converted toString as initial request returns an unusable Object
+        const token = jwtController.newToken(_id.toString())
 
-          /* 
+        /* 
             @desc: setcookie options to httpOnly to prevent any javaScript from accessing the cookie on the clientSide
             @desc: make secure true so cookie can only be sent via HTTPS protocol
             @desc: path set to /api/tasks.  This will only send the cookie in the header when the user makes requests to tasks and no other routers.
           */
+        return res.cookie(
+          'auth',
+          token,
           {
-            httpOnly:true,
-            secure:true,
-            path: '/projects/tasker/'
+            signed: true
           }
-        
         // send confirmation to user to handle login
-        ).json(
-          {
-            success: true
-          }
-        )
+        ).json( { success: true } )
       }
 
       // if login is not successfull but still runs though try block the attempt Must fail.

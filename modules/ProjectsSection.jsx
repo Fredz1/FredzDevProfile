@@ -15,7 +15,7 @@ const ProjectsSection = () => {
           </Grid>
           <Grid container>
             <Grid md={6}>
-              <Link href='/projects/handpong'>Project card 1</Link>
+              <Link href='/projects/tasker'>Task App</Link>
             </Grid>
             <Grid md={6}>
               Project card 2

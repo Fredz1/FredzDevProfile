@@ -23,6 +23,7 @@ const checkLoginStatus = ( req, res, next ) => {
 
     // sent req.body.id for ease of use further in the process
     req.body.id = id
+    console.log(req.body.id)
     
     
     next()

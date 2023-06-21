@@ -21,7 +21,10 @@ const MainTasks = () => {
 
   const getData = async () => {
     const { data } = await axios.get(
-      'http://localhost:3001/apiv2/taskApp/tasks/retrieve'
+      'http://localhost:3001/apiv2/taskApp/tasks/retrieve',
+      {
+        withCredentials: true
+      }
     )
     data.success ? 
       setTaskList(data.response):

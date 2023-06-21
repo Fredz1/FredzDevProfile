@@ -1,0 +1,16 @@
+ssh -i FredsPersonalAWS.pem ubuntu@ec2-13-245-79-12.af-south-1.compute.amazonaws.com
+
+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
+
+
+https://linuxhint.com/install-nodejs-npm-on-ubuntu-22-04/
+
+//install nvm
+https://ostechnix.com/install-node-js-linux/
+
+
+//setup nginx
+https://www.hostinger.com/tutorials/how-to-set-up-nginx-reverse-proxy/
+
+//nginx reverse proxy
+https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/How-to-setup-Nginx-reverse-proxy-servers-by-example
