@@ -7,9 +7,12 @@ const TaskItem = ({ element, setTaskList}) => {
   */
   const deleteTask = async item => {
     const { data } = await axios.post(
-      'api/tasks/deleteTask',
+      'http://localhost:3001/apiv2/taskApp/tasks/deleteTask',
       {
         item
+      },
+      {
+        withCredentials: true
       }
     )
     setTaskList(data)

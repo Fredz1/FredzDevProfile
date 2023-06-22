@@ -63,7 +63,7 @@ const MainTasks = () => {
         <NewTaskInput setTaskList={setTaskList} />
         <div className="MainTaskList">
           {
-            taskList !== [] ? 
+            taskList.length !== 0 ? 
             taskList.map(
               (el, index) => {
                 return(

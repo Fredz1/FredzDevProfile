@@ -29,6 +29,7 @@ router.post(
         res.json( { success:false, response: 'Please complete all fields.' } )
       }
   
+      
       // send request to DB for password and _id to add to JWtoken
       const { password, _id } = await controller.loginUser(req.body)
   
@@ -37,20 +38,21 @@ router.post(
   
       // on passwordValidate result JWT is set and sent in cookie
       if (passwordValidate){
-        // JWToken created
+        // Create Token
         // _id must be converted toString as initial request returns an unusable Object
         const token = jwtController.newToken(_id.toString())
-
         /* 
             @desc: setcookie options to httpOnly to prevent any javaScript from accessing the cookie on the clientSide
             @desc: make secure true so cookie can only be sent via HTTPS protocol
             @desc: path set to /api/tasks.  This will only send the cookie in the header when the user makes requests to tasks and no other routers.
           */
+
         return res.cookie(
           'auth',
           token,
           {
-            signed: true
+            httpOnly: true,
+            path: '/apiv2'
           }
         // send confirmation to user to handle login
         ).json( { success: true } )
@@ -60,7 +62,7 @@ router.post(
       res.json( { success: false, response: 'Something went wrong signing you in.  Please contact your admin' } )
     } catch(e){
       // fail and reject login request if system or anyother failure
-      res.json( { success: false, response: 'Something went wrong signing you in.  Please contact your admin' } )
+      res.json( { success: false, response: 'Something went wrong as a failure.' } )
     }
   }
 )

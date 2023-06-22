@@ -14,12 +14,11 @@ router.get(
   '/retrieve',
   async (req, res) => {
 
-    console.log('route hit')
     // the dbController only returns the tasks
     const tasks = await getUserTasks(req.body.id)
 
     // send list
-    res.send(tasks)
+    res.json({success: true, response: tasks})
   }
 )
 

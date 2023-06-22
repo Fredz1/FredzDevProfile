@@ -20,16 +20,16 @@ const checkLoginStatus = ( req, res, next ) => {
     // If verify fails an error is thrown and handled in the catch block
     // If validation succeeds the id is destructure out.
     const { id } = jwt.verify(token[1], process.env.JWT_SECRET)
+    
 
     // sent req.body.id for ease of use further in the process
     req.body.id = id
-    console.log(req.body.id)
     
     
     next()
   }catch(e){
     // if cookie verification fails 
-    res.send(['cannot verify you'])
+    res.send('cannot verify you')
   }
   
   

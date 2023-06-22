@@ -16,7 +16,7 @@ const cert = fs.readFileSync('./cert/CA/localhost/localhost.crt')
 const server = express()
 
 server.set( 'x-powered-by', false )
-server.set( 'trust proxy',  'loopback' )
+server.set( 'trust proxy',  process.env.NODE_ENV === 'production' ? true : 'loopback' )
 server.use( morgan('dev') )
 server.use( cors( { origin: true, credentials: true, optionsSuccessStatus: 200 } ) )
 server.use( cookieParser() )

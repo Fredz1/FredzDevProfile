@@ -19,15 +19,15 @@ const Login = () => {
       'http://localhost:3001/apiv2/taskApp/user/login',
       {
         email,
-        password
+        password,
       },
       {
-        credentials: "include"
+        withCredentials: true
       }
     )
-    console.log(data)
+    console.log(data.data.success)
     // request returns truethy or falsey
-    data.success ? router.push('/projects/tasker/maintasks') : alert(data.response) || alert('failed')
+    data.data.success ? router.push('/projects/tasker/maintasks') : alert(data.response || 'failed')
   }
 
 

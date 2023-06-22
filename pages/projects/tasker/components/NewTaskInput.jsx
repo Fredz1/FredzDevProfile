@@ -10,11 +10,15 @@ const NewTaskInput = ({ setTaskList }) => {
 
   const addTask = async () => {
     const { data } = await axios.post(
-      '/api/tasks/addTask',
+      'http://localhost:3001/apiv2/taskApp/tasks/addTask',
       {
         taskName
+      },
+      {
+        withCredentials: true
       }
     )
+    console.log(data)
     if(data){
       setTaskList(data)
     }
