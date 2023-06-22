@@ -37,9 +37,9 @@ const MainTasks = () => {
   */
   const logout = async () => {
     const { data } = await axios.get(
-      'api/user/logout'
+      'http://localhost:3001/apiv2/taskApp/user/logout'
     )
-    data === 'confirmed' ? navigate('/') : alert('problem logging you out')
+    data === 'confirmed' ? router.push('/projects/tasker') : alert('problem logging you out')
   }
 
   // make inital request when page is loaded
