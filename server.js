@@ -9,8 +9,6 @@ const multer = require('multer')
 const cookieParser = require('cookie-parser');
 const connectMongo = require('./util/connectMongo')
 const { checkLoginStatus } = require('./routes/taskApp/middleware/jwtProtect')
-const key = fs.readFileSync('./cert/CA/localhost/localhost.decrypted.key')
-const cert = fs.readFileSync('./cert/CA/localhost/localhost.crt')
 
 
 const server = express()
@@ -60,8 +58,6 @@ server.use(
 )
 
 
-
-const app = https.createServer({ key, cert }, server);
 
 // set server to listen for new requests
 server.listen(
