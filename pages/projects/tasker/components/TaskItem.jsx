@@ -7,7 +7,9 @@ const TaskItem = ({ element, setTaskList}) => {
   */
   const deleteTask = async item => {
     const { data } = await axios.post(
-      'http://localhost:3001/apiv2/taskApp/tasks/deleteTask',
+      process.env.NODE_ENV === 'development' ? 
+        'http://localhost:3001/apiv2/taskApp/tasks/deleteTask':
+        'https://www.fredmadethis.co.za/apiv2/taskApp/tasks/deleteTask',
       {
         item
       },

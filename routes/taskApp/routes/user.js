@@ -7,6 +7,7 @@ router.post(
   '/register',
   async (req, res) => {
     // Check for blank fields.
+    console.log('routeHit')
     if (req.body.name === '' || req.body.surname === '' || req.body.email === '' || req.body.password===''){
       res.json({success: false, response: 'Please complete all fields'})
     }

@@ -17,9 +17,9 @@ const Register = () => {
   const register = async () => {
 
     const { data } = await axios.post(
-      process.env.NODE_ENV ? 
+      process.env.NODE_ENV === "development" ? 
       'http://localhost:3001/apiv2/taskApp/user/register' : 
-      'https://www.fredmadethis.co.za/taskApp/user/register',
+      'https://www.fredmadethis.co.za/apiv2/taskApp/user/register',
       {
         name,
         surname,

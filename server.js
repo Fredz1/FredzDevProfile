@@ -1,6 +1,4 @@
 const express = require('express')
-const https = require('https')
-const fs = require('fs')
 const nodemailer = require('nodemailer')
 const cors = require('cors')
 const dotenv = require("dotenv")
@@ -16,14 +14,15 @@ const server = express()
 server.set( 'x-powered-by', false )
 server.set( 'trust proxy',  'loopback' )
 server.use( morgan('dev') )
-server.use( cors( { origin: true, credentials: true, optionsSuccessStatus: 200 } ) )
+server.use( cors( { origin: true, optionsSuccessStatus: 200 } ) )
 server.use( cookieParser() )
 server.use( express.json() )
 server.use( express.urlencoded( { extended: true } ) )
 
 dotenv.config()
 //connect to DB
-connectMongo()
+connectMongo()    
+
 
 const storage = multer.diskStorage({})
 
@@ -47,12 +46,12 @@ let transporter = nodemailer.createTransport({
 })
 
 server.use(
-  '/apiv2/taskApp/user/',
+  '/taskApp/user',
   require('./routes/taskApp/routes/user')
 )
 
 server.use(
-  '/apiv2/taskApp/tasks',
+  '/taskApp/tasks',
   checkLoginStatus,
   require('./routes/taskApp/routes/tasks')
 )
@@ -63,6 +62,9 @@ server.use(
 server.listen(
   process.env.SERVER_PORT,
   () => {
-    console.log(`server listening on port: ${process.env.SERVER_PORT}`)
+    console.log(`
+      server listening on port: ${process.env.SERVER_PORT}
+      Enviroment: ${process.env.NODE_ENV}
+    `)
   }
 )
