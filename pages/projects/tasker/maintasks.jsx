@@ -21,7 +21,7 @@ const MainTasks = () => {
 
   const getData = async () => {
     const { data } = await axios.get(
-      'http://localhost:3001/apiv2/taskApp/tasks/retrieve',
+      process.env.NODE_ENV === development ? 'http://localhost:3001/apiv2/taskApp/tasks/retrieve' :'https://www.fredmadethis.co.za/apiv2/taskApp/tasks/retrieve' ,
       {
         withCredentials: true
       }
@@ -37,7 +37,7 @@ const MainTasks = () => {
   */
   const logout = async () => {
     const { data } = await axios.get(
-      'http://localhost:3001/apiv2/taskApp/user/logout'
+      'https://www.fredmadethis.co.za/apiv2/taskApp/user/logout'
     )
     data === 'confirmed' ? router.push('/projects/tasker') : alert('problem logging you out')
   }

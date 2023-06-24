@@ -16,7 +16,9 @@ const Login = () => {
   */
   const login = async () => {
     const data  = await axios.post(
-      'http://localhost:3001/apiv2/taskApp/user/login',
+      process.env.NODE_ENV === 'development' ? 
+      'http://localhost:3001/apiv2/taskApp/user/login' : 
+      'https://www.fredmadethis.co.za/apiv2/taskApp/user/login',
       {
         email,
         password,
