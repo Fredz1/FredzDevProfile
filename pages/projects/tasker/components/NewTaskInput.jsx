@@ -1,9 +1,20 @@
 import { useState } from "react"
 import axios from 'axios'
+import { Box } from "@mui/material"
 
 /* 
   setTaskList destructured from props inorder to update list if request is successful
 */
+
+const inputContainer = {
+  margin: "0 auto",
+  display: "grid",
+  gridAutoFlow: "column",
+  height: "min-content",
+}
+
+
+
 const NewTaskInput = ({ setTaskList }) => {
 
   const [taskName, setTaskName] = useState('')
@@ -35,7 +46,7 @@ const NewTaskInput = ({ setTaskList }) => {
 
 
   return (
-    <div className="inputContainer">
+    <Box sx={inputContainer}>
 
       <input 
         placeholder="Task" 
@@ -50,7 +61,7 @@ const NewTaskInput = ({ setTaskList }) => {
       >
         Add
       </button>
-    </div>
+    </Box>
   )
 }
 

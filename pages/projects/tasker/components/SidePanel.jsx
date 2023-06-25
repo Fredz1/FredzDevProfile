@@ -1,9 +1,13 @@
-import { Link } from "@mui/material"
+import { Box, Link } from "@mui/material"
 
 const SidePanel = ({ logout }) => {
+
+  const mainTaskSidePanel = {
+    
+  }
   
   return (
-    <div className="mainTasksSidePanel">
+    <Box sx={mainTaskSidePanel}>
 
       <Link to='/'>
         <button  className="buttonStyle">
@@ -18,7 +22,7 @@ const SidePanel = ({ logout }) => {
         Logout
       </button>
 
-    </div>
+    </Box>
   )
 }
 

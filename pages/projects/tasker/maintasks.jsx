@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import { useRouter } from 'next/router'
-import { Container, Unstable_Grid2 as Grid } from "@mui/material"
+import { Container, Unstable_Grid2 as Grid, Typography } from "@mui/material"
 
 // Component imports
 import TaskItem from './components/TaskItem'
@@ -51,20 +51,38 @@ const MainTasks = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
+  const mainTaskContainer = {
+    border: "1px solid black",
+    minHeight: '100vh'
+  }
+
+  const mainTaskHeading = {
+    transform: 'rotate(180deg)',
+    margin: 'auto 0',
+    writingMode: 'vertical-lr',
+    justifyItems: 'center'
+  }
+
 
   return (
     
-    <Container className="mainTaskContainer" disableGutters>
-      <SidePanel logout={logout} />
+    <Container sx={mainTaskContainer} disableGutters direction="column">
+      <Grid container direction='row' alignItems='space-between'>
 
-      <h2 className="mainTaskHeading">Tasks</h2>
+        <NewTaskInput setTaskList={setTaskList}/>
       
+        <SidePanel logout={logout} />
+
+
+      </Grid>
       {/* 
         Task area renders all tasks if request is not empty or unreadable
       */}
-      <Grid container className="MainTaskArea">
-        <NewTaskInput setTaskList={setTaskList} />
-        <div className="MainTaskList">
+      <Grid container direction='row' minHeight='max-content' >
+        <Grid xs={2}>
+          <Typography variant='h2' sx={mainTaskHeading}>Tasks</Typography>
+        </Grid>
+        <Grid xs={10}>
           {
             taskList.length !== 0 ? 
             taskList.map(
@@ -73,14 +91,15 @@ const MainTasks = () => {
                   <TaskItem element={el} key={index} setTaskList={setTaskList} />
                 )
               }
-            )
+              )
             :
             'no tasks for now'
           }
-        </div>
+        </Grid>
       </Grid>
 
 
+      
     </Container>
     
   )

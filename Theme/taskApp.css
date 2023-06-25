@@ -173,22 +173,9 @@ button:hover{
   height: 80vh;
 }
 
-.mainTaskHeading{
-  transform: rotate(180deg);
-  font-size: 100px;
-  margin: auto 0;
-  writing-mode: vertical-lr;
-}
-
 .mainTasksSidePanel{
   position: absolute;
   right: 0;
-}
-
-.MainTaskArea{
-  display: grid;
-  grid-template-rows: 100px 1fr 2px;
-  margin-top: 50px;
 }
 
 .MainTaskList{
@@ -225,19 +212,6 @@ button:hover{
 /* 
   Input Style
 */
-
-.inputContainer{
-  margin: 0 auto;
-  display: grid;
-  grid-auto-flow: column;
-  justify-content: space-between;
-  position: relative;
-  top: 50%;
-  height: fit-content;
-  width: 81%;
-  transform: translateY(-50%);
-  padding: 0 1em;
-}
 
 .inputContainer > input{
   padding: 0.25em;

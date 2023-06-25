@@ -1,8 +1,16 @@
-import { Unstable_Grid2 as Grid } from '@mui/material'
+import { Unstable_Grid2 as Grid, Button } from '@mui/material'
+import ArrowRightAltOutlinedIcon from '@mui/icons-material/ArrowRightAltOutlined'
+import DoneOutlinedIcon from '@mui/icons-material/DoneOutlined'
 
 import axios from 'axios'
 
 const TaskItem = ({ element, setTaskList}) => {
+
+  const card = {
+    fontSize: "1.5em",
+    margin: "2px",
+    justifySelf: 'stretch'
+  }
   
   /* 
     setTasklist with new information on request
@@ -23,16 +31,20 @@ const TaskItem = ({ element, setTaskList}) => {
   }
 
   return (
-    <Grid className="card">
-      &rarr;  {
-        element
-      }
-      <button 
-        className='buttonStyle' 
-        onClick={() => deleteTask(element)}
-      >
-         &#10003; {/* html code for a tickmark */}
-      </button>
+    <Grid container sx={card} justifyContent='space-between'>
+      <Grid>
+        <ArrowRightAltOutlinedIcon />  {
+          element
+        }
+      </Grid>
+      <Grid>
+        <Button 
+          className='buttonStyle' 
+          onClick={() => deleteTask(element)}
+        >
+          <DoneOutlinedIcon />
+        </Button>
+      </Grid>
     </Grid>
   )
 }
