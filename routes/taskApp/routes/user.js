@@ -1,7 +1,7 @@
-import controller from '../controllers/dbController'
-import jwtController from '../controllers/tokenController'
-import bcrypt from 'bcrypt'
-import express from 'express'
+const controller = require('../controllers/dbController')
+const jwtController = require('../controllers/tokenController')
+const bcrypt = require('bcrypt')
+const express = require('express')
 const router = express.Router()
 
 router.post(
@@ -76,4 +76,4 @@ router.get(
   }
 )
 
-export default router
+module.exports = router

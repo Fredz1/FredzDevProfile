@@ -1,4 +1,4 @@
-import { Container, Typography, Unstable_Grid2 as Grid } from "@mui/material"
+import { Container, Typography, Unstable_Grid2 as Grid, Card, CardMedia } from "@mui/material"
 import Link from "next/link"
 
 
@@ -14,8 +14,10 @@ const ProjectsSection = () => {
             </Typography>
           </Grid>
           <Grid container>
-            <Grid md={6}>
-              <Link href='/projects/tasker'>Task App</Link>
+            <Grid>
+              <Card  sx={{ maxWidth: 345 }}>
+                <CardMedia image={'../public/assets/images/simpleTasksCover.png'} title="TaskApp" />
+              </Card>
             </Grid>
             <Grid md={6}>
               Project card 2

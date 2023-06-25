@@ -1,13 +1,14 @@
-import express from 'express'
-import cors from 'cors'
-import dotenv from "dotenv"
-import morgan from 'morgan'
-import multer from 'multer'
-import cookieParser from 'cookie-parser'
-import {connectMongo} from './util/connectMongo.js'
-import mongoose from 'mongoose'
-import { checkLoginStatus } from './routes/taskApp/middleware/jwtProtect.js'
-import chalk from 'chalk'
+const express = require('express')
+const cors = require('cors')
+const dotenv = require("dotenv")
+const morgan = require('morgan')
+const multer = require('multer')
+const cookieParser = require('cookie-parser')
+const connectMongo = require('./util/connectMongo.js')
+const mongoose = require('mongoose')
+const { checkLoginStatus } = require('./routes/taskApp/middleware/jwtProtect.js')
+var colors = require('colors')
+colors.enable()
 
 
 const server = express()
@@ -37,13 +38,13 @@ const upload = multer({
 
 server.use(
   `${process.env.NODE_ENV === 'development'? '/apiv2' : '' }/taskApp/user`,
-  import('./routes/taskApp/routes/user')
+  require('./routes/taskApp/routes/user')
 )
 
 server.use(
   `${process.env.NODE_ENV === 'development'? '/apiv2' : '' }/taskApp/tasks`,
   checkLoginStatus,
-  import('./routes/taskApp/routes/tasks')
+  require('./routes/taskApp/routes/tasks')
 )
 
 
@@ -52,15 +53,15 @@ server.use(
 server.listen(
   process.env.SERVER_PORT,
   () => {
-    console.log(chalk.green(`
-Server listening on port: ${process.env.SERVER_PORT}
-Enviroment: ${process.env.NODE_ENV}
-    `))
     mongoose.connection.once(
       'open',
       () => {
-        console.log(`Mongo Connected`)
+        console.log(`MongoDB Connected`)
       }
     )
+    console.log(`Connected to Mongo`.bgGreen.white)
+    console.log(`Server listening on port: ${process.env.SERVER_PORT}`.bgGreen.white)
+    console.log(`Enviroment: ${process.env.NODE_ENV}`.bgGreen.white)
+    
   }
 )

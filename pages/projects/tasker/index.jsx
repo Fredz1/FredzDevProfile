@@ -1,32 +1,33 @@
-import {Link} from '@mui/material'
+import {Container, Link, Typography} from '@mui/material'
 
 const Index = () => {
 
   return (
-    <div className="homePage">
+    <Container className="homePage">
 
       <div className="homeContainer">
 
         <div className="homeHeading">
-          <h1 className="rotate">Simple</h1><h1> Tasks</h1>
+          <h1 className="rotate">Simple</h1>
+          <h1> Tasks</h1>
         </div>
 
-        <p>If you have already logged in previously</p>
-        <p>
+        <Typography variant='body1'>If you have previously registered</Typography>
+        <Typography variant='h6'>
         &rarr; <Link underline='none' href='./tasker/maintasks'>Go to Dashboard</Link> &larr;
-        </p>
+        </Typography>
 
         <p>
           or
         </p>
         
-        <p>
+        <Typography variant='h6'>
         &rarr; <Link underline='none' href='./tasker/login'>Go to Login Page</Link> &larr;
-        </p>
+        </Typography>
 
       </div>
 
-    </div>
+    </Container>
   )
 }
 

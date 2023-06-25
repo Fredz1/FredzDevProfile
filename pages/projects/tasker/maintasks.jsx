@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import { useRouter } from 'next/router'
+import { Container, Unstable_Grid2 as Grid } from "@mui/material"
 
 // Component imports
 import TaskItem from './components/TaskItem'
@@ -53,7 +54,7 @@ const MainTasks = () => {
 
   return (
     
-    <div className="mainTaskContainer">
+    <Container className="mainTaskContainer" disableGutters>
       <SidePanel logout={logout} />
 
       <h2 className="mainTaskHeading">Tasks</h2>
@@ -61,7 +62,7 @@ const MainTasks = () => {
       {/* 
         Task area renders all tasks if request is not empty or unreadable
       */}
-      <div className="MainTaskArea">
+      <Grid container className="MainTaskArea">
         <NewTaskInput setTaskList={setTaskList} />
         <div className="MainTaskList">
           {
@@ -77,10 +78,10 @@ const MainTasks = () => {
             'no tasks for now'
           }
         </div>
-      </div>
+      </Grid>
 
 
-    </div>
+    </Container>
     
   )
 }

@@ -1,5 +1,5 @@
 //const router = require('express').Router()
-import express from 'express'
+const express = require('express')
 const { getUserTasks, updateTasks } = require('../controllers/dbController')
 
 const router = express.Router()

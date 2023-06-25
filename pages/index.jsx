@@ -4,7 +4,7 @@ import Head from 'next/head'
 // modules
 import TopMenu from '../modules/TopMenu'
 import HeroSection from '../modules/HeroSection'
-import Footer from '../modules/Footer'
+import Footer from '../modules/Footer' 
 
 
 const index = () => {

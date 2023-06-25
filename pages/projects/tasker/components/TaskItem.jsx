@@ -1,3 +1,5 @@
+import { Unstable_Grid2 as Grid } from '@mui/material'
+
 import axios from 'axios'
 
 const TaskItem = ({ element, setTaskList}) => {
@@ -21,7 +23,7 @@ const TaskItem = ({ element, setTaskList}) => {
   }
 
   return (
-    <div className="card">
+    <Grid className="card">
       &rarr;  {
         element
       }
@@ -31,7 +33,7 @@ const TaskItem = ({ element, setTaskList}) => {
       >
          &#10003; {/* html code for a tickmark */}
       </button>
-    </div>
+    </Grid>
   )
 }
 

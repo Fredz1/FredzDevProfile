@@ -1,7 +1,7 @@
-import mongoose from 'mongoose'
+const mongoose = require('mongoose')
 
 
-export const connectMongo = () => {
+const connectMongo = () => {
   try{
     mongoose.connect(
       process.env.MONGO_URI,
@@ -16,4 +16,4 @@ export const connectMongo = () => {
   }
 }
 
-//module.exports = connectMongo
+module.exports = connectMongo
