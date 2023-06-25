@@ -27,7 +27,6 @@ const Register = () => {
         password
       }
     )
-    console.log(data)
     data.success ? router.push('/projects/tasker/login') : alert('Probelm with you registration please try again or contact admin')
   }
 

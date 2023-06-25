@@ -1,13 +1,13 @@
-const router = require('express').Router()
-const controller  = require('../controllers/dbController')
-const jwtController = require('../controllers/tokenController')
-const bcrypt = require('bcrypt')
+import controller from '../controllers/dbController'
+import jwtController from '../controllers/tokenController'
+import bcrypt from 'bcrypt'
+import express from 'express'
+const router = express.Router()
 
 router.post(
   '/register',
   async (req, res) => {
     // Check for blank fields.
-    console.log('routeHit')
     if (req.body.name === '' || req.body.surname === '' || req.body.email === '' || req.body.password===''){
       res.json({success: false, response: 'Please complete all fields'})
     }
@@ -76,4 +76,4 @@ router.get(
   }
 )
 
-module.exports = router
+export default router

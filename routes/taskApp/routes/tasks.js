@@ -1,5 +1,8 @@
-const router = require('express').Router()
+//const router = require('express').Router()
+import express from 'express'
 const { getUserTasks, updateTasks } = require('../controllers/dbController')
+
+const router = express.Router()
 
 /* 
   NOTE: req.body.id is set in jwtController on successful validation.

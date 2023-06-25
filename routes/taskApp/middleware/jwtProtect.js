@@ -1,5 +1,6 @@
-const jwt = require('jsonwebtoken')
-require('dotenv').config()
+import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv'
+dotenv.config()
 
 /* 
   Note: Cookies are sent with every  request to the server.
@@ -9,7 +10,7 @@ require('dotenv').config()
 /* 
   desc: request is ended if no cookie is available in the header or cookie validation fails
 */
-const checkLoginStatus = ( req, res, next ) => {
+export const checkLoginStatus = ( req, res, next ) => {
   try{
     // check for header
     if (!req.headers.cookie) return res.json({success: false, response: 'Not logged in'})
@@ -36,4 +37,4 @@ const checkLoginStatus = ( req, res, next ) => {
 }
 
 // export in object in event inorder to handel more functionality in the future
-module.exports = {checkLoginStatus}
+//module.exports = {checkLoginStatus}

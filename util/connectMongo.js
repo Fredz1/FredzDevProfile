@@ -1,6 +1,7 @@
-const mongoose = require('mongoose')
+import mongoose from 'mongoose'
 
-const connectMongo = () => {
+
+export const connectMongo = () => {
   try{
     mongoose.connect(
       process.env.MONGO_URI,
@@ -9,17 +10,10 @@ const connectMongo = () => {
         useUnifiedTopology: true,
       }
     )
-    
-    mongoose.connection.once(
-      'open',
-      () => {
-        console.log(`Mongo Connected: ${process.env.MONGO_URI}`)
-      }
-    )
   }
   catch(error) {
     console.error(error)
   }
 }
 
-module.exports = connectMongo
+//module.exports = connectMongo
