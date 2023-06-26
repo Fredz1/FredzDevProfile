@@ -25,17 +25,6 @@ dotenv.config()
 //connect to DB
 connectMongo()    
 
-
-const storage = multer.diskStorage({})
-
-const upload = multer({ 
-  storage: storage,
-  limits:{
-    fileSize: 1024 * 1024 * 1
-  },
-  }).none()
-
-
 server.use(
   `${process.env.NODE_ENV === 'development'? '/apiv2' : '' }/taskApp/user`,
   require('./routes/taskApp/routes/user')
@@ -47,8 +36,6 @@ server.use(
   require('./routes/taskApp/routes/tasks')
 )
 
-
-
 // set server to listen for new requests
 server.listen(
   process.env.SERVER_PORT,
@@ -56,12 +43,10 @@ server.listen(
     mongoose.connection.once(
       'open',
       () => {
-        console.log(`MongoDB Connected`)
+        console.log(`MongoDB Connected`.bgGreen.white)
       }
     )
-    console.log(`Connected to Mongo`.bgGreen.white)
     console.log(`Server listening on port: ${process.env.SERVER_PORT}`.bgGreen.white)
     console.log(`Enviroment: ${process.env.NODE_ENV}`.bgGreen.white)
-    
   }
 )
