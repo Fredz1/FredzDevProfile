@@ -7,6 +7,7 @@ import { Container, Unstable_Grid2 as Grid, Typography } from "@mui/material"
 import TaskItem from './components/TaskItem'
 import NewTaskInput from './components/NewTaskInput'
 import SidePanel from "./components/SidePanel"
+import TopMenu from '../../../modules/TopMenu'
 
 const MainTasks = () => {
 
@@ -65,38 +66,40 @@ const MainTasks = () => {
 
 
   return (
-    
-    <Container sx={mainTaskContainer} disableGutters direction="column">
-      <Grid container direction='row' alignItems='space-between' my={2}>
-        <NewTaskInput setTaskList={setTaskList} />
-        <SidePanel logout={logout} />
-      </Grid>
-      {/* 
-        Task area renders all tasks if request is not empty or unreadable
-      */}
-      <Grid container direction='row' minHeight='max-content' alignItems="center">
-        <Grid xs={2}>
-          <Typography variant='h2' sx={mainTaskHeading} m='0 auto'>Tasks</Typography>
+    <>
+      <TopMenu />
+      <Container sx={mainTaskContainer} disableGutters direction="column">
+        <Grid container direction='row' alignItems='space-between' my={2}>
+          <NewTaskInput setTaskList={setTaskList} />
+          <SidePanel logout={logout} />
         </Grid>
-        <Grid xs={10}>
-          {
-            taskList.length !== 0 ? 
-            taskList.map(
-              (el, index) => {
-                return(
-                  <TaskItem element={el} key={index} setTaskList={setTaskList} />
-                )
-              }
-            )
-            :
-            'no tasks for now'
-          }
+        {/* 
+          Task area renders all tasks if request is not empty or unreadable
+        */}
+        <Grid container direction='row' minHeight='max-content' alignItems="center">
+          <Grid xs={2}>
+            <Typography variant='h2' sx={mainTaskHeading} m='0 auto'>Tasks</Typography>
+          </Grid>
+          <Grid xs={10}>
+            {
+              taskList.length !== 0 ? 
+              taskList.map(
+                (el, index) => {
+                  return(
+                    <TaskItem element={el} key={index} setTaskList={setTaskList} />
+                  )
+                }
+              )
+              :
+              'no tasks for now'
+            }
+          </Grid>
         </Grid>
-      </Grid>
 
 
-      
-    </Container>
+        
+      </Container>
+    </>
     
   )
 }

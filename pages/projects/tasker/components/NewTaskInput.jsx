@@ -1,6 +1,6 @@
 import { useState } from "react"
 import axios from 'axios'
-import { Box } from "@mui/material"
+import { Box, Button, TextField } from "@mui/material"
 
 /* 
   setTaskList destructured from props inorder to update list if request is successful
@@ -49,19 +49,22 @@ const NewTaskInput = ({ setTaskList }) => {
   return (
     <Box sx={inputContainer}>
 
-      <input 
-        placeholder="Task" 
-        onKeyDown={e => enterPress(e)} 
-        type="text" value={taskName} 
+      <TextField
         onChange={ e => setTaskName(e.target.value)}
+        hiddenLabel
+        id="filled-hidden-label-small"
+        value={taskName}
+        onKeyDown={e => enterPress(e)} 
+        placeholder="Tasks"
+        size="small"
       />
 
-      <button 
+      <Button 
         className="buttonStyle" 
         onClick={ () => addTask()}
       >
         Add
-      </button>
+      </Button>
     </Box>
   )
 }

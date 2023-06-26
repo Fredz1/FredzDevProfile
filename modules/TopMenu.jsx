@@ -20,7 +20,7 @@ const TopMenu = () => {
             </Link>
           </Typography>
         </Grid>
-    <Box sx={{minHeight: '1rem', p: 1, width: "100%"}} my={2} >
+    <Box sx={{minHeight: '1rem'}} my={2} textAlign='center'>
       <Grid container px={5} justifyContent='center'>
         <Grid>
           <Button variant='newButton' disableElevation disableRipple disableTouchRipple>

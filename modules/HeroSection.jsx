@@ -7,7 +7,7 @@ const HeroSection = () => {
     <Box my={4}>
       <Container>
           <Grid>
-            <Typography variant="h3">
+            <Typography variant="h4">
               <Typewriter words={['Fred','Made','This', 'FredMadeThis']} cursor loop={1} cursorBlinking={false} typeSpeed={250}/>            
             </Typography>
           </Grid>

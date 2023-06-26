@@ -1,27 +1,27 @@
 export const skills = [
   {
     tech: 'ReactJs',
-    value: 85
+    value: 95
   },
   {
     tech: 'NextJS',
-    value: 90
+    value: 95
   },
   {
     tech: 'HTML',
-    value: 80
-  },
-  {
-    tech: 'CSS',
     value: 85
   },
   {
-    tech: 'JavaScript',
+    tech: 'CSS',
     value: 90
   },
   {
+    tech: 'JavaScript',
+    value: 95
+  },
+  {
     tech: 'GIT',
-    value: 70
+    value: 75
   },
   {
     tech: 'RESTful Services/APIs',
@@ -33,7 +33,7 @@ export const skills = [
   },
   {
     tech: 'Python',
-    value: 60
+    value: 65
   },
 ]
 
