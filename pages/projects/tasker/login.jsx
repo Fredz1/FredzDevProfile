@@ -27,7 +27,6 @@ const Login = () => {
         withCredentials: true
       }
     )
-    console.log(data.data.success)
     // request returns truethy or falsey
     data.data.success ? router.push('/projects/tasker/maintasks') : alert(data.response || 'failed')
   }

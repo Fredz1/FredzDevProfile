@@ -53,34 +53,30 @@ const MainTasks = () => {
 
   const mainTaskContainer = {
     border: "1px solid black",
-    minHeight: '100vh'
+    minHeight: '50vh',
+    my: 5,
   }
 
   const mainTaskHeading = {
     transform: 'rotate(180deg)',
-    margin: 'auto 0',
     writingMode: 'vertical-lr',
-    justifyItems: 'center'
+    borderLeft: '1px solid black'
   }
 
 
   return (
     
     <Container sx={mainTaskContainer} disableGutters direction="column">
-      <Grid container direction='row' alignItems='space-between'>
-
-        <NewTaskInput setTaskList={setTaskList}/>
-      
+      <Grid container direction='row' alignItems='space-between' my={2}>
+        <NewTaskInput setTaskList={setTaskList} />
         <SidePanel logout={logout} />
-
-
       </Grid>
       {/* 
         Task area renders all tasks if request is not empty or unreadable
       */}
-      <Grid container direction='row' minHeight='max-content' >
+      <Grid container direction='row' minHeight='max-content' alignItems="center">
         <Grid xs={2}>
-          <Typography variant='h2' sx={mainTaskHeading}>Tasks</Typography>
+          <Typography variant='h2' sx={mainTaskHeading} m='0 auto'>Tasks</Typography>
         </Grid>
         <Grid xs={10}>
           {
@@ -91,7 +87,7 @@ const MainTasks = () => {
                   <TaskItem element={el} key={index} setTaskList={setTaskList} />
                 )
               }
-              )
+            )
             :
             'no tasks for now'
           }

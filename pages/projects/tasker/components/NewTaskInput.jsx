@@ -34,6 +34,7 @@ const NewTaskInput = ({ setTaskList }) => {
     )
     if(data){
       setTaskList(data)
+      setTaskName('')
     }
   }
 
@@ -50,7 +51,7 @@ const NewTaskInput = ({ setTaskList }) => {
 
       <input 
         placeholder="Task" 
-        onKeyPress={e => enterPress(e)} 
+        onKeyDown={e => enterPress(e)} 
         type="text" value={taskName} 
         onChange={ e => setTaskName(e.target.value)}
       />

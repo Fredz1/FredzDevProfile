@@ -1,4 +1,4 @@
-import { Unstable_Grid2 as Grid, Button } from '@mui/material'
+import { Unstable_Grid2 as Grid, Button, Typography } from '@mui/material'
 import ArrowRightAltOutlinedIcon from '@mui/icons-material/ArrowRightAltOutlined'
 import DoneOutlinedIcon from '@mui/icons-material/DoneOutlined'
 
@@ -7,9 +7,7 @@ import axios from 'axios'
 const TaskItem = ({ element, setTaskList}) => {
 
   const card = {
-    fontSize: "1.5em",
-    margin: "2px",
-    justifySelf: 'stretch'
+    justifySelf: 'stretch',
   }
   
   /* 
@@ -32,10 +30,11 @@ const TaskItem = ({ element, setTaskList}) => {
 
   return (
     <Grid container sx={card} justifyContent='space-between'>
-      <Grid>
-        <ArrowRightAltOutlinedIcon />  {
-          element
-        }
+      <Grid container alignContent='center'>
+        <ArrowRightAltOutlinedIcon />  
+        <Typography variant='body1' letterSpacing={0.75}>
+        { element }
+        </Typography>
       </Grid>
       <Grid>
         <Button 
