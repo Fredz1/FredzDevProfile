@@ -8,6 +8,7 @@ const TaskItem = ({ element, setTaskList}) => {
 
   const card = {
     justifySelf: 'stretch',
+    border: '1px solid red'
   }
   
   /* 
@@ -29,7 +30,7 @@ const TaskItem = ({ element, setTaskList}) => {
   }
 
   return (
-    <Grid container sx={card} justifyContent='space-between' my={1}>
+    <Grid container sx={card} justifyContent='space-between' my={1} mr={2}>
       <Grid container alignContent='center'>
         <ArrowRightAltOutlinedIcon />  
         <Typography variant='body1' letterSpacing={0.75}>

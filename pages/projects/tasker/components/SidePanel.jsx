@@ -1,26 +1,23 @@
-import { Box, Link } from "@mui/material"
+import { Box, Link, Button } from "@mui/material"
 
 const SidePanel = ({ logout }) => {
 
-  const mainTaskSidePanel = {
-    
-  }
-  
+   
   return (
-    <Box sx={mainTaskSidePanel}>
+    <Box>
 
       <Link to='/'>
-        <button  className="buttonStyle">
+        <Button  className="buttonStyle">
           Home
-        </button>
+        </Button>
       </Link>
-
-      <button 
+    
+      <Button 
         className="buttonStyle" 
         onClick={() => logout()}
       >
         Logout
-      </button>
+      </Button>
 
     </Box>
   )

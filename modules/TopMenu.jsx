@@ -1,4 +1,4 @@
-import { Container, Box, ButtonGroup, Button, Unstable_Grid2 as Grid, Typography, Link } from "@mui/material"
+import { Container, Box, Button, Unstable_Grid2 as Grid, Typography, Link } from "@mui/material"
 import Image from "next/image"
 import Logo from '../public/assets/images/fred-made-this-logo.webp'
 
@@ -20,7 +20,7 @@ const TopMenu = () => {
             </Link>
           </Typography>
         </Grid>
-    <Box sx={{minHeight: '1rem'}} my={2} textAlign='center'>
+    <Box sx={ {minHeight: '1rem'} } my={ 2 } textAlign='center'>
       <Grid container px={5} justifyContent='center'>
         <Grid>
           <Button variant='newButton' disableElevation disableRipple disableTouchRipple>

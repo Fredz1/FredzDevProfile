@@ -1,9 +1,11 @@
-import {Container, Link, Typography} from '@mui/material'
+import { Container, Link, Typography } from '@mui/material'
+import MicroMenu from '../../../modules/MicroMenu'
 
 const Index = () => {
 
   return (
     <Container className="homePage">
+      <MicroMenu />
 
       <div className="homeContainer">
 

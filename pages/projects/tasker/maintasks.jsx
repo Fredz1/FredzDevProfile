@@ -66,7 +66,7 @@ const MainTasks = () => {
 
 
   return (
-    <>
+    <Container>
       <TopMenu />
       <Container sx={mainTaskContainer} disableGutters direction="column">
         <Grid container direction='row' alignItems='space-between' my={2}>
@@ -76,30 +76,30 @@ const MainTasks = () => {
         {/* 
           Task area renders all tasks if request is not empty or unreadable
         */}
-        <Grid container direction='row' minHeight='max-content' alignItems="center">
-          <Grid xs={2}>
-            <Typography variant='h2' sx={mainTaskHeading} m='0 auto'>Tasks</Typography>
+          <Grid container direction='row' minHeight='max-content' alignItems="center">
+            <Grid xs={2}>
+              <Typography variant='h2' sx={mainTaskHeading} m='0 auto'>Tasks</Typography>
+            </Grid>
+            <Grid xs={10}>
+              {
+                taskList.length !== 0 ? 
+                taskList.map(
+                  (el, index) => {
+                    return(
+                      <TaskItem element={el} key={index} setTaskList={setTaskList} />
+                    )
+                  }
+                )
+                :
+                'no tasks for now'
+              }
+            </Grid>
           </Grid>
-          <Grid xs={10}>
-            {
-              taskList.length !== 0 ? 
-              taskList.map(
-                (el, index) => {
-                  return(
-                    <TaskItem element={el} key={index} setTaskList={setTaskList} />
-                  )
-                }
-              )
-              :
-              'no tasks for now'
-            }
-          </Grid>
-        </Grid>
 
 
         
       </Container>
-    </>
+    </Container>
     
   )
 }
