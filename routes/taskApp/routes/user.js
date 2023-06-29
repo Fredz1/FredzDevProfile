@@ -29,14 +29,15 @@ router.post(
       if(req.body.email === '' || req.body.password === ''){
         res.json( { success:false, response: 'Please complete all fields.' } )
       }
+
   
       
       // send request to DB for password and _id to add to JWtoken
       const { password, _id } = await controller.loginUser(req.body)
-  
+      
       // bcrypt validates password
       const passwordValidate = await bcrypt.compare(req.body.password, password)
-  
+
       // on passwordValidate result JWT is set and sent in cookie
       if (passwordValidate){
         // Create Token
