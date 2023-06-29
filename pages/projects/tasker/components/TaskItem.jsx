@@ -8,7 +8,6 @@ const TaskItem = ({ element, setTaskList}) => {
 
   const card = {
     justifySelf: 'stretch',
-    border: '1px solid red'
   }
   
   /* 
