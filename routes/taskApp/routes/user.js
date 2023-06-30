@@ -53,8 +53,10 @@ router.post(
           'auth',
           token,
           {
+            secure: true,
+            name: 'taskerApp',
             httpOnly: true,
-            path: '/apiv2'
+            path: '/apiv2',
           }
         // send confirmation to user to handle login
         ).json( { success: true } )

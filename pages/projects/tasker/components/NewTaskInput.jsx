@@ -1,6 +1,6 @@
 import { useState } from "react"
 import axios from 'axios'
-import { Box, Button, TextField } from "@mui/material"
+import { Box, Button, TextField, Container } from "@mui/material"
 
 /* 
   setTaskList destructured from props inorder to update list if request is successful
@@ -9,7 +9,6 @@ import { Box, Button, TextField } from "@mui/material"
 const inputContainer = {
   margin: "0 auto",
   display: "grid",
-  gridAutoFlow: "column",
   height: "min-content",
 }
 
@@ -47,25 +46,27 @@ const NewTaskInput = ({ setTaskList }) => {
 
 
   return (
-    <Box sx={inputContainer}>
+    <Container>
+      <Box sx={inputContainer}>
 
-      <TextField
-        onChange={ e => setTaskName(e.target.value)}
-        hiddenLabel
-        id="filled-hidden-label-small"
-        value={taskName}
-        onKeyDown={e => enterPress(e)} 
-        placeholder="Tasks"
-        size="small"
-      />
+        <TextField
+          onChange={ e => setTaskName(e.target.value)}
+          hiddenLabel
+          id="filled-hidden-label-small"
+          value={taskName}
+          onKeyDown={e => enterPress(e)} 
+          placeholder="Tasks"
+          size="small"
+        />
 
-      <Button 
-        className="buttonStyle" 
-        onClick={ () => addTask()}
-      >
-        Add
-      </Button>
-    </Box>
+        <Button 
+          className="buttonStyle" 
+          onClick={ () => addTask()}
+        >
+          Add
+        </Button>
+      </Box>
+    </Container>
   )
 }
 

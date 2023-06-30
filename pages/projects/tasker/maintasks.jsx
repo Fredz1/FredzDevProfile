@@ -69,9 +69,12 @@ const MainTasks = () => {
     <Container>
       <TopMenu />
       <Container sx={mainTaskContainer} disableGutters direction="column">
-        <Grid container direction='row' alignItems='space-between' my={2}>
-          <NewTaskInput setTaskList={setTaskList} />
+
+        <Grid my={2}>
           <SidePanel logout={logout} />
+        </Grid>
+        <Grid my={2}>
+          <NewTaskInput setTaskList={setTaskList} />
         </Grid>
         {/* 
           Task area renders all tasks if request is not empty or unreadable

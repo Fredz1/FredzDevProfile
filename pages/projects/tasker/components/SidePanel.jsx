@@ -4,21 +4,21 @@ const SidePanel = ({ logout }) => {
 
    
   return (
-    <Box>
-
+    <Box alignContent='end'>
       <Link to='/'>
-        <Button  className="buttonStyle">
+        <Button size="small" className="buttonStyle">
+
           Home
         </Button>
       </Link>
     
       <Button 
+        size="small"
         className="buttonStyle" 
         onClick={() => logout()}
       >
         Logout
       </Button>
-
     </Box>
   )
 }
