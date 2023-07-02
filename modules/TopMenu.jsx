@@ -1,4 +1,5 @@
 import { Container, Box, Button, Unstable_Grid2 as Grid, Typography, Link } from "@mui/material"
+import MenuIcon from '@mui/icons-material/Menu'
 import Image from "next/image"
 import Logo from '../public/assets/images/fred-made-this-logo.webp'
 
@@ -12,7 +13,7 @@ const TopMenu = () => {
             <Link href="/" underline="none" py={2}>
               <Image 
                 src={Logo} 
-                alt="Logo and home button" 
+                alt="Logo and Home button" 
                 style
                 priority
                 height={50}
