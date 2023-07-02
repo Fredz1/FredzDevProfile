@@ -1,9 +1,24 @@
-import { Container, Box, Button, Unstable_Grid2 as Grid, Typography, Link } from "@mui/material"
+import { Container, Box, Button, Unstable_Grid2 as Grid, Typography, Link, Drawer , useMediaQuery, useTheme, IconButton } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu'
 import Image from "next/image"
 import Logo from '../public/assets/images/fred-made-this-logo.webp'
+import { useState } from "react"
+
 
 const TopMenu = () => {
+
+  const theme = useTheme()
+  const screenWidth = useMediaQuery( theme.breakpoints.up('sm') )
+
+  const showMenu = {
+    display: screenWidth ? 'block' : 'none',
+  }
+
+  const showsideMenu = {
+    display: screenWidth ? 'none' : 'block'
+  }
+
+  const [drawer, setDrawer] = useState(false)
 
   return (
     <Box sx={{minHeight: '1rem', my: 4, width: "100%"}} >
@@ -21,8 +36,8 @@ const TopMenu = () => {
             </Link>
           </Typography>
         </Grid>
-    <Box sx={ {minHeight: '1rem'} } my={ 2 } textAlign='center'>
-      <Grid container px={5} justifyContent='center'>
+    <Box my={ 2 } textAlign='center' >
+      <Grid container px={5} justifyContent='center' sx={showMenu}>
         <Grid>
           <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
             about me
@@ -44,6 +59,53 @@ const TopMenu = () => {
           </Button>
         </Grid>
       </Grid>
+
+      {/* Swipeble drawer when mobile breakpoint is true */}
+      <IconButton aria-label="toggleMenu" sx={showsideMenu} onClick={() =>setDrawer(!drawer)}>
+        <MenuIcon />
+      </IconButton>
+      <Drawer 
+        anchor="right"
+        hysteresis={0.50}
+        minFlingVelocity={300}
+        open={drawer}
+      >
+        <Grid container direction='column' px={5} justifyContent='center'>
+        <IconButton aria-label="toggleMenu" onClick={() =>setDrawer(!drawer)}>
+          <MenuIcon />
+        </IconButton>
+        <Grid container direction='column'>
+          <Grid>
+            <Grid>
+              <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
+                about me
+              </Button>
+            </Grid>
+            <Grid>
+              <Button variant='newButton'>
+                <Link href="/projects" underline="none" color='black'>
+                  Projects
+                </Link>
+              </Button>
+            </Grid>
+            <Grid>
+              <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
+                <Link href="/websites" underline="none" color='black'>
+                  websites
+                </Link>
+              </Button>
+            </Grid>
+            <Grid>
+              <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
+                <Link href="/contact" underline="none" color='black'>
+                  Contact
+                </Link>
+              </Button>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+      </Drawer>
       
     </Box>
       </Container>

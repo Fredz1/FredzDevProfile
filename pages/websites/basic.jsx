@@ -4,6 +4,8 @@ import Image from 'next/image'
 
 import smallProject from '../../public/assets/project/smallProject.jpg'
 
+
+import Footer from '../../modules/Footer'
 import TopMenu from '../../modules/TopMenu'
 
 const Basic = () => {
@@ -14,7 +16,7 @@ const Basic = () => {
         <Grid container>
           {/* image here */}
           <Grid md={6}>
-            <Image src={smallProject} alt="sample image" style={{objectFit: "contain", maxWidth: '100%', height: 'min-content' }}/> 
+            <Image priority src={smallProject} alt="sample image" style={{objectFit: "contain", maxWidth: '100%', height: 'min-content' }}/> 
           </Grid>
           <Grid md={6}>
               <Typography variant="h5">
@@ -71,6 +73,7 @@ const Basic = () => {
           </Grid>
 
         </Grid>
+        <Footer />
     </Container>
   );
 }
