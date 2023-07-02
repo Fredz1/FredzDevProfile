@@ -46,8 +46,8 @@ const NewTaskInput = ({ setTaskList }) => {
 
 
   return (
-    <Container>
-      <Box sx={inputContainer}>
+    <Container sx={{borderBottom: '1px solid black', pb: 0.5}}>
+      <Box sx={inputContainer} gap={1}>
 
         <TextField
           onChange={ e => setTaskName(e.target.value)}
@@ -55,7 +55,7 @@ const NewTaskInput = ({ setTaskList }) => {
           id="filled-hidden-label-small"
           value={taskName}
           onKeyDown={e => enterPress(e)} 
-          placeholder="Tasks"
+          placeholder="Add a new task"
           size="small"
         />
 

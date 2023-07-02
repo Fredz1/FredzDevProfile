@@ -6,8 +6,10 @@ const SidePanel = ({ logout }) => {
   return (
     <Box alignContent='end'>
       <Link to='/'>
-        <Button size="small" className="buttonStyle">
-
+        <Button 
+          size="small" 
+          className="buttonStyle"
+        >
           Home
         </Button>
       </Link>

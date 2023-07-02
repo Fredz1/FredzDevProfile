@@ -29,11 +29,11 @@ const TaskItem = ({ element, setTaskList}) => {
   }
 
   return (
-    <Grid container sx={card} justifyContent='space-between' my={1} mr={2}>
+    <Grid container sx={card} justifyContent='space-between' mx={2} my={0.5}>
       <Grid container alignContent='center'>
         <ArrowRightAltOutlinedIcon />  
         <Typography variant='body1' letterSpacing={0.75}>
-        { element }
+          { element }
         </Typography>
       </Grid>
       <Grid>

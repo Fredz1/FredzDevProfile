@@ -8,6 +8,7 @@ import TaskItem from './components/TaskItem'
 import NewTaskInput from './components/NewTaskInput'
 import SidePanel from "./components/SidePanel"
 import TopMenu from '../../../modules/TopMenu'
+import Footer from '../../../modules/Footer'
 
 const MainTasks = () => {
 
@@ -54,7 +55,7 @@ const MainTasks = () => {
 
   const mainTaskContainer = {
     border: "1px solid black",
-    minHeight: '50vh',
+    minHeight: 'min-content',
     my: 5,
   }
 
@@ -70,20 +71,18 @@ const MainTasks = () => {
       <TopMenu />
       <Container sx={mainTaskContainer} disableGutters direction="column">
 
-        <Grid my={2}>
-          <SidePanel logout={logout} />
-        </Grid>
+        
         <Grid my={2}>
           <NewTaskInput setTaskList={setTaskList} />
         </Grid>
         {/* 
           Task area renders all tasks if request is not empty or unreadable
         */}
-          <Grid container direction='row' minHeight='max-content' alignItems="center">
-            <Grid xs={2}>
+          <Grid container minHeight='max-content' alignItems="center">
+            <Grid xs={12} md={2}>
               <Typography variant='h2' sx={mainTaskHeading} m='0 auto'>Tasks</Typography>
             </Grid>
-            <Grid xs={10}>
+            <Grid xs={12} md={10}>
               {
                 taskList.length !== 0 ? 
                 taskList.map(
@@ -98,10 +97,14 @@ const MainTasks = () => {
               }
             </Grid>
           </Grid>
+          <Grid my={2}>
+            <SidePanel logout={logout} />
+          </Grid>
 
 
         
       </Container>
+      <Footer />
     </Container>
     
   )
