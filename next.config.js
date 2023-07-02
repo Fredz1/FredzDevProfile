@@ -4,12 +4,11 @@ const nextConfig = {
   reactStrictMode: true,
   optimizeFonts: true,
   compiler: {
-    removeConsole: process.env.production ? true : false,
+    removeConsole: process.env.NODE_ENV === 'production' ? true : false,
   },
   images: {
     domains : ['picsum.photos']
-  }
-  
+  },
 }
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({
