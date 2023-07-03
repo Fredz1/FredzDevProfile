@@ -15,7 +15,8 @@ const TopMenu = () => {
   }
 
   const showsideMenu = {
-    display: screenWidth ? 'none' : 'block'
+    display: screenWidth ? 'none' : 'block',
+    margin: '0 auto'
   }
 
   const [drawer, setDrawer] = useState(false)
@@ -65,9 +66,10 @@ const TopMenu = () => {
         <MenuIcon />
       </IconButton>
       <Drawer 
-        anchor="right"
-        hysteresis={0.50}
-        minFlingVelocity={300}
+        variant="temporary"
+        elevation={0}
+        hideBackdrop={false}
+        anchor="top"
         open={drawer}
       >
         <Grid container direction='column' px={5} justifyContent='center'>
