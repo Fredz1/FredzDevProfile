@@ -9,7 +9,6 @@ const { checkLoginStatus } = require('./routes/taskApp/middleware/jwtProtect.js'
 var colors = require('colors')
 colors.enable()
 
-
 const server = express()
 
 server.set( 'x-powered-by', false )
@@ -22,15 +21,15 @@ server.use( express.urlencoded( { extended: true } ) )
 
 dotenv.config()
 //connect to DB
-connectMongo()    
+connectMongo()
 
 server.use(
-  `${process.env.NODE_ENV === 'development'? '/apiv2' : '' }/taskApp/user`,
+  '/apiv2/taskApp/user',
   require('./routes/taskApp/routes/user')
 )
 
 server.use(
-  `${process.env.NODE_ENV === 'development'? '/apiv2' : '' }/taskApp/tasks`,
+  '/apiv2/taskApp/tasks',
   checkLoginStatus,
   require('./routes/taskApp/routes/tasks')
 )

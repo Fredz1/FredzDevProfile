@@ -36,6 +36,7 @@ const Basic = () => {
             <Typography variant="body1">
               <strong>Responsive Design:</strong> A basic website is designed to be responsive, meaning it adjusts and adapts its layout and content to provide an optimal viewing experience across different devices and screen sizes, including desktops, tablets, and mobile phones.
             </Typography>
+            
             <Typography variant="body1">
               <strong>Home Page:</strong> The home page serves as the main entry point to your website, providing an overview of your business, organization, or personal brand. It often includes a logo, navigation menu, introductory text or visuals, and highlights key sections or services.
             </Typography>

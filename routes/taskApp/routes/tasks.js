@@ -21,7 +21,7 @@ router.get(
     const tasks = await getUserTasks(req.body.id)
 
     // send list
-    res.json({success: true, response: tasks})
+    res.json( { success: true, response: tasks } )
   }
 )
 

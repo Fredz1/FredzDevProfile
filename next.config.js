@@ -8,7 +8,7 @@ const nextConfig = {
   },
   images: {
     domains : ['picsum.photos']
-  },
+  }
 }
 
 const withBundleAnalyzer = require('@next/bundle-analyzer')({

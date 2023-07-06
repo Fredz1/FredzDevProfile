@@ -13,15 +13,14 @@ dotenv.config()
 const checkLoginStatus = ( req, res, next ) => {
   try{
     // check for header
-    if (!req.headers.cookie) return res.json({success: false, response: 'Not logged in'})
+    if (!req.cookies.auth) return res.json({success: false, response: 'Not logged in'})
 
     // Token is  split and array returned
-    const token = req.headers.cookie.split('=')
+    const token = req.cookies.auth
     
     // If verify fails an error is thrown and handled in the catch block
     // If validation succeeds the id is destructure out.
-    const { id } = jwt.verify(token[1], process.env.JWT_SECRET)
-    
+    const { id } = jwt.verify(token, process.env.JWT_SECRET)
 
     // sent req.body.id for ease of use further in the process
     req.body.id = id

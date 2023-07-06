@@ -33,16 +33,16 @@ router.post(
   
       
       // send request to DB for password and _id to add to JWtoken
-      const { password, _id } = await controller.loginUser(req.body)
+      const { password, _id } = await controller.loginUser( req.body )
       
       // bcrypt validates password
-      const passwordValidate = await bcrypt.compare(req.body.password, password)
+      const passwordValidate = await bcrypt.compare( req.body.password, password )
 
       // on passwordValidate result JWT is set and sent in cookie
-      if (passwordValidate){
+      if ( passwordValidate ){
         // Create Token
         // _id must be converted toString as initial request returns an unusable Object
-        const token = jwtController.newToken(_id.toString())
+        const token = jwtController.newToken( _id.toString() )
         /* 
             @desc: setcookie options to httpOnly to prevent any javaScript from accessing the cookie on the clientSide
             @desc: make secure true so cookie can only be sent via HTTPS protocol
@@ -56,7 +56,6 @@ router.post(
             secure: true,
             name: 'taskerApp',
             httpOnly: true,
-            path: '/apiv2',
           }
         // send confirmation to user to handle login
         ).json( { success: true } )
@@ -75,7 +74,7 @@ router.get(
   '/logout',
   (req, res) => {
     // Destroy the authorisation token if user logs out.
-    res.clearCookie('auth').send('confirmed')
+    res.clearCookie('auth').json({success: true})
   }
 )
 
