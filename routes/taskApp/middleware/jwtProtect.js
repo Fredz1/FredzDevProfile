@@ -15,16 +15,12 @@ const checkLoginStatus = ( req, res, next ) => {
     // check for header
     if (!req.cookies.auth) return res.json({success: false, response: 'Not logged in'})
 
-    // Token is  split and array returned
-    const token = req.cookies.auth
-    
     // If verify fails an error is thrown and handled in the catch block
     // If validation succeeds the id is destructure out.
-    const { id } = jwt.verify(token, process.env.JWT_SECRET)
+    const { id } = jwt.verify(req.cookies.auth, process.env.JWT_SECRET)
 
     // sent req.body.id for ease of use further in the process
     req.body.id = id
-    
     
     next()
   }catch(e){
