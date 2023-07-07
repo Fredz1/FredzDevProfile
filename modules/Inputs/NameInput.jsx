@@ -8,4 +8,4 @@ const NameInput = () => {
   );
 }
 
-export default NameInput;
+export default NameInput

@@ -62,10 +62,10 @@ router.post(
         ).json( { success: true } )
       }
 
-      // if login is not successfull but still runs though try block the attempt Must fail.
+      // if login is not successful but still runs though try block the attempt Must fail.
       res.json( { success: false, response: 'Something went wrong signing you in.  Please contact your admin' } )
     } catch(e){
-      // fail and reject login request if system or anyother failure
+      // fail and reject login request if system or any other failure
       res.json( { success: false, response: 'Something went wrong as a failure.' } )
     }
   }
@@ -74,7 +74,7 @@ router.post(
 router.get(
   '/logout',
   (req, res) => {
-    // Destroy the authorisation token if user logs out.
+    // Destroy the authorization token if user logs out.
     res.clearCookie('auth').json({success: true})
   }
 )

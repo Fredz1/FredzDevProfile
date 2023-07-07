@@ -12,7 +12,7 @@ require('dotenv').config()
 const checkLoginStatus = ( req, res, next ) => {
   try{
     // check for header
-    if (!req.headers.cookie) return res.json({success: false, reponse:'Not logged in'})
+    if (!req.headers.cookie) return res.json({success: false, response:'Not logged in'})
 
     // Token is  split and array returned
     //const token = req.headers.cookie.split('=')
@@ -27,7 +27,7 @@ const checkLoginStatus = ( req, res, next ) => {
     next()
   }catch(e){
     // if cookie verification fails
-    res.json({success: false, response:'Error checking authorisation status'})
+    res.json({success: false, response:'Error checking authorization status'})
   }
   
   
