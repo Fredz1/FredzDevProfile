@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react"
+import { useContext, useEffect, useState } from "react"
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import { Container, Unstable_Grid2 as Grid, Typography, Button, Link } from "@mui/material"
@@ -9,7 +9,10 @@ import NewTaskInput from './components/NewTaskInput'
 import TopMenu from '../../../modules/TopMenu'
 import Footer from '../../../modules/Footer'
 
+import { UserInfo } from "../../../contexts/userContext"
+
 const MainTasks = () => {
+  const {userData} = useContext(UserInfo)
 
   const router = useRouter()
 
@@ -72,6 +75,9 @@ const MainTasks = () => {
 
         
         <Grid my={2}>
+          <Typography variant="h6">
+            Hi, {userData.userName}
+          </Typography>
           <NewTaskInput setTaskList={setTaskList} />
         </Grid>
         {/* 

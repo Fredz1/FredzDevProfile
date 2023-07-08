@@ -34,10 +34,9 @@ router.post(
       
       // send request to DB for password and _id to add to JWtoken
       const { password, _id, name } = await controller.loginUser( req.body )
-      
+      console.log(password)
       // bcrypt validates password
       const passwordValidate = await bcrypt.compare( req.body.password, password )
-
       // on passwordValidate result JWT is set and sent in cookie
       if ( passwordValidate ){
         /* 
@@ -64,6 +63,7 @@ router.post(
       // if login is not successful but still runs though try block the attempt Must fail.
       res.json( { success: false, response: 'Something went wrong signing you in.  Please contact your admin' } )
     } catch(e){
+      console.log(e)
       // fail and reject login request if system or any other failure
       res.json( { success: false, response: 'Something went wrong.' } )
     }

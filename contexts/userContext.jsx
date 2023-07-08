@@ -8,16 +8,16 @@ export const UserInfo = createContext(INITIAL_DATA)
 
 export const UserContext = ( { children } ) => {
 
-  const [data, setData] = useState(INITIAL_DATA)
+  const [userData, setUserData] = useState(INITIAL_DATA)
   
   const updateUserData = fields => {
-    setData(prev => {
+    setUserData(prev => {
       return {...prev, ...fields}
     })
   }
 
   return (
-    <UserInfo.Provider value={{data, updateUserData}} >
+    <UserInfo.Provider value={{userData, updateUserData}} >
       { children }
     </UserInfo.Provider>
   )
