@@ -1,15 +1,20 @@
-import { useState } from "react"
+import { useState, useContext } from "react"
 import axios from 'axios'
 import { Link } from "@mui/material"
 import { useRouter } from 'next/router'
+
+//TODO: update user name in userInfo component when login successful.
+
 
 const Login = () => {
   // State
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
 
-  //Router initialise
+  //Router initialize
   const router = useRouter()
+
+  const { name } = useContext()
 
   /* 
     @desc: if user is valid send them to dashboard else alert them to incorrect details entered
@@ -27,7 +32,7 @@ const Login = () => {
         withCredentials: true
       }
     )
-    // request returns truethy or falsey
+    // request returns truthy or falsely
     data.data.success ? router.push('/projects/tasker/maintasks') : alert(data.response || 'failed')
   }
 

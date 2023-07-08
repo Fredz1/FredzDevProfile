@@ -33,40 +33,39 @@ router.post(
   
       
       // send request to DB for password and _id to add to JWtoken
-      const { password, _id } = await controller.loginUser( req.body )
+      const { password, _id, name } = await controller.loginUser( req.body )
       
       // bcrypt validates password
       const passwordValidate = await bcrypt.compare( req.body.password, password )
 
       // on passwordValidate result JWT is set and sent in cookie
       if ( passwordValidate ){
-        // Create Token
-        // _id must be converted toString as initial request returns an unusable Object
-        const token = jwtController.newToken( _id.toString() )
         /* 
-            @desc: setcookie options to httpOnly to prevent any javaScript from accessing the cookie on the clientSide
+            @desc: set-cookie options to httpOnly to prevent any javaScript from accessing the cookie on the clientSide
             @desc: make secure true so cookie can only be sent via HTTPS protocol
             @desc: path set to /api/tasks.  This will only send the cookie in the header when the user makes requests to tasks and no other routers.
+            @desc: create token
           */
 
         return res.cookie(
           'auth',
-          token,
+          jwtController.newToken( _id.toString() ),
           {
             secure: true,
             name: 'taskerApp',
             httpOnly: true,
-            path: '/apiv2'
+            path: '/apiv2',
+            maxAge: 1000 * 60 * 60 * 24 * 7
           }
         // send confirmation to user to handle login
-        ).json( { success: true } )
+        ).json( { success: true, response: { name } } )
       }
 
       // if login is not successful but still runs though try block the attempt Must fail.
       res.json( { success: false, response: 'Something went wrong signing you in.  Please contact your admin' } )
     } catch(e){
       // fail and reject login request if system or any other failure
-      res.json( { success: false, response: 'Something went wrong as a failure.' } )
+      res.json( { success: false, response: 'Something went wrong.' } )
     }
   }
 )

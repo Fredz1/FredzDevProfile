@@ -1,18 +1,18 @@
-import { Box, Link, Button } from "@mui/material"
+import { Container, Box, Link, Button, Grid } from "@mui/material"
 
-const SidePanel = ({ logout }) => {
+const SidePanel = ( { logout } ) => {
 
    
   return (
-    <Box alignContent='end'>
-      <Link to='/'>
-        <Button 
-          size="small" 
-          className="buttonStyle"
-        >
+    <Grid  >
+      <Button 
+        size="small" 
+        className="buttonStyle"
+      >
+        <Link to='/'>
           Home
-        </Button>
-      </Link>
+        </Link>
+      </Button>
     
       <Button 
         size="small"
@@ -21,7 +21,7 @@ const SidePanel = ({ logout }) => {
       >
         Logout
       </Button>
-    </Box>
+    </Grid>
   )
 }
 

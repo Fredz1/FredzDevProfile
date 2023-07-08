@@ -19,6 +19,8 @@ import '../Theme/global.css'
 //Mui styles
 import { CssBaseline } from '@mui/material'
 
+import {UserContext} from '../contexts/userContext'
+
 const App = ( { Component, pageProps } ) => {
 
   const router = useRouter()
@@ -34,7 +36,7 @@ const App = ( { Component, pageProps } ) => {
   }, [router.events])
 
   return (
-    <>
+    <UserContext>
       <Head>
         <meta name='application-name' content='Fred Dev Portfolio' />
         <meta name='apple-mobile-web-app-capable' content='yes' />
@@ -87,7 +89,7 @@ const App = ( { Component, pageProps } ) => {
           <Component {...pageProps} />
         </FredzTheme>
       </CssBaseline>
-    </>
+    </UserContext>
   )
 }
 

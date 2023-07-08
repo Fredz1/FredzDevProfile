@@ -3,6 +3,8 @@ import ProjectsSection from '../../modules/ProjectsSection'
 import Footer from '../../modules/Footer'
 
 
+
+
 const Projects = () => {
 
   return (

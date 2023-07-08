@@ -1,12 +1,11 @@
 import { useEffect, useState } from "react"
 import axios from 'axios'
 import { useRouter } from 'next/router'
-import { Container, Unstable_Grid2 as Grid, Typography } from "@mui/material"
+import { Container, Unstable_Grid2 as Grid, Typography, Button, Link } from "@mui/material"
 
 // Component imports
 import TaskItem from './components/TaskItem'
 import NewTaskInput from './components/NewTaskInput'
-import SidePanel from "./components/SidePanel"
 import TopMenu from '../../../modules/TopMenu'
 import Footer from '../../../modules/Footer'
 
@@ -36,7 +35,7 @@ const MainTasks = () => {
     }
   
   /* 
-    @desc: logout client and handle any problems if log out failes.
+    @desc: logout client and handle any problems if log out fails.
   */
   const logout = async () => {
     const { data } = await axios.get(
@@ -47,7 +46,7 @@ const MainTasks = () => {
     data.success ? router.push('/projects/tasker') : alert('problem logging you out')
   }
 
-  // make inital request when page is loaded
+  // make initial request when page is loaded
   useEffect(() => {
     getData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
@@ -97,8 +96,27 @@ const MainTasks = () => {
               }
             </Grid>
           </Grid>
-          <Grid my={2}>
-            <SidePanel logout={logout} />
+
+          <Grid container gap={2} justifyContent="center" m={2}>
+            <Grid>
+              <Button 
+                size="small" 
+                className="buttonStyle"
+              >
+                <Link to='/'>
+                  Home
+                </Link>
+              </Button>
+            </Grid>
+            <Grid>
+              <Button 
+                size="small"
+                className="buttonStyle" 
+                onClick={() => logout()}
+              >
+                Logout
+              </Button>
+            </Grid>
           </Grid>
 
 
