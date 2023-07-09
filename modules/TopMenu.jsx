@@ -3,6 +3,7 @@ import MenuIcon from '@mui/icons-material/Menu'
 import Image from "next/image"
 import Logo from '../public/assets/images/fred-made-this-logo.webp'
 import { useState } from "react"
+import UserMenu from "./UserMenu"
 
 
 const TopMenu = () => {
@@ -49,7 +50,7 @@ const TopMenu = () => {
             </Link>
           </Button>
           <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
-          <Link href="/websites" underline="none" color='black'>
+            <Link href="/websites" underline="none" color='black'>
               websites
             </Link>
           </Button>
@@ -58,6 +59,7 @@ const TopMenu = () => {
               Contact
             </Link>
           </Button>
+          <UserMenu />
         </Grid>
       </Grid>
 
