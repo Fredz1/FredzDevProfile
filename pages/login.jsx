@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 const INITIAL_STATE = {
   userEmail: 'Test@test.com',
-  userPassword: 'testic'
+  userPassword: 'testy'
 }
 
 const Login = () => {
@@ -13,7 +13,9 @@ const Login = () => {
   const [userInfo, setUserInfo] = useState(INITIAL_STATE)
 
   const updateUserData = fields => {
+
     setUserInfo(prev => {
+      console.log(userInfo)
       return {...prev, ...fields}
     })
   }
@@ -28,11 +30,12 @@ const Login = () => {
         <TextField 
           variant='standard'
           value={userInfo.userEmail}
-          onChange={console.log(e) }
+          onChange={e => updateUserData({userEmail:e.target.value}) }
         />
         <TextField 
           variant='standard'
           value={userInfo.userPassword}
+          onChange={e => updateUserData({userPassword:e.target.value}) }
         />
         <Button variant='medium'>
           Login
@@ -44,7 +47,7 @@ const Login = () => {
         </Link>
       </Grid>
     </Container>
-  );
+  )
 }
 
 export default Login
