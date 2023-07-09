@@ -40,7 +40,8 @@ jspm_packages
 *.pdf
 .env*.local
 .env.development
-.env
+.env.production
+.env*
 out
 
 service-worker.js

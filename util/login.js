@@ -1,6 +1,9 @@
 import axios from 'axios'
 
-export const login = async (email, password) => {
+export const userLogin = async ( inputInfo ) => {
+
+  const email = inputInfo.userEmail
+  const password = inputInfo.userPassword
 
   const data  = await axios.post(
       process.env.NODE_ENV === 'development' ? 
@@ -8,12 +11,12 @@ export const login = async (email, password) => {
       'https://www.fredmadethis.co.za/apiv2/taskApp/user/login',
       {
         email,
-        password,
+        password
       },
       {
         withCredentials: true
       }
     )
 
-    console.log(data)
+    return data
 }

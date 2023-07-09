@@ -24,8 +24,8 @@ dotenv.config()
 connectMongo()
 
 server.use(
-  '/apiv2/taskApp/user',
-  require('./routes/taskApp/routes/user')
+  '/apiv2/user',
+  require('./routes/user')
 )
 
 server.use(
