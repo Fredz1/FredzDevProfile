@@ -1,16 +1,19 @@
-import { Container, Box, Button, Unstable_Grid2 as Grid, Typography, Link, Drawer , useMediaQuery, useTheme, IconButton } from "@mui/material"
+import {Container, Box, Button, Unstable_Grid2 as Grid, Typography, Link, Drawer , useMediaQuery, useTheme, IconButton } from "@mui/material"
 import MenuIcon from '@mui/icons-material/Menu'
 import Image from "next/image"
 import Logo from '../public/assets/images/fred-made-this-logo.webp'
-import { useState } from "react"
+import { useState, useContext } from "react"
 import UserMenu from "./UserMenu"
 
+import { UserInfo } from '../contexts/userContext'
 
 const TopMenu = () => {
 
   const theme = useTheme()
   const screenWidth = useMediaQuery( theme.breakpoints.up('sm') )
 
+  const { userData: { userName } } = useContext( UserInfo )
+  
   const showMenu = {
     display: screenWidth ? 'block' : 'none',
   }
@@ -64,9 +67,12 @@ const TopMenu = () => {
       </Grid>
 
       {/* Swipeble drawer when mobile breakpoint is true */}
-      <IconButton aria-label="toggleMenu" sx={showsideMenu} onClick={() =>setDrawer(!drawer)}>
-        <MenuIcon />
-      </IconButton>
+      <Grid container direction='row' sx={showsideMenu} >
+        <IconButton aria-label="toggleMenu"  onClick={() =>setDrawer(!drawer)}>
+          <MenuIcon />
+        </IconButton>
+        <UserMenu />
+      </Grid>
       <Drawer 
         variant="temporary"
         elevation={0}
