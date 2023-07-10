@@ -24,8 +24,8 @@ const user = new mongoose.Schema(
     ]
   },
   {
-    collection: 'TaskApp'
+    collection: 'tasks'
   }
 )
 
-module.exports = mongoose.model('user', user)
+module.exports = mongoose.models.user || mongoose.model('user', user)

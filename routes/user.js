@@ -34,7 +34,6 @@ router.post(
       
       // send request to DB for password and _id to add to JWtoken
       const { password, _id, name } = await controller.loginUser( req.body )
-      console.log(password)
       // bcrypt validates password
       const passwordValidate = await bcrypt.compare( req.body.password, password )
       // on passwordValidate result JWT is set and sent in cookie

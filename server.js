@@ -5,7 +5,7 @@ const morgan = require('morgan')
 const cookieParser = require('cookie-parser')
 const connectMongo = require('./util/connectMongo.js')
 const mongoose = require('mongoose')
-const { checkLoginStatus } = require('./routes/taskApp/middleware/jwtProtect.js')
+const { checkLoginStatus } = require('./middleware/jwtProtect.js')
 var colors = require('colors')
 colors.enable()
 
@@ -25,13 +25,13 @@ connectMongo()
 
 server.use(
   '/apiv2/user',
-  require('./routes/user')
+  require('./routes/user.js')
 )
 
 server.use(
   '/apiv2/taskApp/tasks',
   checkLoginStatus,
-  require('./routes/taskApp/routes/tasks')
+  require('./routes/tasks.js')
 )
 
 // set server to listen for new requests
@@ -45,6 +45,6 @@ server.listen(
       }
     )
     console.log(`Server listening on port: ${process.env.SERVER_PORT}`.bgGreen.white)
-    console.log(`Enviroment: ${process.env.NODE_ENV}`.bgGreen.white)
+    console.log(`Environment: ${process.env.NODE_ENV}`.bgGreen.white)
   }
 )

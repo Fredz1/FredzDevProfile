@@ -30,7 +30,7 @@ const Login = () => {
     console.log(data)
 
     if(data.success){
-      //console.log(data.data)
+      console.log(data.data)
     }
 
   }
