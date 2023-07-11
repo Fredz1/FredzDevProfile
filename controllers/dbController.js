@@ -33,13 +33,14 @@ const addUser = async input => {
 const loginUser = async input => {
   try{
     // Destructure password and _id user exists else error is returned and handled in the catch block
-    const { password, _id } = await user.findOne( { email:input.email } )
+    console.log(input)
+    const { password, _id, name } = await user.findOne( { email : input.email } )
   
-    return {password, _id}
+    return {password, _id, name}
 
   } catch(e){
     // send error to route to handle the result
-    return 'no user found'
+    return { success: false, response: 'User does not exist'}
   }
 
 }

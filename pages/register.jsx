@@ -1,38 +1,38 @@
+import { useState } from "react"
+import { useRouter } from 'next/router'
+import axios from 'axios'
+
 import { Container, Unstable_Grid2 as Grid, TextField, Typography, Button, Link } from '@mui/material'
-import TopMenu from '../modules/TopMenu'
-import { userLogin } from '../util/userActions.js'
 
-import { useState } from 'react'
+import { userRegistration } from "../util/userActions"
 
-const INITIAL_STATE = {
-  userEmail: 'Test@test.com',
-  userPassword: 'testy'
+import TopMenu from "../modules/TopMenu"
+
+const INITIAL_DATA = {
+  name: '',
+  surname: '',
+  email: '',
+  password: '',
 }
 
-const Login = () => {
+const Register = () => {
 
-  const [ userInfo, setUserInfo ] = useState(INITIAL_STATE)
+  // useNavigate to push client to login page
+  const router = useRouter()
 
-  /* update user form information */
-  const updateUserData = fields => {
-
-    setUserInfo(prev => {
-      
-      return {...prev, ...fields}
-    })
+  // State
+  const [ userInfo, setUserInfo] = useState(INITIAL_DATA)
+  
+  const updateUserInfo = field => {
     
   }
 
-  const loginRequest = async () => {
 
-    let data = await userLogin(userInfo)
+  const register = async () => {
 
-    console.log(data)
-
-    if(data.success){
-      console.log(data.data)
-    }
-
+    const request = await userRegistration()
+    
+    data.success ? router.push('/projects/tasker/login') : alert('Problem with you registration please try again or contact admin')
   }
 
   return (
@@ -65,4 +65,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Register

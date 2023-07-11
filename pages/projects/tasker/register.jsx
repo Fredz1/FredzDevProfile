@@ -8,10 +8,10 @@ const Register = () => {
   const router = useRouter()
 
   // State
-  const [name, setName] = useState('')
-  const [surname, setSurname] = useState('')
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
+  const [ name, setName ] = useState('')
+  const [ surname, setSurname ] = useState('')
+  const [ email, setEmail ] = useState('')
+  const [ password, setPassword ] = useState('')
 
 
   const register = async () => {
