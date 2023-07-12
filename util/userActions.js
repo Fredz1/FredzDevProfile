@@ -30,5 +30,7 @@ export const userRegistration = async input => {
       password
     }
   )
-  
+
+  return data
+
 }
