@@ -23,7 +23,12 @@ const Register = () => {
   // State
   const [ userInfo, setUserInfo] = useState(INITIAL_DATA)
   
-  const updateUserInfo = field => {
+  const updateUserData = fields => {
+
+    setUserInfo(prev => {
+      
+      return {...prev, ...fields}
+    })
     
   }
 
@@ -40,24 +45,43 @@ const Register = () => {
       <TopMenu />
       <Grid container direction='column'>
         <Typography variant='h4'>
-          Login
+          Register
         </Typography>
         <TextField 
           variant='standard'
-          value={userInfo.userEmail}
-          onChange={e => updateUserData({userEmail:e.target.value}) }
+          label='Name'
+          placeholder="Your Name"
+          value={userInfo.name}
+          onChange={e => updateUserData({name:e.target.value}) }
         />
         <TextField 
+          label='Surname'
           variant='standard'
-          value={ userInfo.userPassword }
-          onChange={ e => updateUserData( { userPassword:e.target.value } ) }
+          placeholder="Your Surname"
+          value={ userInfo.surname }
+          onChange={ e => updateUserData( { surname:e.target.value } ) }
+        />
+        <TextField 
+          label='Email'
+          variant='standard'
+          placeholder="email@email.com"
+          type='email'
+          value={ userInfo.email }
+          onChange={ e => updateUserData( { email:e.target.value } ) }
+        />
+        <TextField 
+          label='Password'
+          variant='standard'
+          type='password'
+          value={ userInfo.password }
+          onChange={ e => updateUserData( { password:e.target.value } ) }
         />
         <Button variant='medium' onClick={() =>loginRequest()}>
-          Login
+          Submit
         </Button>
-        <Link href="/register">
+        <Link href="/register" underline="none">
           <Typography variant="body1">
-            register
+            Login
           </Typography>
         </Link>
       </Grid>
