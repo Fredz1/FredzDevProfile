@@ -2,6 +2,20 @@ import { createTheme, ThemeProvider } from '@mui/material/styles'
 
 export const myTheme = createTheme(
   {
+    palette: {
+      primary: {
+        light: '#CC6600',
+        main: '#696974',
+        dark: '#002884',
+        contrastText: '#fff',
+      },
+      secondary: {
+        light: '#696974',
+        main: '#f44336',
+        dark: '#ba000d',
+        contrastText: '#000',
+      },
+    },
     components: {
       MuiTypography :{
         variants: [

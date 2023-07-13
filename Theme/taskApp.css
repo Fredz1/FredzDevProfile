@@ -59,11 +59,6 @@ input{
   background-origin: border-box;
   background-repeat: no-repeat;
   
-  /*Irrelevant code*/  
-  width: fit-content;
-  height: fit-content;
-  padding: 0.5em 1em;
-  margin: 0 auto;
 }
 
 button:hover{

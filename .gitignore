@@ -37,11 +37,8 @@ jspm_packages
 .node_repl_history
 .next
 
-*.pdf
-.env*.local
-.env.development
-.env.production
 .env*
+
 out
 
 service-worker.js

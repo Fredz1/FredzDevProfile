@@ -21,6 +21,7 @@ const index = () => {
       <TopMenu />
       <HeroSection />
       <Footer />
+
         
     </>
   )

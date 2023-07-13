@@ -1,7 +1,8 @@
 body {
   margin: auto;
   overflow: auto;
-  background: linear-gradient(315deg, rgba(255, 255, 255, 0.705) 3%, rgb(170, 170, 170) 68% );
+  /* background: linear-gradient(315deg, rgba(255, 255, 255, 0.705) 3%, rgb(170, 170, 170) 68% ); */
+  background: #EDAB4D;
   animation: gradient 20s ease infinite;
   background-size: 400% 400%;
   background-attachment: fixed;

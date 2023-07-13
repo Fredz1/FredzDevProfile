@@ -44,7 +44,7 @@ const Register = () => {
     <Container>
       <TopMenu />
       <Grid container direction='column'>
-        <Typography variant='h4'>
+        <Typography variant='h4' fontWeight={650}>
           Register
         </Typography>
         <TextField 
