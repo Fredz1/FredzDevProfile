@@ -5,12 +5,7 @@ import { skills } from '../Data/skills'
 const HeroSection = () => {
   return (
     <Box my={4}>
-      <Container>
-          <Grid>
-            <Typography variant="h4">
-              <Typewriter words={['Fred','Made','This', 'FredMadeThis']} cursor loop={1} cursorBlinking={false} typeSpeed={250}/>            
-            </Typography>
-          </Grid>
+      <Container disableGutters>
           <Grid>
             <Typography variant="body1">
               Im Fred
@@ -25,26 +20,7 @@ const HeroSection = () => {
             <Typography variant="body1">
               Specialities:
             </Typography>
-
-            <Grid container direction='column'>
-              {
-                skills.map(
-                  (el, index) => (
-
-                    <Grid key={index}>
-                      <Typography variant="body1" ml={2} mt={1}>
-                        {el.tech}
-                      </Typography>
-                      <LinearProgress
-                        variant="determinate"
-                        value={el.value}
-                        color="warning"
-                      />
-                    </Grid>
-                  )
-                )
-              }
-            </Grid>
+            
           </Grid>
 
           <Grid mt={4}>

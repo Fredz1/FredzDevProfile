@@ -26,99 +26,48 @@ const TopMenu = () => {
   const [drawer, setDrawer] = useState(false)
 
   return (
-    <Box sx={{minHeight: '1rem', my: 4, width: "100%"}} >
-      <Container px={5} direction='row'>
-        <Grid>
-          <Typography variant="body1" textAlign="center" >
-            <Link href="/" underline="none" py={2}>
-              <Image 
-                src={Logo} 
-                alt="Logo and Home button" 
-                style
-                priority
-                height={50}
-              />
-            </Link>
-          </Typography>
-        </Grid>
-    <Box my={ 2 } textAlign='center' >
-      <Grid container px={5} justifyContent='center' sx={showMenu}>
-        <Grid>
-          <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
-            about me
-          </Button>
-          <Button variant='newButton'>
-            <Link href="/projects" underline="none" color='black'>
-              Projects
-            </Link>
-          </Button>
-          <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
-            <Link href="/websites" underline="none" color='black'>
-              websites
-            </Link>
-          </Button>
-          <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
-            <Link href="/contact" underline="none" color='black'>
-              Contact
-            </Link>
-          </Button>
-          <UserMenu />
-        </Grid>
-      </Grid>
+    <Box sx={ {backgroundColor: "#0C101E", width: "100%", height: "100%"} } >
 
-      {/* Swipeble drawer when mobile breakpoint is true */}
-      <Grid container direction='row' sx={showsideMenu} >
-        <IconButton aria-label="toggleMenu"  onClick={() =>setDrawer(!drawer)}>
-          <MenuIcon />
-        </IconButton>
-        <UserMenu />
-      </Grid>
-      <Drawer 
-        variant="temporary"
-        elevation={0}
-        hideBackdrop={false}
-        anchor="top"
-        open={drawer}
-      >
-        <Grid container direction='column' px={5} justifyContent='center'>
-        <IconButton aria-label="toggleMenu" onClick={() =>setDrawer(!drawer)}>
-          <MenuIcon />
-        </IconButton>
-        <Grid container direction='column'>
-          <Grid>
-            <Grid>
-              <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
-                about me
-              </Button>
-            </Grid>
-            <Grid>
-              <Button variant='newButton'>
-                <Link href="/projects" underline="none" color='black'>
-                  Projects
-                </Link>
-              </Button>
-            </Grid>
-            <Grid>
-              <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
-                <Link href="/websites" underline="none" color='black'>
-                  websites
-                </Link>
-              </Button>
-            </Grid>
-            <Grid>
-              <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
-                <Link href="/contact" underline="none" color='black'>
-                  Contact
-                </Link>
-              </Button>
-            </Grid>
-          </Grid>
+      <Grid container justifyContent='center' sx={ showMenu }>
+
+        <Grid>
+          <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
+            <Link href="/projects" underline="none" variant="inherit">
+              <Typography variant="body1">
+                ABOUT.Fred
+              </Typography>
+            </Link>
+          </Button>
         </Grid>
+
+        <Grid>
+          <Button variant='newButton'>
+            <Link href="/projects" underline="none">
+              Freds.PROJECTS
+            </Link>
+          </Button>
+        </Grid>
+
+        <Grid>
+          <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
+            <Link href="/websites" underline="none">
+              WORK.w/Fred
+            </Link>
+          </Button>
+        </Grid>
+
+        <Grid>
+          <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
+            <Link href="/contact" underline="none">
+              CONTACT.Fred
+            </Link>
+          </Button>
+        </Grid>
+
+          <UserMenu />
+
+
       </Grid>
-      </Drawer>
-      
-    </Box>
-      </Container>
     </Box>
   )
 

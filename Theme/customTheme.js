@@ -19,40 +19,7 @@ export const myTheme = createTheme(
     components: {
       MuiTypography :{
         variants: [
-          {
-            props: {
-              variant: 'typewriter'
-            },
-            color: 'blue',
-            style: {
-              '&::before, &::after': {
-                content: '""',
-                top: 0,
-                bottom: 0,
-                left:0,
-                right: 0,
-                position: 'absolute',
-              },
-              '&::before': {
-                backgroundColor: 'red',
-                animation: '$typewriter 3s steps(21) forwards'
-              },
-              '&::after' : {
-                width: '5px',
-                backgroundColor: 'blue',
-                animation: '$typewriter 3s steps(21) forwards, $blink 750ms steps(21) infinate'
-              },
-              '@keyframes typewriter': {
-                to : {left: '100%'}
-              },
-              '@keyframes blink' : {
-                '0%' : {background: "transparent"},
-                '50%' : {background: "100%"},
-                '100%' : {background: "transparent"}
-              }
-              
-            }
-          }
+
         ]
       },
       MuiButton: {
@@ -62,7 +29,8 @@ export const myTheme = createTheme(
               variant: 'newButton'
             },
             style: {
-              color: 'black',
+              color: '#FEFCE8',
+              fontSize: '1.75rem',
               '&::after' : {
                 content: '""',
                 display: 'block',
@@ -84,8 +52,6 @@ export const myTheme = createTheme(
                 color: 'blue',
                 backgroundColor: 'transparent'
               }
-              /* borderBottom: '1px solid red' */
-              
             }
           },
           {
@@ -117,7 +83,7 @@ export const myTheme = createTheme(
               },
                
             }
-          }
+          },
         ]
       }
     }
