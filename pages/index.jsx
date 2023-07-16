@@ -1,11 +1,12 @@
 // modules
 import Head from 'next/head'
 
-import { Unstable_Grid2 as Grid, Container } from '@mui/material'
+import { Unstable_Grid2 as Grid, Container, Typography } from '@mui/material'
 // modules
 import TopMenu from '../modules/TopMenu'
 import HeroSection from '../modules/HeroSection'
 import Footer from '../modules/Footer' 
+
 
 
 const index = () => {
@@ -21,7 +22,14 @@ const index = () => {
       </Head>
       <Container direction="row" disableGutters sx={{minWidth: "100vw"}}>
 
+        
+
         <Grid container direction='row'>
+          <Grid>
+
+        
+
+        </Grid>
 
           <Grid xs={8} md={7}>
             <HeroSection />

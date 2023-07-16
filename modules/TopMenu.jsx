@@ -26,42 +26,35 @@ const TopMenu = () => {
   const [drawer, setDrawer] = useState(false)
 
   return (
-    <Box sx={ {backgroundColor: "#0C101E", width: "100%", height: "100%"} } >
+    <Box sx={ {backgroundColor: "#0C101E", width: "100%", height: "100vh"} } >
 
       <Grid container justifyContent='center' sx={ showMenu }>
 
         <Grid>
-          <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
+          
             <Link href="/projects" underline="none" variant="inherit">
-              <Typography variant="body1">
-                ABOUT.Fred
-              </Typography>
+              ABOUT.Fred
             </Link>
-          </Button>
         </Grid>
 
         <Grid>
-          <Button variant='newButton'>
-            <Link href="/projects" underline="none">
-              Freds.PROJECTS
-            </Link>
-          </Button>
+          <Link href="/projects" underline="none">
+            Freds.PROJECTS
+          </Link>
         </Grid>
 
         <Grid>
-          <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
+          
             <Link href="/websites" underline="none">
               WORK.w/Fred
             </Link>
-          </Button>
         </Grid>
 
         <Grid>
-          <Button variant='newButton' disableElevation disableRipple disableTouchRipple>
+          
             <Link href="/contact" underline="none">
               CONTACT.Fred
             </Link>
-          </Button>
         </Grid>
 
           <UserMenu />

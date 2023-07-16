@@ -2,10 +2,27 @@ import { Box, Unstable_Grid2 as Grid, Container, Typography, LinearProgress } fr
 import { Typewriter } from "react-simple-typewriter";
 import { skills } from '../Data/skills'
 
+import logo from '../assets/dot-icon.png'
+
+import Image from 'next/image'
+
+
 const HeroSection = () => {
   return (
     <Box my={4}>
       <Container disableGutters>
+
+        <Grid container>
+          <Grid xs={4}>
+            <Image src={logo} alt='site logo' objectFit="contain" priority width={175} />
+          </Grid>
+          <Grid xs={8}>
+            <Typography variant='h2' fontWeight={650} alignSelf='center'>
+              FredMadeThis.
+            </Typography>
+          </Grid>
+        </Grid>
+
           <Grid>
             <Typography variant="body1">
               Im Fred
