@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.fredmadethis.co.za
+
+# Sitemaps
+Sitemap: https://www.fredmadethis.co.za/sitemap.xml

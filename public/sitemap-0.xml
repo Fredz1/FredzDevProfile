@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://www.fredmadethis.co.za</loc><lastmod>2023-07-19T17:20:35.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.fredmadethis.co.za/about</loc><lastmod>2023-07-19T17:20:35.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.fredmadethis.co.za/contact</loc><lastmod>2023-07-19T17:20:35.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.fredmadethis.co.za/login</loc><lastmod>2023-07-19T17:20:35.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.fredmadethis.co.za/profile</loc><lastmod>2023-07-19T17:20:35.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.fredmadethis.co.za/projects</loc><lastmod>2023-07-19T17:20:35.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.fredmadethis.co.za/projects/tasker</loc><lastmod>2023-07-19T17:20:35.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.fredmadethis.co.za/projects/tasker/components/NewTaskInput</loc><lastmod>2023-07-19T17:20:35.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.fredmadethis.co.za/projects/tasker/components/SidePanel</loc><lastmod>2023-07-19T17:20:35.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.fredmadethis.co.za/projects/tasker/components/TaskItem</loc><lastmod>2023-07-19T17:20:35.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.fredmadethis.co.za/projects/tasker/login</loc><lastmod>2023-07-19T17:20:35.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.fredmadethis.co.za/projects/tasker/maintasks</loc><lastmod>2023-07-19T17:20:35.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.fredmadethis.co.za/projects/tasker/register</loc><lastmod>2023-07-19T17:20:35.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.fredmadethis.co.za/register</loc><lastmod>2023-07-19T17:20:35.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.fredmadethis.co.za/websites</loc><lastmod>2023-07-19T17:20:35.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.fredmadethis.co.za/websites/basic</loc><lastmod>2023-07-19T17:20:35.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://www.fredmadethis.co.za/websites/medium</loc><lastmod>2023-07-19T17:20:35.602Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+</urlset>

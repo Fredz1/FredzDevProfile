@@ -31,7 +31,6 @@ const TopMenu = () => {
       <Grid container justifyContent='center' sx={ showMenu }>
 
         <Grid>
-          
             <Link href="/projects" underline="none" variant="inherit">
               ABOUT.Fred
             </Link>
@@ -44,7 +43,6 @@ const TopMenu = () => {
         </Grid>
 
         <Grid>
-          
             <Link href="/websites" underline="none">
               WORK.w/Fred
             </Link>

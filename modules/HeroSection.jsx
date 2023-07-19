@@ -1,5 +1,4 @@
 import { Box, Unstable_Grid2 as Grid, Container, Typography, LinearProgress } from "@mui/material";
-import { Typewriter } from "react-simple-typewriter";
 import { skills } from '../Data/skills'
 
 import logo from '../assets/dot-icon.png'
