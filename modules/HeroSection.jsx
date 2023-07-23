@@ -13,10 +13,10 @@ const HeroSection = () => {
 
         <Grid container>
           <Grid xs={4}>
-            <Image src={logo} alt='site logo' objectFit="contain" priority width={175} />
+            <Image src={logo} alt='site logo' style={{objectFit: 'contain'}} priority width={150} />
           </Grid>
           <Grid xs={8}>
-            <Typography variant='h2' fontWeight={650} alignSelf='center'>
+            <Typography variant='h2' fontWeight={650} alignSelf='center' style={{fontSize: '5vw', justifyItems: 'center'}}>
               FredMadeThis.
             </Typography>
           </Grid>

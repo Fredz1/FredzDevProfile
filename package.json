@@ -12,7 +12,7 @@
     "start": "next start",
     "now-build": "next build",
     "lint": "next lint",
-    "postbuild" : "next-sitemap"
+    "postbuild": "next-sitemap"
   },
   "keywords": [
     "Developer Profile"
@@ -25,7 +25,6 @@
     "@mui/icons-material": "^5.14.1",
     "@mui/material": "^5.14.1",
     "@mui/styled-engine-sc": "^5.12.0",
-    "@next/bundle-analyzer": "^13.4.10",
     "axios": "^1.4.0",
     "bcrypt": "^5.1.0",
     "colors": "^1.4.0",
@@ -36,20 +35,20 @@
     "jsonwebtoken": "^9.0.1",
     "mongoose": "^7.4.0",
     "multer": "^1.4.5-lts.1",
-    "next": "^13.4.10",
+    "next": "^13.4.12",
     "next-pwa": "^5.6.0",
     "next-sitemap": "^4.1.8",
     "nodemailer": "^6.9.4",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-ga4": "^2.1.0",
-    "sharp": "^0.32.3",
+    "sharp": "^0.32.4",
     "uuid": "^9.0.0"
   },
   "devDependencies": {
     "concurrently": "^8.2.0",
     "eslint": "8.45.0",
-    "eslint-config-next": "13.4.10",
+    "eslint-config-next": "13.4.12",
     "morgan": "^1.10.0",
     "nodemon": "^3.0.1"
   }

@@ -31,11 +31,11 @@ const index = () => {
 
         </Grid>
 
-          <Grid xs={8} md={7}>
+          <Grid xs={9} md={8}>
             <HeroSection />
           </Grid>
 
-          <Grid xs={4} md={5}>
+          <Grid xs={3} md={4}>
             <TopMenu />
           </Grid>
 

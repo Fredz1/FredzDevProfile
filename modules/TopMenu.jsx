@@ -1,7 +1,4 @@
-import {Container, Box, Button, Unstable_Grid2 as Grid, Typography, Link, Drawer , useMediaQuery, useTheme, IconButton } from "@mui/material"
-import MenuIcon from '@mui/icons-material/Menu'
-import Image from "next/image"
-import Logo from '../public/assets/images/fred-made-this-logo.webp'
+import {Box, Unstable_Grid2 as Grid, Link, Drawer , useMediaQuery, useTheme } from "@mui/material"
 import { useState, useContext } from "react"
 import UserMenu from "./UserMenu"
 
@@ -26,31 +23,32 @@ const TopMenu = () => {
   const [drawer, setDrawer] = useState(false)
 
   return (
-    <Box sx={ {backgroundColor: "#0C101E", width: "100%", height: "100vh"} } >
+    <Box sx={ {backgroundColor: "#0C101E", width: "100%", height: "100vh", pl: 2} } >
+      
 
-      <Grid container justifyContent='center' sx={ showMenu }>
+      <Grid container justifyContent='center' sx={ showMenu } >
 
         <Grid>
-            <Link href="/projects" underline="none" variant="inherit">
+            <Link href="/projects" underline="none" variant="inherit" style={{fontSize: '3vw'}}>
               ABOUT.Fred
             </Link>
         </Grid>
 
         <Grid>
-          <Link href="/projects" underline="none">
+          <Link href="/projects" underline="none" style={{fontSize: '3vw'}}>
             Freds.PROJECTS
           </Link>
         </Grid>
 
         <Grid>
-            <Link href="/websites" underline="none">
+            <Link href="/websites" underline="none" style={{fontSize: '3vw'}}>
               WORK.w/Fred
             </Link>
         </Grid>
 
         <Grid>
           
-            <Link href="/contact" underline="none">
+            <Link href="/contact" underline="none" style={{fontSize: '3vw'}}>
               CONTACT.Fred
             </Link>
         </Grid>

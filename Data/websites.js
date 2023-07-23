@@ -16,11 +16,11 @@ const websites = [
       'Services (non-ecommerce)',
       'Contact'
     ],
-    exludes: [
+    excludes: [
       'Graphic Design',
       'Hosting',
-      'Maintenence',
-      'Writting and Publishing',
+      'Maintenance',
+      'Writing and Publishing',
       'SEO',
       'Marketing',
       'Any content'
@@ -42,11 +42,11 @@ const websites = [
       'Services (non-ecommerce)',
       'Contact'
     ],
-    exludes: [
+    excludes: [
       'Graphic Design',
       'Hosting',
-      'Maintenence',
-      'Writting and Publishing',
+      'Maintenance',
+      'Writing and Publishing',
       'SEO',
       'Marketing',
       'Any content'
