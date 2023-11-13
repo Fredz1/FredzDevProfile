@@ -9,14 +9,14 @@ import Image from 'next/image'
 const HeroSection = () => {
   return (
     <Box my={4}>
-      <Container disableGutters>
+      <Container >
 
         <Grid container>
           <Grid xs={4}>
             <Image src={logo} alt='site logo' style={{objectFit: 'contain'}} priority width={150} />
           </Grid>
-          <Grid xs={8}>
-            <Typography variant='h2' fontWeight={650} alignSelf='center' style={{fontSize: '5vw', justifyItems: 'center'}}>
+          <Grid xs={8} style={{display: "grid", placeItems: "center"}}>
+            <Typography variant='h2' fontWeight={650} alignSelf='center' style={{fontSize: '5vw', color: "#0C101E"}}>
               FredMadeThis.
             </Typography>
           </Grid>
@@ -48,7 +48,7 @@ const HeroSection = () => {
             </Typography>
           </Grid>
           <Grid>
-            Social media icons
+            **Add Social media icons here **
           </Grid>
       </Container>
     </Box>
