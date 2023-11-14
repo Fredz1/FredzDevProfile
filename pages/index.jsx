@@ -2,6 +2,7 @@
 import Head from 'next/head'
 
 import { Unstable_Grid2 as Grid, Container, Typography } from '@mui/material'
+
 // modules
 import TopMenu from '../modules/TopMenu'
 import HeroSection from '../modules/HeroSection'
@@ -9,7 +10,9 @@ import Footer from '../modules/Footer'
 
 
 
+
 const index = () => {
+
   return (
     <>
       <Head>
@@ -31,11 +34,11 @@ const index = () => {
 
         </Grid>
 
-          <Grid xs={9} md={8}>
+          <Grid md={8}>
             <HeroSection />
           </Grid>
 
-          <Grid xs={3} md={4}>
+          <Grid >
             <TopMenu />
           </Grid>
 

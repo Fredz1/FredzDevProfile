@@ -19,7 +19,7 @@ import '../Theme/global.css'
 //Mui styles
 import { CssBaseline } from '@mui/material'
 
-import {UserContext} from '../contexts/userContext'
+import { UserContext } from '../contexts/userContext'
 
 const App = ( { Component, pageProps } ) => {
 

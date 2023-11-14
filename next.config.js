@@ -10,7 +10,13 @@ const nextConfig = {
     removeConsole: process.env.NODE_ENV === 'production' ? true : false,
   },
   images: {
-    domains : ['picsum.photos']
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'picsum.photos',
+        pathname: '**'
+      }
+    ]
   }
 }
 
