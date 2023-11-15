@@ -1,7 +1,7 @@
 // modules
 import Head from 'next/head'
 
-import { Unstable_Grid2 as Grid, Container, Typography } from '@mui/material'
+import { Unstable_Grid2 as Grid, Container } from '@mui/material'
 
 // modules
 import TopMenu from '../modules/TopMenu'
@@ -23,26 +23,22 @@ const index = () => {
         <meta name="keywords" content="Developer, Profile, FullStack Web Development" />
         <meta name="author" content="Frederick Williams" />
       </Head>
-      <Container direction="row" disableGutters sx={{minWidth: "100vw"}}>
+      <Container direction="row" disableGutters>
 
         
 
-        <Grid container direction='row'>
-          <Grid>
-
-        
-
-        </Grid>
-
-          <Grid md={8}>
+        <Grid container >
+          <Grid md={8} >
             <HeroSection />
           </Grid>
 
-          <Grid >
+          <Grid md={4}>
             <TopMenu />
           </Grid>
 
         </Grid>
+
+        
       </Container>
         
     </>

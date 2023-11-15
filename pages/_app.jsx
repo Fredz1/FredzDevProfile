@@ -6,7 +6,7 @@ import Script from 'next/script'
 import * as gtag from '../util/googleTagManager'
 
 // React Component Imports
-import { useEffect } from "react"
+import { StrictMode, useEffect } from "react"
 import { useRouter } from "next/router"
 
 //style
@@ -19,6 +19,7 @@ import '../Theme/global.css'
 //Mui styles
 import { CssBaseline } from '@mui/material'
 
+//Context
 import { UserContext } from '../contexts/userContext'
 
 const App = ( { Component, pageProps } ) => {
@@ -36,6 +37,7 @@ const App = ( { Component, pageProps } ) => {
   }, [router.events])
 
   return (
+    
     <UserContext>
       <Head>
         <meta name='application-name' content='Fred Dev Portfolio' />
@@ -90,6 +92,7 @@ const App = ( { Component, pageProps } ) => {
         </FredzTheme>
       </CssBaseline>
     </UserContext>
+    
   )
 }
 

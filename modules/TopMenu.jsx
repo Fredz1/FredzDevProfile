@@ -5,8 +5,7 @@ import UserMenu from "./UserMenu"
 import { UserInfo } from '../contexts/userContext'
 
 const linkStyle = {
-  fontSize: '3vw',
-  paddingLeft: 5
+  fontSize: '3vw'
 }
 
 const TopMenu = () => {
@@ -22,15 +21,15 @@ const TopMenu = () => {
 
   const showsideMenu = {
     display: screenWidth ? 'none' : 'block',
-    margin: '0 auto'
   }
 
   const [drawer, setDrawer] = useState(false)
 
   return (
-    <Box sx={ {backgroundColor: "#0C101E", width: "100%", height: "100vh"} } >
+    <Box sx={ { backgroundColor: "#0C101E", height: "100%" } } >
 
-      <Grid container justifyContent='center' sx={ showMenu } >
+      {/* Larger Screen */}
+      <Grid container sx={ showMenu } >
 
         <Grid>
             <Link href="/projects" underline="none" variant="inherit" style={ linkStyle }>
@@ -51,7 +50,6 @@ const TopMenu = () => {
         </Grid>
 
         <Grid>
-          
             <Link href="/contact" underline="none" style={ linkStyle }>
               CONTACT.Fred
             </Link>
@@ -61,6 +59,41 @@ const TopMenu = () => {
 
 
       </Grid>
+
+      {/* Mobile Screen: Show burger menu */}
+      <Drawer>
+
+        <Box container sx={ showsideMenu }>
+
+          <Grid>
+              <Link href="/projects" underline="none" variant="inherit" style={ linkStyle }>
+                ABOUT.Fred
+              </Link>
+          </Grid>
+
+          <Grid>
+            <Link href="/projects" underline="none" style={ linkStyle }>
+              Freds.PROJECTS
+            </Link>
+          </Grid>
+
+          <Grid>
+              <Link href="/websites" underline="none" style={ linkStyle }>
+                WORK.w/Fred
+              </Link>
+          </Grid>
+
+          <Grid>
+              <Link href="/contact" underline="none" style={ linkStyle }>
+                CONTACT.Fred
+              </Link>
+          </Grid>
+
+
+        </Box>
+
+      </Drawer>
+
     </Box>
   )
 

@@ -8,15 +8,15 @@ import Image from 'next/image'
 
 const HeroSection = () => {
   return (
-    <Box my={4}>
-      <Container >
+    <>
+      
 
-        <Grid container>
-          <Grid xs={4}>
-            <Image src={logo} alt='site logo' style={{objectFit: 'contain'}} priority width={150} />
+        <Grid container my={4}>
+          <Grid md={4}>
+            <Image src={ logo } alt='site logo' style={ {objectFit: 'contain'} } priority width={ 150 } />
           </Grid>
-          <Grid xs={8} style={{display: "grid", placeItems: "center"}}>
-            <Typography variant='h2' fontWeight={650} alignSelf='center' style={{fontSize: '5vw', color: "#0C101E"}}>
+          <Grid md={8} style={ { display: "grid", placeItems: "center", overflow: 'hidden' } }>
+            <Typography variant='h2' fontWeight={ 800 } sx={{color: 'white'}}>
               FredMadeThis.
             </Typography>
           </Grid>
@@ -50,8 +50,8 @@ const HeroSection = () => {
           <Grid>
             **Add Social media icons here **
           </Grid>
-      </Container>
-    </Box>
+      
+    </>
   );
 }
 
