@@ -6,7 +6,7 @@ import Script from 'next/script'
 import * as gtag from '../util/googleTagManager'
 
 // React Component Imports
-import { StrictMode, useEffect } from "react"
+import { useEffect } from "react"
 import { useRouter } from "next/router"
 
 //style

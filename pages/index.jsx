@@ -23,7 +23,7 @@ const index = () => {
         <meta name="keywords" content="Developer, Profile, FullStack Web Development" />
         <meta name="author" content="Frederick Williams" />
       </Head>
-      <Container direction="row" disableGutters>
+      <Container direction="row"  disableGutters maxWidth={false}>
 
         
 
@@ -40,6 +40,7 @@ const index = () => {
 
         
       </Container>
+      <Footer />
         
     </>
   )
