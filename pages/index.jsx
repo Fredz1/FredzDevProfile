@@ -23,24 +23,22 @@ const index = () => {
         <meta name="keywords" content="Developer, Profile, FullStack Web Development" />
         <meta name="author" content="Frederick Williams" />
       </Head>
-      <Container direction="row"  disableGutters maxWidth={false}>
+      <Container direction="row"  maxWidth={false}>
 
-        
-
-        <Grid container >
-          <Grid md={8} >
+        <Grid container>
+          
+          <Grid md={8}>
             <HeroSection />
           </Grid>
 
-          <Grid md={4}>
-            <TopMenu />
+          <Grid>
+            <TopMenu md={4}/>
           </Grid>
 
         </Grid>
-
         
-      </Container>
       <Footer />
+      </Container>
         
     </>
   )
