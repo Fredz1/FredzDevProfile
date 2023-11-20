@@ -16,7 +16,7 @@ const HeroSection = () => {
             <Image src={ logo } alt='site logo' sx={ { objectFit: 'contain' } } priority width={ 150 } />
           </Grid>
           <Grid md style={ { display: "grid", placeItems: "center", overflow: 'hidden' } }>
-            <Typography variant='h2' fontWeight={ 850 } sx={ { color: 'white', fontSize: '5vmin' } } >
+            <Typography variant='h2' fontWeight={ 700 } sx={ { color: 'white', fontSize: '5vmin' } } >
               FredMadeThis.
             </Typography>
           </Grid>

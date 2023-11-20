@@ -1,15 +1,12 @@
 // modules
 import Head from 'next/head'
 
-import { Unstable_Grid2 as Grid, Container } from '@mui/material'
+import { Unstable_Grid2 as Grid, Container, Box } from '@mui/material'
 
 // modules
 import TopMenu from '../modules/TopMenu'
 import HeroSection from '../modules/HeroSection'
 import Footer from '../modules/Footer' 
-
-
-
 
 const index = () => {
 
@@ -23,22 +20,20 @@ const index = () => {
         <meta name="keywords" content="Developer, Profile, FullStack Web Development" />
         <meta name="author" content="Frederick Williams" />
       </Head>
-      <Container direction="row"  maxWidth={false}>
 
-        <Grid container>
-          
-          <Grid md={8}>
+        <Grid container columns={{sm: 12, md:12}}>
+
+          <Grid sm={10} md={8}>
             <HeroSection />
           </Grid>
-
-          <Grid>
-            <TopMenu md={4}/>
+          
+          <Grid md>
+            <TopMenu />
           </Grid>
 
         </Grid>
         
       <Footer />
-      </Container>
         
     </>
   )

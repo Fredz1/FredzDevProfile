@@ -29,7 +29,7 @@ const TopMenu = () => {
 
   return (
     <>
-      <Box sx={ { backgroundColor: "#0C101E", height: "100%", ...showMenu, } }>
+      <Box sx={ { backgroundColor: "#0C101E", height: "100%", ...showMenu } }>
 
         {/* Larger Screen */}
         <Grid container sx={ {...showMenu, mx: 2 }} >
@@ -69,8 +69,8 @@ const TopMenu = () => {
           Mobile Screen: Show burger menu and hide menu until burger menu is clicked to slide from right.
         */}
         
-      <Box>
-        <MenuIcon sx={{...showSideMenu, position: "absolute", top: "10", right: "5"}} onClick={() => setOpenDrawer(!openDrawer)}/>
+      <Box sx={ { backgroundColor: "#0C101E"} } >
+        <MenuIcon sx={{...showSideMenu, position: "fixed", top: "10", right: "5"}} onClick={() => setOpenDrawer(!openDrawer)}/>
           
           <Drawer open={openDrawer} anchor="right">
             <ClickAwayListener onClickAway={() => setOpenDrawer(!openDrawer)}>
