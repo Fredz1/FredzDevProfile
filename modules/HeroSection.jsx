@@ -1,59 +1,71 @@
-import { Box, Unstable_Grid2 as Grid, Container, Typography, LinearProgress } from "@mui/material";
-import { skills } from '../Data/skills'
+"use client"
+
+import "../app/style/heroSection.css"
 
 import logo from '../assets/dot-icon.png'
 
 import Image from 'next/image'
 
+import { motion } from "framer-motion";
+
+import SideMenu from "./SideMenu";
+
+
 
 const HeroSection = () => {
-  return (
-    <Container>
-      
-
-        <Grid container>
-          <Grid md={4} sx={{ display: "grid", placeItems: "center", overflow: 'hidden' }}>
-            <Image src={ logo } alt='site logo' sx={ { objectFit: 'contain' } } priority width={ 150 } />
-          </Grid>
-          <Grid md style={ { display: "grid", placeItems: "center", overflow: 'hidden' } }>
-            <Typography variant='h2' fontWeight={ 700 } sx={ { color: 'white', fontSize: '5vmin' } } >
+  
+  
+    return (
+      <section >
+        <div className="heroSection">
+          <div className="logoText">
+            <motion.div
+              initial={{ x: -750 }}
+              animate={{ x: 0, rotate: 1080 }}
+              transition={{ 
+                duration: 5 ,
+                repeat: 0,
+              }}
+              
+            >
+              <Image className="logo" src={logo} alt="site logo" width={150} priority />
+            </motion.div>
+            <motion.h1
+              initial={{ y: -150, rotate: -90 }}
+              animate={{ y: 0, rotate: 0 }}
+              transition={{
+                  duration: 2,
+                  type: "spring",
+              }}
+              style={{transformOrigin: "left"}}
+            >
               FredMadeThis.
-            </Typography>
-          </Grid>
-        </Grid>
+            </motion.h1>
+          </div>
+          <div className="mainText">
+            <p>Hello There, I am Fred.</p>
+            <p>Fullstack Developer, UX architect and JavaScript engineer.</p>
+            <p>Pressing buttons with my fingers to make magic happen on the internet.</p>
+            <p>You can view my projects, shop, resume, or contact me.</p>
+          </div>
 
-        <Grid>
-          <Typography variant="body1">
-            Hello There, I am Fred.
-          </Typography>
-        </Grid>
-
-        <Grid>
-          <Typography variant="body1">
-            Fullstack Developer, UX architect and JavaScript engineer.
-          </Typography>
-        </Grid>
-
-        <Grid mt={4}>
-          <Typography variant="body1">
-            Specialities:
-          </Typography>
-        </Grid>
-
-        <Grid mt={4}>
-          <Typography variant="body1">
-            Pressing buttons with my fingers to make magic happen on the internet.
-          </Typography>
-          <Typography variant="body1">
-            You can view my projects, shop, resume, or contact me.
-          </Typography>
-        </Grid>
-
-        <Grid>
-          **Add Social media icons here **
-        </Grid>
+          <div>
+            **Add Social media icons here **
+          </div>
+        </div>
+        <motion.div 
+          className="menuComp"
+          initial={{ x: 1000 }}
+          animate={{ x: 0 }}  
+          transition={{ 
+            duration: 2,
+            ease: "easeInOut",
+          }}
+        >
+          <SideMenu />
+        </motion.div>
       
-    </Container>
+    </section>
   );
 }
 

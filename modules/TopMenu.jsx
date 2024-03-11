@@ -1,10 +1,7 @@
 import {Box, Unstable_Grid2 as Grid, Link, Drawer , useMediaQuery, useTheme } from "@mui/material"
 import { ClickAwayListener } from '@mui/base'
 import { useState, useContext } from "react"
-import UserMenu from "./UserMenu"
 import MenuIcon from '@mui/icons-material/Menu'
-
-import { UserInfo } from '../contexts/userContext'
 
 const linkStyle = {
   fontSize: '3vw'
@@ -15,7 +12,7 @@ const TopMenu = () => {
   const theme = useTheme()
   const screenWidth = useMediaQuery( theme.breakpoints.up('sm') )
 
-  const { userData: { userName } } = useContext( UserInfo )
+  /* const { userData: { userName } } = useContext( UserInfo ) */
   
   const showMenu = {
     display: screenWidth ? 'block' : 'none',

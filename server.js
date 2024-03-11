@@ -21,7 +21,7 @@ server.use( express.urlencoded( { extended: true } ) )
 
 dotenv.config()
 //connect to DB
-connectMongo()
+/* connectMongo() */
 
 server.use(
   '/apiv2/user',
