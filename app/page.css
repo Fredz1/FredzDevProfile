@@ -22,11 +22,10 @@
   background-color: #555;
 }
 
-
 .mainBody {
   display: flex;
   flex-direction: column;
-  flex-grow: 1;
   background-color: #E79518;
   height: 100vh;
+  width: 100%;
 }

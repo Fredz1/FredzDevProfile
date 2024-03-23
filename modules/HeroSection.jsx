@@ -10,6 +10,8 @@ import { motion } from "framer-motion";
 
 import SideMenu from "./SideMenu";
 
+import SocialMedia from "./SocialMedia";
+
 
 
 const HeroSection = () => {
@@ -17,7 +19,7 @@ const HeroSection = () => {
   
     return (
       <section >
-        <div className="heroSection">
+        <div className="heroSection section-left">
           <div className="logoText">
             <motion.div
               initial={{ x: -750 }}
@@ -50,11 +52,11 @@ const HeroSection = () => {
           </div>
 
           <div>
-            **Add Social media icons here **
+            <SocialMedia />
           </div>
         </div>
         <motion.div 
-          className="menuComp"
+          className="menuComp section-right"
           initial={{ x: 1000 }}
           animate={{ x: 0 }}  
           transition={{ 

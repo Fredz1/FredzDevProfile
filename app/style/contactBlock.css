@@ -1,0 +1,62 @@
+section {
+  display: grid;
+  grid-template-columns: 3fr 1fr;
+  overflow: hidden;
+}
+
+.logoText {
+  display: grid;
+  place-items: center;
+  grid-template-columns: minmax(max-content, min-content) max-content;
+  margin: 0 auto;
+  justify-content: center;
+}
+
+.logo {
+  object-fit: contain;
+}
+
+.logoText h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: #0C101E;
+  margin: 0;
+  padding: 0;
+}
+
+.mainText{
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 3rem;
+  font-size: 1.50rem;
+  color: #0C101E;
+}
+
+.mainText p {
+  margin: 1rem 0;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: #FEFCE8 ;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+.contactArea {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.inputForm {
+  padding: 2rem;
+}
+
+.contactLinks {
+  display: grid;
+  padding: 2rem;
+}

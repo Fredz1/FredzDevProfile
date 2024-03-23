@@ -1,52 +1,69 @@
-import { Container, Typography, Unstable_Grid2 as Grid, Card, CardMedia, CardContent, CardActions, Button } from "@mui/material"
 import Link from "next/link"
-
-import taskAppPic from '../public/assets/images/simpleTasksCover.png'
-
+import {motion} from "framer-motion"
+import Image from "next/image"
+import SideMenu from "./SideMenu"
+import logo from '../assets/dot-icon.png'
+import "../app/style/projectsSection.css"
 
 const ProjectsSection = () => {
   
   return (
     <>
-      <Container>
-        <Grid container direction='column'>
-          <Grid>
-            <Typography variant="h5">
-              Projects.
-            </Typography>
-          </Grid>
-        </Grid>
-
-          <Grid container>
-
-            <Grid>
-              <Card sx={ { maxWidth: 280 } }>
-                <CardContent>
-                <CardMedia sx={{ height: 280 }} image='/assets/images/simpleTasksCover.png' />
-                  <Typography gutterBottom variant="h5" component="div">
-                    Simple Task App
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Set your tasks for the day and knock them down 1 by one.
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size="small">
-                    <Link href="/projects/tasker">
-                      Goto App
-                    </Link>
-                  </Button>
-                </CardActions>
-              </Card>
-            </Grid>
-
-            <Grid md={6}>
-              Project card 2
-            </Grid>
+      <section>
+        <div className="heroSection">
+          <div className="logoText">
+            <motion.div
+              initial={{ x: -750 }}
+              animate={{ x: 0, rotate: 1080 }}
+              transition={{
+                duration: 2,
+                repeat: 0,
+                type: "spring",
+                bounce: 0.5
+              }}
+            >
+              <Image className="logo" src={logo} alt="site logo" width={150} priority />
+            </motion.div>
+            <motion.h1
+              initial={{ y: -150, rotate: -90 }}
+              animate={{ y: 0, rotate: 0 }}
+              transition={{
+                duration: 2,
+                type: "spring",
+                bounce: 0.5
+              }}
+              style={{ transformOrigin: "left" }}
+            >
+              FredMadeThis.
+            </motion.h1>
+          </div>
+          <div className="mainText">
+            <p>I do not have many personal projects</p>
+            <p>but this is a start.</p>
             
-          </Grid>
+          </div>
 
-      </Container>
+          <div className="buttonContainer">
+            **add winelands project**
+          </div>
+
+          <div>
+            **Add Social media icons here **
+          </div>
+        </div>
+        <motion.div
+          className="menuComp"
+          initial={{ x: 1000 }}
+          animate={{ x: 0 }}
+          transition={{
+            duration: 2,
+            ease: "easeInOut",
+          }}
+        >
+          <SideMenu />
+        </motion.div>
+
+      </section>
     </>
   )
 }

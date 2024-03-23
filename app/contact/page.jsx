@@ -2,14 +2,14 @@
 
 import "../page.css"
 
-import ProjectsSection from '../../modules/ProjectsSection'
+import ContactBlock from '../../modules/contactBlock'
 import Footer from '../../modules/Footer' 
 
 function Page() {
   return (
     <>
       <div className="mainBody">
-        <ProjectsSection />
+        <ContactBlock />
         <Footer />
       </div>
     </>

@@ -11,8 +11,8 @@ const index = () => {
     <>
       <div className="mainBody">
         <HeroSection />
+        <Footer />
       </div>
-      <Footer />
     </>
   )
 }

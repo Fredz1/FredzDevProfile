@@ -95,7 +95,7 @@ const Icon = ({height, active}) => {
       <g id="smallDot">
         {
           active ?
-          <circle cx="125" cy="125" r="60" fill="#0C101E" />
+          <circle cx="125" cy="125" r="40" fill="#0C101E" />
           :
           <circle
             cx="150"
