@@ -7,8 +7,6 @@ const SocialMedia = ({direction}) => {
 
   const iconSize = "32px";
 
-  
-
   return (
     <div className={direction === "row" ? style.socialBlockRow :style.socialBlockColumn }>
       <Link href="https://www.facebook.com/fredmadethis/" className={style.socialLink}>

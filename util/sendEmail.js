@@ -14,13 +14,16 @@ const transporter = nodemailer.createTransport({
 });
 
 const sendEmail = async (formValues) => {
-  console.log("im here");
   try {
     const info = await transporter.sendMail({
       from: "fredwil25@gmail.com",
       to: "fredwil25@gmail.com",
       subject: "Website Enquiry",
-      text: "You have a web enquiry.",
+      text: `
+      Name: ${formValues.name}
+      Email: ${formValues.email}
+      Message: ${formValues.message}
+      `,
     });
 
     console.log("Email sent:", info.messageId);

@@ -19,6 +19,12 @@ const ContactBlock = () => {
     return emailRegex.test(email);
   };
 
+  const validateName = (name) => {
+    if(name.length < 3) return false;
+    const nameRegex = /^[a-zA-Z\s]+$/;
+    return nameRegex.test(name);
+  };
+
   const [mailSendingStatus, SetMailSendingStatus] = useState(0);
 
   const [responseMessage, setResponseMessage] = useState({
@@ -46,15 +52,36 @@ const ContactBlock = () => {
           ...e,
           recaptchaToken: recaptchaValue,
       };
+      
       SetMailSendingStatus(1);
+
+      if(!validateEmail(completeFormData.email)){
+        SetMailSendingStatus(2)
+        setResponseMessage({
+          type: "ERROR",
+          message:
+            "Please enter a valid email address.",
+        });
+      }
+
+      if(!validateName(completeFormData.name)){
+        SetMailSendingStatus(2)
+        setResponseMessage({
+          type: "ERROR",
+          message:
+            "Please enter a valid name.",
+        });
+      }
+
       try {
           const req = await sendEmail(completeFormData);
+          console.log(req)
           if (req.status === 250) {
               SetMailSendingStatus(2);
               setResponseMessage({
                   type: "SUCCESS",
                   message:
-                      "I am excited to hear from you, I will get back to you as soon as possible.",
+                    "I am excited to hear from you. I will get back to you as soon as possible.",
               });
           }
       } catch (e) {
@@ -124,21 +151,21 @@ const ContactBlock = () => {
                   <label>
                       <input
                           type="email"
-                          className={style.input}
+                          className={style.input}       
                           required
                           placeholder={"Email Address"}
                           {...register("email")}
-                          onChange={(e) => {validateEmail(e.target.value)}}
                       />
                   </label>
               </div>
               <div>
                   <label>
                       <input
-                          type="text"
+                          type="textarea"
                           className={style.input}
                           required
                           placeholder={"Message"}
+                          lines="4"
                           {...register("message")}
                       />
                   </label>

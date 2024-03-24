@@ -44,6 +44,8 @@ const HeroSection = () => {
             <p>Fullstack Developer, UX architect and JavaScript engineer.</p>
             <p>Pressing buttons with my fingers to make magic happen on the internet.</p>
             <p>You can view my projects, shop, resume, or contact me.</p>
+            <p>This site is still very much under construction...</p>
+            <p>Please contact me via linkedIn or Whatsapp for now. :)</p>
           </div>
 
           <div>

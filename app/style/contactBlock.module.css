@@ -1,6 +1,6 @@
 .section {
   display: grid;
-  grid-template-columns: 3fr 1fr;
+  grid-template-columns: minmax(75%, 3fr) 1fr;
   overflow: hidden;
   padding: 0 2rem;
 }
@@ -71,7 +71,7 @@
   font-size: large;
 }
 
-.inputError {
+.inputValid {
   width: 100%;
   padding: 12px;
   border: 1px solid green;
@@ -100,4 +100,12 @@
   grid-template-columns: 1fr 1fr;
   gap: 2rem;
   padding: 2rem;
+}
+
+.responseMessage {
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  font-size: 1.25rem;
+  color: #0C101E;
 }
