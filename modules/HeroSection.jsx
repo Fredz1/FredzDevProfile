@@ -1,15 +1,10 @@
 "use client"
 
 import "../app/style/heroSection.css"
-
 import logo from '../assets/dot-icon.png'
-
 import Image from 'next/image'
-
 import { motion } from "framer-motion";
-
 import SideMenu from "./SideMenu";
-
 import SocialMedia from "./SocialMedia";
 
 

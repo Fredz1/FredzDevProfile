@@ -1,8 +1,5 @@
 import { Button, Container, Unstable_Grid2 as Grid, Link, Typography } from "@mui/material"
 
-import FacebookOutlinedIcon from '@mui/icons-material/FacebookOutlined'
-import WhatsAppIcon from '@mui/icons-material/WhatsApp'
-
 const Footer = () => {
 
   const whatsAppMessage = "https://wa.me/27761349290?text=I%20am%20interested%20in%20working%20with%20a%20you."
@@ -10,16 +7,6 @@ const Footer = () => {
   return (
     <Container>
       <Grid container direction='row'gap={4} py={5} justifyContent='space-around' >
-        <Grid sx={{display: 'flex',  alignItems: 'center', gap: 2}}>
-          {/* social media */}
-          <Link href='www.facebook.com/fredmadethis' rel="noopener" target="_blank" sx={{display: 'flex',  alignItems: 'center'}}>
-            <FacebookOutlinedIcon  />
-          </Link>
-          <Link href={whatsAppMessage} justifyItems='center' sx={{display: 'flex',  alignItems: 'center'}}>
-            <WhatsAppIcon />
-          </Link>
-        </Grid>
-
         <Grid>
           <Grid container >
           {/* Quick Links */}

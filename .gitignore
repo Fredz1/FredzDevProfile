@@ -38,7 +38,7 @@ jspm_packages
 .next
 
 .env*
-
+.env
 out
 
 service-worker.js
@@ -49,3 +49,4 @@ sitemap.xml
 server.txt
 
 /cert
+.env
