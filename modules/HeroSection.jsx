@@ -47,7 +47,7 @@ const HeroSection = () => {
           </div>
 
           <div>
-            <SocialMedia />
+            <SocialMedia direction="row"/>
           </div>
         </div>
         <motion.div 

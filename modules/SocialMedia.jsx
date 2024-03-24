@@ -3,14 +3,14 @@ import Link from 'next/link';
 import style from '../app/style/socialMedia.module.css'
 
 
-const SocialMedia = () => {
+const SocialMedia = ({direction}) => {
 
   const iconSize = "32px";
 
   
 
   return (
-    <div className={style.socialBlock}>
+    <div className={direction === "row" ? style.socialBlockRow :style.socialBlockColumn }>
       <Link href="https://www.facebook.com/fredmadethis/" className={style.socialLink}>
         <svg
           fill="#000000"

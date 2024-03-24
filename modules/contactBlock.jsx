@@ -13,6 +13,12 @@ import style from '../app/style/contactBlock.module.css'
 
 const ContactBlock = () => {
 
+  const validateEmail = (email) => {
+    // Regular expression to validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
   const [mailSendingStatus, SetMailSendingStatus] = useState(0);
 
   const [responseMessage, setResponseMessage] = useState({
@@ -63,7 +69,7 @@ const ContactBlock = () => {
 
   return (
     <section className={style.section}>
-      <div>
+      <div >
         <div className={style.logoText}>
           <motion.div
             initial={{ x: -750 }}
@@ -88,8 +94,8 @@ const ContactBlock = () => {
           </motion.h1>
         </div>
         <div className={style.contactArea}>
-          <SocialMedia />
-          <form onSubmit={handleSubmit(submitHandler)} className={style.input}>
+          <SocialMedia direction="column" />
+          <form onSubmit={handleSubmit(submitHandler)} className={style.form}>
             <div>
               {responseMessage.type && (
                 <p
@@ -107,6 +113,7 @@ const ContactBlock = () => {
                 <label>
                   <input
                       type="text"
+                      className={style.input}
                       required
                       placeholder={"Full Name"}
                       {...register("name")}
@@ -117,9 +124,11 @@ const ContactBlock = () => {
                   <label>
                       <input
                           type="email"
+                          className={style.input}
                           required
                           placeholder={"Email Address"}
                           {...register("email")}
+                          onChange={(e) => {validateEmail(e.target.value)}}
                       />
                   </label>
               </div>
@@ -127,6 +136,7 @@ const ContactBlock = () => {
                   <label>
                       <input
                           type="text"
+                          className={style.input}
                           required
                           placeholder={"Message"}
                           {...register("message")}
@@ -143,7 +153,7 @@ const ContactBlock = () => {
 
                   <motion.button
                       type="submit"
-                      className={`mt-2 self-start text-lg uppercase `}
+                      className={style.submitButton}
                       initial={{ y: 300, opacity: 0 }}
                       animate={{ y: 0, opacity: 1 }}
                       transition={{ duration: 1.2, ease: "easeOut" }}
@@ -154,7 +164,7 @@ const ContactBlock = () => {
           </form>
         </div>
       </div>
-        <SideMenu />
+      <SideMenu />
     </section>
   );
 }
