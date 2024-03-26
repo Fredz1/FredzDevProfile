@@ -15,15 +15,15 @@ const ContactBlock = () => {
 
   const validateEmail = (email) => {
     // Regular expression to validate email format
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    return emailRegex.test(email)
   };
 
   const validateName = (name) => {
-    if(name.length < 3) return false;
-    const nameRegex = /^[a-zA-Z\s]+$/;
-    return nameRegex.test(name);
-  };
+    if(name.length < 3) return false
+    const nameRegex = /^[a-zA-Z\s]+$/
+    return nameRegex.test(name)
+  }
 
   const [mailSendingStatus, SetMailSendingStatus] = useState(0);
 
@@ -40,20 +40,20 @@ const ContactBlock = () => {
     email: "",
   });
 
-  const [recaptchaToken, setRecaptchaToken] = useState("");
-  const recaptchaRef = useRef();
+  const [recaptchaToken, setRecaptchaToken] = useState("")
+  const recaptchaRef = useRef()
 
   const submitHandler = async (e) => {
-      const recaptchaValue = recaptchaRef.current?.getValue();
+      const recaptchaValue = recaptchaRef.current?.getValue()
 
-      setRecaptchaToken(recaptchaValue || "");
+      setRecaptchaToken(recaptchaValue || "")
 
       const completeFormData = {
           ...e,
           recaptchaToken: recaptchaValue,
-      };
+      }
       
-      SetMailSendingStatus(1);
+      SetMailSendingStatus(1)
 
       if(!validateEmail(completeFormData.email)){
         SetMailSendingStatus(2)
@@ -61,7 +61,7 @@ const ContactBlock = () => {
           type: "ERROR",
           message:
             "Please enter a valid email address.",
-        });
+        })
       }
 
       if(!validateName(completeFormData.name)){
@@ -70,19 +70,19 @@ const ContactBlock = () => {
           type: "ERROR",
           message:
             "Please enter a valid name.",
-        });
+        })
       }
 
       try {
-          const req = await sendEmail(completeFormData);
+          const req = await sendEmail(completeFormData)
           console.log(req)
           if (req.status === 250) {
-              SetMailSendingStatus(2);
+              SetMailSendingStatus(2)
               setResponseMessage({
                   type: "SUCCESS",
                   message:
                     "I am excited to hear from you. I will get back to you as soon as possible.",
-              });
+              })
           }
       } catch (e) {
           SetMailSendingStatus(2);
@@ -90,9 +90,9 @@ const ContactBlock = () => {
               type: "ERROR",
               message:
                   "There is an error sending your message, please try again later.",
-          });
+          })
       }
-  };
+  }
 
   return (
     <section className={style.section}>
