@@ -3,19 +3,22 @@
 import "../app/style/heroSection.css"
 import logo from '../assets/dot-icon.png'
 import Image from 'next/image'
-import { motion } from "framer-motion";
+import { motion, useInView  } from "framer-motion";
 import SideMenu from "./SideMenu";
 import SocialMedia from "./SocialMedia";
+import { useRef } from "react";
 
 
 
 const HeroSection = () => {
-  
+
+  const header = useRef(null)
+  const isInView = useInView(header)
   
     return (
-      <section >
+      <section id="heroSection">
         <div className="heroSection section-left">
-          <div className="logoText">
+          <div className="logoText" ref={header}>
             <motion.div
               initial={{ x: -750 }}
               animate={{ x: 0, rotate: 1080 }}
