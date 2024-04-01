@@ -2,13 +2,12 @@ import React from 'react';
 import Link from 'next/link';
 import style from '../app/style/socialMedia.module.css'
 
-
-const SocialMedia = ({direction}) => {
+const SocialMedia = ({direction, iconsOnly = false}) => {
 
   const iconSize = "32px";
 
   return (
-    <div className={direction === "row" ? style.socialBlockRow :style.socialBlockColumn }>
+    <div className={ direction === "row" ? style.socialBlockRow : style.socialBlockColumn }>
       <Link href="https://www.facebook.com/fredmadethis/" className={style.socialLink}>
         <svg
           fill="#000000"
@@ -31,7 +30,9 @@ const SocialMedia = ({direction}) => {
             />
           </g>
         </svg>
-        <p>Facebook</p>
+        {
+          iconsOnly ? null : <p>Facebook</p>
+        }
       </Link>
       <Link href="https://www.linkedin.com/in/frederick-williams-cpt/" className={style.socialLink}>
         <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -40,7 +41,10 @@ const SocialMedia = ({direction}) => {
           <path d="M11 19H12C12.5523 19 13 18.5523 13 18V13.5C13 12 16 11 16 13V18.0004C16 18.5527 16.4477 19 17 19H18C18.5523 19 19 18.5523 19 18V12C19 10 17.5 9 15.5 9C13.5 9 13 10.5 13 10.5V10C13 9.44771 12.5523 9 12 9H11C10.4477 9 10 9.44772 10 10V18C10 18.5523 10.4477 19 11 19Z" fill="#0F0F0F"/>
           <path fillRule="evenodd" clipRule="evenodd" d="M20 1C21.6569 1 23 2.34315 23 4V20C23 21.6569 21.6569 23 20 23H4C2.34315 23 1 21.6569 1 20V4C1 2.34315 2.34315 1 4 1H20ZM20 3C20.5523 3 21 3.44772 21 4V20C21 20.5523 20.5523 21 20 21H4C3.44772 21 3 20.5523 3 20V4C3 3.44772 3.44772 3 4 3H20Z" fill="#0F0F0F"/>
         </svg>
-        <p>LinkedIn</p>
+        {
+          iconsOnly ? null : <p>LinkedIn</p>
+        }
+        
       </Link>
       <Link href="https://www.whatsapp.com" className={style.socialLink}>
         <svg width={iconSize} height={iconSize} viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" >
@@ -52,14 +56,18 @@ const SocialMedia = ({direction}) => {
               </g>
           </g>
       </svg>
-      <p>Whatsapp</p>
+      {
+        iconsOnly ? null : <p>Whatsapp</p>
+      }
       </Link>
       <Link href="mailto:fredwil25@gmail.com" className={style.socialLink}>
         <svg width={iconSize} height={iconSize} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M4 7.00005L10.2 11.65C11.2667 12.45 12.7333 12.45 13.8 11.65L20 7" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           <rect x="3" y="5" width="18" height="14" rx="2" stroke="#000000" strokeWidth="2" strokeLinecap="round" />
         </svg>
-      <p>Mail</p>
+        {
+          iconsOnly ? null : <p>Mail</p>
+        }
       </Link>
     </div>
   );

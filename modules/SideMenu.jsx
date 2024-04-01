@@ -6,6 +6,8 @@ import Link from "next/link"
 
 import { motion, useMotionValue, AnimatePresence } from "framer-motion";
 
+import SocialMedia from "./SocialMedia"
+
 const SideMenu = () => {
 
   const sideMenuItemList = [
@@ -64,6 +66,7 @@ const SideMenu = () => {
           })
         }
       </div>
+      {/* <SocialMedia direction="column" iconsOnly={ true }/> */}
     </div>
   )
 }
