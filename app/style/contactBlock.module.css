@@ -2,7 +2,7 @@
   display: grid;
   grid-template-columns: minmax(75%, 3fr) 1fr;
   overflow: hidden;
-  padding: 0 2rem;
+  padding: 0 0rem;
 }
 
 .logoText {

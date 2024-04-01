@@ -1,8 +1,7 @@
 "use client"
 
-import { motion } from "framer-motion";
-import Image from 'next/image'
-import logo from '../assets/fmt-logo-light.png'
+import { motion, useAnimate } from "framer-motion";
+import { useEffect } from "react";
 
 import "./page.css"
 
@@ -26,7 +25,7 @@ const animatedCircles = [
       initial:{ y: -750, rotate: 0, scale: 1.5 },
       animate:{ y: 0, rotate: getRandomNumber(45,720), scale: 1 },
       transition:{ 
-        duration: getRandomNumber(3,5),
+        duration: getRandomNumber(2,4),
       }
     }
   },
@@ -41,7 +40,7 @@ const animatedCircles = [
       initial:{ x: 750, rotate: 0, scale: 1.5 },
       animate:{ x: 0, rotate: getRandomNumber(0,1080), scale: 1 },
       transition:{ 
-        duration: getRandomNumber(3,5),
+        duration: getRandomNumber(2,3),
       }
     }
   },
@@ -56,20 +55,53 @@ const animatedCircles = [
       initial:{ x: -750, rotate: 0, scale: 1.25 },
       animate:{ x: 0, rotate: getRandomNumber(0,1080), scale: 1 },
       transition:{ 
-        duration: getRandomNumber(3,5),
+        duration: getRandomNumber(2,3),
       }
     }
   },
 ]
 
 
-const index = () => {
+const Index = () => {
+
+  const [intro, animate] = useAnimate()
+
+  const hideAnimation = () => {
+    animate(
+      "svg",
+      {
+        height: 0,
+        padding: 0,
+        transition: {
+          duration: 2,
+        },
+      }
+    )
+    animate(
+      intro.current,
+      {
+        height: 0,
+        padding: 0,
+        transition: {
+          duration: 2,
+        },
+      }
+    )
+  }
+
+  useEffect(() => {
+    setTimeout(() => {
+      hideAnimation()
+    }, 12000);
+  });
 
   return (
     <>
-      <div className="mainBody">
-        
-        <div className="introAnimation" >
+      <div className="mainBody" >
+        <div 
+          ref={intro}
+          className="introAnimation" 
+        >
           {
             animatedCircles.map((circle, index) => {
               return (
@@ -106,7 +138,7 @@ const index = () => {
             })
           }
           <motion.div
-            initial={{ x: 750 }}
+            initial={{ x: 1500 }}
             animate={{ x: 0 }}
             transition={{ 
               delay: 3.5,
@@ -122,11 +154,11 @@ const index = () => {
               />
             </svg>
           </motion.div>
-
           <motion.svg
+            id="nextpage"
             initial={{ rotate: 180, scale: 0, x: "-50%", y: 0, z:50}}
             animate={{ rotate: 0, scale: 1, x: "-50%", y: 0, z: 0 }}
-            transition={{ duration: 2, delay:4}}
+            transition={{ duration: 1, delay:5}}
             className="nextpage"
             width="250"
             height="250"
@@ -134,7 +166,7 @@ const index = () => {
             fill="none"
             xmlns="http://www.w3.org/2000/svg"
             onClick={() => {
-              document.getElementById("heroSection").scrollIntoView({ behavior: "smooth" });
+              hideAnimation()
             }}
           >
             <circle cx="125" cy="125" r="125" fill="#0C101E"/>
@@ -142,9 +174,6 @@ const index = () => {
             <path d="M78 162L130 210L180 162" stroke="#E79518" strokeWidth="10" strokeLinecap="round"/>
             <path d="M78 66L130 114L180 66" stroke="#E79518" strokeWidth="10" strokeLinecap="round"/>
           </motion.svg>
-
-          
-
         </div>
         <HeroSection/>
         <Footer />
@@ -153,4 +182,4 @@ const index = () => {
   )
 }
 
-export default index
+export default Index

@@ -1,0 +1,70 @@
+.sideMenu {
+  position: relative;
+  height: 100vh;
+  background-color: #0C101E;
+  padding-top: 50px;
+  z-index: 1000;
+  padding-left: 0.10rem;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  .sideMenuText {
+    font-size: 1.5rem;
+    padding: 0rem;
+    text-align: start;
+    text-decoration: none;
+    color: #E79518;
+    display: block;
+    width: 100%;
+  }
+
+  .menuItem {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 1rem;
+    margin: 0.5rem;
+    max-height: 2rem;
+    gap: 1rem;
+    color: #E79518;
+  }
+
+  .toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #E79518;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.sideMenuClosed {
+  position: relative;
+  height: 100vh;
+  background-color: #0C101E;
+  padding-top: 50px;
+  z-index: 1000;
+  padding-left: 0rem;
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+
+  .sideMenuText {
+    display: none;
+  }
+
+  .menuItem {
+    display: none;
+  }
+
+  .toggle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #E79518;
+    width: 32px;
+    height: 32px;
+  }
+}

@@ -1,23 +1,30 @@
 /** @type {import('next').NextConfig} */
+const path = require("path");
 
 const nextConfig = {
   env: {
-    SITEMAP_URL: 'https://www.fredmadethis.co.za'
+    SITEMAP_URL: "https://www.fredmadethis.co.za",
   },
   reactStrictMode: true,
   optimizeFonts: true,
   compiler: {
-    removeConsole: process.env.NODE_ENV === 'production' ? true : false,
+    removeConsole: process.env.NODE_ENV === "production" ? true : false,
   },
   images: {
     remotePatterns: [
       {
-        protocol: 'https',
-        hostname: 'picsum.photos',
-        pathname: '**'
-      }
-    ]
-  }
-}
+        protocol: "https",
+        hostname: "picsum.photos",
+        pathname: "**",
+      },
+    ],
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
+
+module.exports = {
+  sassOptions: {
+    includePaths: [path.join(__dirname, "styles")],
+  },
+};

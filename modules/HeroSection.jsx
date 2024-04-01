@@ -8,15 +8,13 @@ import SideMenu from "./SideMenu";
 import SocialMedia from "./SocialMedia";
 import { useRef } from "react";
 
-
-
 const HeroSection = () => {
 
   const header = useRef(null)
   const isInView = useInView(header)
   
     return (
-      <section id="heroSection">
+      <section className="heroSection">
         <div className="heroSection section-left">
           <div className="logoText" ref={header}>
             <motion.div
@@ -26,7 +24,6 @@ const HeroSection = () => {
                 duration: 5 ,
                 repeat: 0,
               }}
-              
             >
               <Image className="logo" src={logo} alt="site logo" width={150} priority />
             </motion.div>
@@ -57,8 +54,8 @@ const HeroSection = () => {
         </div>
         <motion.div 
           className="menuComp section-right"
-          initial={{ x: 1000 }}
-          animate={{ x: 0 }}  
+          initial={{ x: 1000, opacity: 0}}
+          animate={{ x: 0, opacity: 1}}  
           transition={{ 
             duration: 2,
             ease: "easeInOut",

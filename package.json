@@ -1,6 +1,6 @@
 {
   "name": "devprofile",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Developer Profile Of Frederick Williams",
   "main": "server.js",
   "scripts": {
@@ -54,6 +54,7 @@
     "eslint": "8.57.0",
     "eslint-config-next": "14.1.4",
     "morgan": "^1.10.0",
-    "nodemon": "^3.1.0"
+    "nodemon": "^3.1.0",
+    "sass": "^1.72.0"
   }
 }
