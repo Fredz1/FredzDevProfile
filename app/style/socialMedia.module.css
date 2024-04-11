@@ -1,18 +1,17 @@
 .socialBlockRow {
     display: grid;
+    grid-template-columns: repeat(4, 1fr);
     align-items: center;
     flex-direction: row;
     justify-content: center;
     gap: 2rem;
+    padding: 2rem 1rem;
 }
 
 .socialBlockColumn {
     display: grid;
     grid-auto-rows: auto;
     justify-items: start;
-    /* align-items: start;
-    flex-direction: column;
-    justify-content: start; */
     gap: 2rem;
 }
 

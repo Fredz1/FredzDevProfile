@@ -1,6 +1,11 @@
 section {
   display: grid;
-  grid-template-columns: 3fr min-content ;
+  grid-template-columns: minmax(200px, 1fr) min-content;
+  justify-content: space-between;
+}
+
+.heroSection {
+  width: 100%;
 }
 
 .logoText {
@@ -15,7 +20,7 @@ section {
   object-fit: contain;
 }
 
-.logoText h1{
+.logoText h1 {
   font-size: 3rem;
   font-weight: 700;
   color: #0C101E;
@@ -23,7 +28,7 @@ section {
   padding: 0;
 }
 
-.mainText{
+.mainText {
   font-family: Arial, Helvetica, sans-serif;
   padding: 3rem;
   font-size: 1.50rem;
@@ -37,4 +42,20 @@ section {
 .menuComp {
   display: flex;
   flex-grow: 1;
+}
+
+@media screen and (max-width: 768px) {
+
+  .logoText h1 {
+    font-size: 2rem;
+  }
+
+  .mainText {
+    font-size: 1.25rem;
+  }
+
+  .menuComp {
+    width: fit-content;
+  }
+
 }

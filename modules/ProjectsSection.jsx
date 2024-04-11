@@ -40,15 +40,6 @@ const ProjectsSection = () => {
           <div className="mainText">
             <p>I do not have many personal projects</p>
             <p>but this is a start.</p>
-            
-          </div>
-
-          <div className="buttonContainer">
-            **add winelands project**
-          </div>
-
-          <div>
-            **Add Social media icons here **
           </div>
         </div>
         <motion.div

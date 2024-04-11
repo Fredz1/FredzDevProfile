@@ -1,12 +1,12 @@
 .sideMenu {
   position: relative;
-  height: 100vh;
+  height: 100%;
   background-color: #0C101E;
   padding-top: 50px;
   z-index: 1000;
   padding-left: 0.10rem;
   display: flex;
-  width: 100%;
+  width: fit-content;
   flex-direction: column;
 
   .sideMenuText {
@@ -48,8 +48,9 @@
   z-index: 1000;
   padding-left: 0rem;
   display: flex;
-  width: 100%;
+  width: max-content;
   flex-direction: column;
+  justify-content: space-between;
 
   .sideMenuText {
     display: none;

@@ -61,12 +61,12 @@ const animatedCircles = [
   },
 ]
 
-
 const Index = () => {
 
   const [intro, animate] = useAnimate()
 
   const hideAnimation = () => {
+    setCookeie()
     animate(
       "svg",
       {
@@ -89,11 +89,20 @@ const Index = () => {
     )
   }
 
+  const setCookeie = () => {
+    window.sessionStorage.setItem("playAnimation", false)
+  }
+
   useEffect(() => {
-    setTimeout(() => {
+    if(window.sessionStorage.getItem("playAnimation")){
       hideAnimation()
-    }, 12000);
-  });
+    } else {
+      setTimeout(() => {
+        hideAnimation()
+        setCookeie()
+      }, 12000);
+    }
+  }, [])
 
   return (
     <>

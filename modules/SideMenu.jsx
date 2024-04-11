@@ -1,11 +1,8 @@
 import style from "../app/style/sideMenu.module.scss"
-
 import { useState, useEffect } from "react"
 import { usePathname } from 'next/navigation'
 import Link from "next/link"
-
-import { motion, useMotionValue, AnimatePresence } from "framer-motion";
-
+import { motion, AnimatePresence } from "framer-motion";
 import SocialMedia from "./SocialMedia"
 
 const SideMenu = () => {
@@ -33,25 +30,44 @@ const SideMenu = () => {
 
   const [iconSize, setIconSize] = useState(32)
   const [open, setOpen] = useState(false)
+  const [showMenuIcon, setShowMenuIcon] = useState(false)
+  const [menuVisibility, setMenuVisibility] = useState(false);
+
+
   
-  const getHeight = () => {
-    const menuItem = document.querySelector('#menuItem')
-    const height = menuItem?.offsetHeight
-    setIconSize(height)
+  const getWidth = () => {
+    const windowWidth = window.innerWidth
+    if(windowWidth < 768){
+      setIconSize(24)
+      setShowMenuIcon(true)
+      setMenuVisibility(false)
+    } else {
+      setIconSize(32)
+      setShowMenuIcon(false)
+      setMenuVisibility(true)
+    }
+
   }
 
   useEffect(() => {
-    getHeight()
-    window.addEventListener('resize', getHeight)
+    getWidth()
+    window.addEventListener('resize', getWidth)
     return () => {
-      window.removeEventListener('resize', getHeight)
+      window.removeEventListener('resize', getWidth)
     }
   }, [])
 
+  const toggleMenu = () => {
+    setMenuVisibility(!menuVisibility)
+  }
+
 
   return (
-    <div className={style.sideMenu} >
-      <ToggleButton open={open}/>
+    <div className={menuVisibility ? style.sideMenu : style.sideMenuClosed} >
+      {
+        showMenuIcon ? <ToggleButton toggleMenu={toggleMenu} /> : <></>
+      }
+      
       <div className={style.sideMenuText}>
         {
           sideMenuItemList.map((item, index) => {
@@ -65,8 +81,8 @@ const SideMenu = () => {
             )
           })
         }
+      <SocialMedia direction="row" iconsOnly={ true } />
       </div>
-      {/* <SocialMedia direction="column" iconsOnly={ true }/> */}
     </div>
   )
 }
@@ -115,19 +131,7 @@ const Icon = ({height, active}) => {
   );
 }
 
-const ToggleButton = () => {
-
-  const toggleMenu = () => {
-    setOpen(!open)
-    
-  }
-
-  const [open, setOpen] = useState(false);
-  const motionValue  =  useMotionValue(0);
-
-  useEffect(() => {
-    motionValue.set(open ? 1 : 0)
-  }, [motionValue, open])
+const ToggleButton = ({toggleMenu}) => {
 
   const pathVariants = {
     open: {
@@ -152,24 +156,7 @@ const ToggleButton = () => {
     >
       <circle cx="125" cy="125" r="125" fill="#0C101E"/>
       <AnimatePresence mode="wait">
-        <motion.path
-          d={open ? pathVariants.open.d : pathVariants.closed.d}
-          stroke="#E79518"
-          strokeWidth="10"
-          strokeLinecap="round"
-          variants={
-            {
-              open: {
-                transition: { duration: 2 }
-              },
-              closed: {
-                transition: { duration: 2 }
-              }
-            }
-          }
-          initial="closed"
-          animate={open ? 'open' : 'closed'}
-        />
+        
       </AnimatePresence>
     </svg>
   )
