@@ -3,15 +3,15 @@ import {motion} from "framer-motion"
 import Image from "next/image"
 import SideMenu from "./SideMenu"
 import logo from '../assets/dot-icon.png'
-import "../app/style/projectsSection.css"
+import style from "../app/projects/projectsSection.module.scss"
 
 const ProjectsSection = () => {
   
   return (
     <>
-      <section>
-        <div className="heroSection">
-          <div className="logoText">
+      <section className={style.section}>
+        <div className={style.heroSection}>
+          <div className={style.logoText}>
             <motion.div
               initial={{ x: -750 }}
               animate={{ x: 0, rotate: 1080 }}
@@ -22,7 +22,7 @@ const ProjectsSection = () => {
                 bounce: 0.5
               }}
             >
-              <Image className="logo" src={logo} alt="site logo" width={150} priority />
+              <Image className={style.logo} src={logo} alt="site logo" width={150} priority />
             </motion.div>
             <motion.h1
               initial={{ y: -150, rotate: -90 }}
@@ -37,13 +37,12 @@ const ProjectsSection = () => {
               FredMadeThis.
             </motion.h1>
           </div>
-          <div className="mainText">
+          <div className={style.mainText}>
             <p>I do not have many personal projects</p>
-            <p>but this is a start.</p>
+            <p>but here is 1</p>
           </div>
         </div>
         <motion.div
-          className="menuComp"
           initial={{ x: 1000 }}
           animate={{ x: 0 }}
           transition={{
@@ -53,7 +52,6 @@ const ProjectsSection = () => {
         >
           <SideMenu />
         </motion.div>
-
       </section>
     </>
   )

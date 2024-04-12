@@ -65,7 +65,7 @@ const SideMenu = () => {
   return (
     <div className={menuVisibility ? style.sideMenu : style.sideMenuClosed} >
       {
-        showMenuIcon ? <ToggleButton toggleMenu={toggleMenu} /> : <></>
+        showMenuIcon ? <ToggleButton toggleMenu={toggleMenu} menuVisibility={menuVisibility} /> : <></>
       }
       
       <div className={style.sideMenuText}>
@@ -131,7 +131,7 @@ const Icon = ({height, active}) => {
   );
 }
 
-const ToggleButton = ({toggleMenu}) => {
+const ToggleButton = ({toggleMenu, menuVisibility}) => {
 
   const pathVariants = {
     open: {
@@ -156,7 +156,9 @@ const ToggleButton = ({toggleMenu}) => {
     >
       <circle cx="125" cy="125" r="125" fill="#0C101E"/>
       <AnimatePresence mode="wait">
-        
+        {
+          menuVisibility ? pathVariants.open : pathVariants.closed
+        }
       </AnimatePresence>
     </svg>
   )

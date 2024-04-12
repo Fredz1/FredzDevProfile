@@ -1,0 +1,17 @@
+.footer {
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: space-around;
+  padding: 2rem;
+  place-items: center;
+
+  .copyDisclaimers {
+
+  }
+
+  .links > *{
+    text-decoration: none;
+    color: inherit;
+  }
+}
