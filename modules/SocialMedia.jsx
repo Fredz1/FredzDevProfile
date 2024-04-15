@@ -10,14 +10,14 @@ const SocialMedia = ({direction, iconsOnly = false}) => {
 
   return (
     <div className={ direction === "row" ? style.socialBlockRow : style.socialBlockColumn }>
-      <Link href="https://www.facebook.com/fredmadethis/" className={style.socialLink}>
+      <Link href="https://www.facebook.com/fredmadethis/" className={style.socialLink} target="_blank">
         <FacebookSVG width={iconSize} height={iconSize} />
         {
           iconsOnly ? null : <p>Facebook</p>
         }
       </Link>
 
-      <Link href="https://www.linkedin.com/in/frederick-williams-cpt/" className={style.socialLink}>
+      <Link href="https://www.linkedin.com/in/frederick-williams-cpt/" className={style.socialLink} target="_blank">
         <LinkedInSVG width={iconSize} height={iconSize} />
         {
           iconsOnly ? null : <p>LinkedIn</p>
@@ -25,14 +25,14 @@ const SocialMedia = ({direction, iconsOnly = false}) => {
         
       </Link>
 
-      <Link href="https://www.whatsapp.com" className={style.socialLink}>
+      <Link href="https://www.whatsapp.com" className={style.socialLink} target="_blank">
         <WhatsappSVG width={iconSize} height={iconSize} />
       {
         iconsOnly ? null : <p>Whatsapp</p>
       }
       </Link>
 
-      <Link href="mailto:fredwil25@gmail.com" className={style.socialLink}>
+      <Link href="mailto:fredwil25@gmail.com" className={style.socialLink} target="_blank">
         <MailSVG width={iconSize} height={iconSize} />
         {
           iconsOnly ? null : <p>Mail</p>

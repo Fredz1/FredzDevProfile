@@ -20,6 +20,13 @@
   "author": "Frederick Williams",
   "license": "ISC",
   "dependencies": {
+    "@tensorflow-models/coco-ssd": "^2.2.3",
+    "@tensorflow-models/mobilenet": "^2.1.1",
+    "@tensorflow/tfjs": "^4.17.0",
+    "@tensorflow/tfjs-backend-cpu": "^4.17.0",
+    "@tensorflow/tfjs-backend-webgl": "^4.17.0",
+    "@tensorflow/tfjs-converter": "^4.17.0",
+    "@tensorflow/tfjs-core": "^4.17.0",
     "axios": "^1.6.8",
     "bcrypt": "^5.1.1",
     "colors": "^1.4.0",
@@ -27,6 +34,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.1",
+    "formidable": "^3.5.1",
     "framer-motion": "^11.0.20",
     "jsonwebtoken": "^9.0.2",
     "mongoose": "^8.2.3",
@@ -50,6 +58,7 @@
     "eslint-config-next": "14.1.4",
     "morgan": "^1.10.0",
     "nodemon": "^3.1.0",
-    "sass": "^1.72.0"
+    "sass": "^1.72.0",
+    "typescript": "^5.4.5"
   }
 }
