@@ -6,8 +6,10 @@
   padding: 2rem;
   place-items: center;
 
-  .copyDisclaimers {
-
+  .logo {
+    object-fit: contain;
+    width: 75%;
+    height: auto;
   }
 
   .links > *{

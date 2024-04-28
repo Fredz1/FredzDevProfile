@@ -1,4 +1,4 @@
-section {
+.section {
   display: grid;
   grid-template-columns: minmax(200px, 1fr) min-content;
   justify-content: space-between;
@@ -22,21 +22,37 @@ section {
 
 .logoText h1 {
   font-size: 3rem;
-  font-weight: 700;
+  font-weight: 400;
   color: #0C101E;
   margin: 0;
   padding: 0;
 }
 
 .mainText {
+  display: grid;
+  grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr);
+  width: 100%;
+  gap: 2rem;
   font-family: Arial, Helvetica, sans-serif;
   padding: 3rem;
   font-size: 1.50rem;
   color: #0C101E;
+  font-family: "Fredoka One";
 }
 
-.mainText p {
-  margin: 1rem 0;
+
+.discText {
+  h2 {
+    font-size: 1.5rem;
+    padding: 1rem 0;
+    font-weight: 500;
+  }
+
+  p {
+    font-size: 1rem;
+    padding: 0 1rem;
+    
+  }
 }
 
 .menuComp {

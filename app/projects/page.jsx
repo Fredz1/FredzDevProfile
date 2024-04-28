@@ -1,6 +1,5 @@
 "use client"
 
-import "../page.css"
 
 import ProjectsSection from '../../modules/ProjectsSection'
 import Footer from '../../modules/Footer' 

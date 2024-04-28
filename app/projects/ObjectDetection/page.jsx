@@ -6,7 +6,7 @@ import Image from 'next/image'
 import axios from 'axios';
 import { load as cocoModalLoad } from '@tensorflow-models/coco-ssd'
 import * as tf from '@tensorflow/tfjs'
-import { startDetecting } from './modelDetection'
+import { startDetecting } from '../../server/modelDetection'
 
 const ObjectDetection = () => {
 
@@ -24,12 +24,20 @@ const ObjectDetection = () => {
     /* const formData = new FormData()
     formData.append('image', uploadedImage) */
 
+    // send the image to the server
+    /* const response = await axios.post('/api/modelDetection', formData, {
+      headers: {
+        'Content-Type': 'multipart/form-data'
+      }
+    }) */
 
-    let predictions = await startDetecting(imageEle)
+    let predictions = await startDetecting(uploadedImage)
 
-    if (predictions && canvasEle.current) {
+    console.log(predictions)
+
+    /* if (predictions && canvasEle.current) {
       draw(canvasEle.current.getContext('2d'), predictions)
-    } 
+    }  */
   }
 
   const setImage = event => {

@@ -6,7 +6,6 @@ const nextConfig = {
     SITEMAP_URL: "https://www.fredmadethis.co.za",
   },
   reactStrictMode: true,
-  optimizeFonts: true,
   compiler: {
     removeConsole: process.env.NODE_ENV === "production" ? true : false,
   },
@@ -19,12 +18,9 @@ const nextConfig = {
       },
     ],
   },
+  sassOptions: {
+    includePaths: [path.join(__dirname, "style")]
+  },
 };
 
 module.exports = nextConfig;
-
-module.exports = {
-  sassOptions: {
-    includePaths: [path.join(__dirname, "styles")],
-  },
-};

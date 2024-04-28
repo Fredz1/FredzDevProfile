@@ -191,7 +191,9 @@ const ContactBlock = () => {
           </form>
         </div>
       </div>
-      <SideMenu />
+      <div>
+        <SideMenu />
+      </div>
     </section>
   );
 }

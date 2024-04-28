@@ -1,6 +1,6 @@
 "use client"
 
-import "../page.css"
+import style from "../style/page.css"
 
 import ContactBlock from '../../modules/contactBlock'
 import Footer from '../../modules/Footer' 
@@ -8,7 +8,7 @@ import Footer from '../../modules/Footer'
 function Page() {
   return (
     <>
-      <div className="mainBody">
+      <div className={style.mainBody}>
         <ContactBlock />
         <Footer />
       </div>

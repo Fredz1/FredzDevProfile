@@ -8,6 +8,8 @@ const SocialMedia = ({direction, iconsOnly = false}) => {
 
   const iconSize = "32px";
 
+  const whatsAppMessage = "https://wa.me/27761349290?text=I%20am%20interested%20in%20working%20with%20a%20you."
+
   return (
     <div className={ direction === "row" ? style.socialBlockRow : style.socialBlockColumn }>
       <Link href="https://www.facebook.com/fredmadethis/" className={style.socialLink} target="_blank">
@@ -25,7 +27,7 @@ const SocialMedia = ({direction, iconsOnly = false}) => {
         
       </Link>
 
-      <Link href="https://www.whatsapp.com" className={style.socialLink} target="_blank">
+      <Link href={whatsAppMessage} className={style.socialLink} target="_blank">
         <WhatsappSVG width={iconSize} height={iconSize} />
       {
         iconsOnly ? null : <p>Whatsapp</p>
