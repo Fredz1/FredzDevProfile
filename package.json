@@ -20,12 +20,6 @@
   "author": "Frederick Williams",
   "license": "ISC",
   "dependencies": {
-    "@tensorflow-models/coco-ssd": "^2.2.3",
-    "@tensorflow/tfjs": "^4.17.0",
-    "@tensorflow/tfjs-backend-cpu": "^4.17.0",
-    "@tensorflow/tfjs-backend-webgl": "^4.17.0",
-    "@tensorflow/tfjs-converter": "^4.17.0",
-    "@tensorflow/tfjs-core": "^4.17.0",
     "axios": "^1.6.8",
     "colors": "^1.4.0",
     "express": "^4.19.1",
