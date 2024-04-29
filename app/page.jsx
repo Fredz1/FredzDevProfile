@@ -73,7 +73,7 @@ const Index = () => {
         height: 0,
         padding: 0,
         transition: {
-          duration: 2,
+          duration: 0,
         },
       }
     )
@@ -83,7 +83,7 @@ const Index = () => {
         height: 0,
         padding: 0,
         transition: {
-          duration: 2,
+          duration: 0,
         },
       }
     )
@@ -94,14 +94,15 @@ const Index = () => {
   }
 
   useEffect(() => {
-    if(window.sessionStorage.getItem("playAnimation" === true)){
+    hideAnimation()
+    /* if(window.sessionStorage.getItem("playAnimation" === true)){
       hideAnimation()
     } else {
       setTimeout(() => {
         hideAnimation()
         setCookeie()
       }, 12000);
-    }
+    } */
   }, [])
 
   return (
