@@ -112,8 +112,8 @@ const ContactBlock = () => {
             initial={{ y: -150, rotate: -90 }}
             animate={{ y: 0, rotate: 0 }}
             transition={{
-                duration: 2,
-                type: "spring",
+              duration: 2,
+              type: "spring",
             }}
             style={{transformOrigin: "left"}}
           >
@@ -136,58 +136,51 @@ const ContactBlock = () => {
                 </p>
               )}
             </div>
-              <div>
-                <label>
-                  <input
-                      type="text"
-                      className={style.input}
-                      required
-                      placeholder={"Full Name"}
-                      {...register("name")}
-                  />
-                </label>
-              </div>
-              <div>
-                  <label>
-                      <input
-                          type="email"
-                          className={style.input}       
-                          required
-                          placeholder={"Email Address"}
-                          {...register("email")}
-                      />
-                  </label>
-              </div>
-              <div>
-                  <label>
-                      <input
-                          type="textarea"
-                          className={style.input}
-                          required
-                          placeholder={"Message"}
-                          lines="4"
-                          {...register("message")}
-                      />
-                  </label>
-              </div>
-              <div>
-                  {/* <ReCAPTCHA
-                      ref={recaptchaRef}
-                      sitekey={process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY || ""}
-                      className="my-4"
-                      onChange={(value) => setRecaptchaToken(value || "")}
-                  /> */}
-
-                  <motion.button
-                      type="submit"
-                      className={style.submitButton}
-                      initial={{ y: 300, opacity: 0 }}
-                      animate={{ y: 0, opacity: 1 }}
-                      transition={{ duration: 1.2, ease: "easeOut" }}
-                  >
-                      {mailSendingStatus === 1 ? "Sending" : "Submit"}
-                  </motion.button>
-              </div>
+            <div>
+              <label>
+                <input
+                  type="text"
+                  className={style.input}
+                  required
+                  placeholder={"Full Name"}
+                  {...register("name")}
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                <input
+                  type="email"
+                  className={style.input}       
+                  required
+                  placeholder={"Email Address"}
+                  {...register("email")}
+                />
+              </label>
+            </div>
+            <div>
+              <label>
+                <input
+                  type="textarea"
+                  className={style.input}
+                  required
+                  placeholder={"Message"}
+                  lines="4"
+                  {...register("message")}
+                />                  
+              </label>
+            </div>
+            <div>
+              <motion.button
+                type="submit"
+                className={style.submitButton}
+                initial={{ y: 300, opacity: 0 }}
+                animate={{ y: 0, opacity: 1 }}
+                transition={{ duration: 1.2, ease: "easeOut" }}
+              >
+                {mailSendingStatus === 1 ? "Sending" : "Submit"}
+              </motion.button>
+            </div>
           </form>
         </div>
       </div>

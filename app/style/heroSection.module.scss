@@ -1,77 +1,119 @@
-.section {
-  display: grid;
-  grid-template-columns: minmax(200px, 1fr) min-content;
+.section{
+  display: grid;;
+  grid-template-columns: auto auto;
+  padding: 0 ;
+  max-width: 100vw;
+  overflow: hidden;
   justify-content: space-between;
-}
 
-.heroSection {
-  width: 100%;
-}
-
-.logoText {
-  display: grid;
-  place-items: center;
-  grid-template-columns: minmax(max-content, min-content) max-content;
-  margin: 0 auto;
-  justify-content: center;
-}
-
-.logo {
-  object-fit: contain;
-}
-
-.logoText h1 {
-  font-size: 3rem;
-  font-weight: 400;
-  color: #0C101E;
-  margin: 0;
-  padding: 0;
-}
-
-.mainText {
-  display: grid;
-  grid-template-columns: minmax(200px, 1fr) minmax(200px, 1fr);
-  width: 100%;
-  gap: 2rem;
-  font-family: Arial, Helvetica, sans-serif;
-  padding: 3rem;
-  font-size: 1.50rem;
-  color: #0C101E;
-  font-family: "Fredoka One";
-}
-
-
-.discText {
-  h2 {
-    font-size: 1.5rem;
-    padding: 1rem 0;
-    font-weight: 500;
+  .logoText{
+    display: grid;
   }
 
-  p {
-    font-size: 1rem;
-    padding: 0 1rem;
+  .leftSide {
+    display: grid;
+    grid-template-rows: max-content auto;
+    gap: 1rem;
+
+    .mainText {
+      display: grid;
+      grid-template-rows: auto auto;
+      align-content: space-between;
+      height: 100vh;
+      background-color: antiquewhite;
+
+      .mainTopText{
+        overflow: hidden;
+      }
+
+      .mainBottomText {
+        padding-bottom: 4rem;
+        h3 {
+          font-size: 24px;
+          font-weight: 400;
+        }
+      }
+
+      .heroVideo{
+
+      }
+
+      h1{
+        font-size: 60px;
+        font-weight: 400;
+      }
+    }
+
+    .pitch {
+      display: grid;
+      grid-template-rows: 1fr 1fr;
+      height: 100vh;
+      
+      .topBlock{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+
+        .leftBlock{
+          overflow: hidden;
+
+          img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+
+        }
+      }
+      .bottomBlock{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+    }
+
+    .skills {
+      height: 100vh;
+
+      .blurb {
+        font-size: 4rem;
+        width: 20ch;
+      }
+
+
+      .skillsBlocks{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+
+        .skillsBlockLeft {
+          font-size: 2rem;
+          border: 1px solid black;
+          height: 10rem;
+          padding: 1rem;
+
+          
+        }
+
+        .skillsBlockRight {
+          display: grid;
+          grid-template-rows: 1fr 1fr;
+          font-size: 2rem;
+          border: 1px solid black;
+          height: 10rem;
+          padding: 1rem;
+        }
+      }
+
+    }
+
+    .headline{
+      font-size: 2rem;
+    }
+
+      
     
-  }
-}
 
-.menuComp {
-  display: flex;
-  flex-grow: 1;
-}
-
-@media screen and (max-width: 768px) {
-
-  .logoText h1 {
-    font-size: 2rem;
-  }
-
-  .mainText {
-    font-size: 1.25rem;
-  }
-
-  .menuComp {
-    width: fit-content;
+    
   }
 
 }

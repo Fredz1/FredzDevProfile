@@ -2,118 +2,136 @@
 
 import logo from '../assets/dot-icon.png'
 import Image from 'next/image'
-import { motion, useInView  } from "framer-motion";
+import { useInView  } from "framer-motion";
 import SideMenu from "./SideMenu";
 import { useRef } from "react";
-import SkillsCard from "./SkillsCard";
+import { gsap } from 'gsap';
+import { useGSAP } from '@gsap/react';
 import style from '../app/style/heroSection.module.scss'
+import Header from './Header/Header'
+import Curve from './CurveAnimation/Curve'
+import { useScroll, useSpring } from "framer-motion"
+import uxImage from '../public/assets/images/ux-design.jpg'
 
-const skills = [
-  {
-    name: "ReactJs",
-    level: 10
-  },
-  {
-    name: "NextJs",
-    level: 10
-  },
-  {
-    name: "HTML",
-    level: 10
-  },
-  {
-    name: "JavaScript",
-    level: 10
-  },
-  {
-    name: "GIT",
-    level: 10
-  },
-  {
-    name: "RESTful Services/APIs",
-    level: 10
-  },
-  {
-    name: "Responsive/Mobile Design",
-    level: 10
-  },
-  {
-    name: "Python",
-    level: 10
-  },
-]
+gsap.registerPlugin(useGSAP);
 
 const HeroSection = () => {
 
+  const heroTopText = useRef()
+
   const header = useRef(null)
   const isInView = useInView(header)
+
+  const animationContainer = useRef()
+
+  useGSAP(
+    () => {
+      gsap.fromTo('.text', { y: 200, opacity: 0, duration: 1 }, { y: 0, opacity: 1, duration: 1 });
+      /* gsap.to('.text', { y: 0 }); */
+    },
+    { scope: heroTopText }
+  )
+
+  const { scrollYProgress } = useScroll({
+    target: animationContainer,
+    offset: ["start end", "end start"]
+  });
+
+  const offsetSpring = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
+
+
+  
   
     return (
       <section className={style.section}>
-        <div >
-          <div className={style.logoText} ref={header}>
-            <motion.div
-              initial={{ x: -750 }}
-              animate={{ x: 0, rotate: 1080 }}
-              transition={{ 
-                duration: 5 ,
-                repeat: 0,
-              }}
-            >
-              <Image className={style.logo} src={logo} alt="site logo" width={150} priority />
-            </motion.div>
-            <motion.h1
-              initial={{ y: -150, rotate: -90 }}
-              animate={{ y: 0, rotate: 0 }}
-              transition={{
-                  duration: 2,
-                  type: "spring",
-              }}
-              style={{transformOrigin: "left"}}
-            >
-              FredMadeThis.
-            </motion.h1>
-          </div>
-          <div className={style.mainText}>
-            <div className={style.discText}>
-              <h2>Hello There, I am Fred.</h2>
-              <p>
-                I&apos;m a passionate Fullstack Developer, UX architect, and JavaScript engineer, dedicated to crafting seamless digital experiences.
-              </p>
-              <h2>What I do:</h2>
-              <p>
-                As a Fullstack Developer, I specialize in both frontend and backend technologies, ensuring every aspect of a project works harmoniously. My expertise in UX architecture allows me to design intuitive interfaces that prioritize user satisfaction. From conceptualization to implementation, I am driven by the challenge of turning ideas into reality.
-              </p>
-              <h2>My Approach:</h2>
-              <p>
-                I believe in the power of innovation and creativity to drive meaningful change. By combining technical prowess with a keen eye for design, I create digital solutions that captivate audiences and deliver tangible results. Whether it is building dynamic web applications or optimizing user journeys, I thrive on pushing boundaries and exceeding expectations.
-              </p>
-              <h2>Let&apos;s Connect:</h2>
-              <p>
-                Feel free to explore my projects, browse my shop for curated tech products, check out my resume to learn more about my skills and experiences, or reach out to me directly.
-              </p>
-              <h2>Stay Tuned:</h2>
-              <p>This site is continually evolving as I add more content and features. Keep checking back for updates and new insights into my work and interests.</p>
-              <h2>Get in Touch:</h2>
-              <p>While the site is under construction, you can contact me via LinkedIn or WhatsApp. I&apos;m always excited to connect with fellow enthusiasts, collaborators, and potential clients.</p>
+        <div className={ style.leftSide }>
+          {/* <Header /> */}
+          <div className={ style.mainText }>
+            <div className={style.mainTopText} ref={heroTopText}>
+              <h1>Design a solution</h1>
+              <h1>which works for you</h1>
             </div>
-            <div>
-              {
-                skills.map((skill, index) => {
-                  return (
-                    <SkillsCard skills={skill} key={`skill-${index}`} />
-                  )
-                })
-              }
+
+            {/* <div className={style.heroVideo}>
+              <video 
+                autoPlay 
+                loop 
+                muted 
+                controlsList="nofullscreen nodownload noremoteplayback noplaybackrate"
+              >
+                <source src="/assets/video/heroVideo.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            </div> */}
+
+            <div className={ style.mainBottomText }>
+              <h3>Let me plan, design and build</h3>
+              <h3>web applications that are tailored to your needs.</h3>
+            </div>
           </div>
+
+          <div className={style.pitch}>
+            <div className={ style.topBlock }>
+              <div>
+                <h2>Designing UX is hard</h2>
+                <h2>Let me simplify it</h2>
+              </div>
+              <div className={style.leftBlock}>
+                <Image src={ uxImage } alt="UX Image" width={200} height={150} />
+                {/* Work on the curve curving */}
+                {/* <Curve scrollYProgress={ scrollYProgress } forwardRef={ animationContainer } /> */}
+              </div>
+            </div>
+            <div className={ style.bottomBlock }>
+              <div>
+                bottom left
+              </div>
+              <div>
+                bottom right
+              </div>
+            </div>
+          </div>
+          <div className={ style.skills }>
+            <div>
+              <div className={style.blurb}>
+                <p> Design skills that ensure your market success</p> 
+              </div>
+              <div className={style.skillsBlocks}>  
+                <div className={ style.skillsBlockLeft }>
+
+                  <div>Web Design</div>
+
+                  <div>
+                    {/* list */}
+                  </div>
+                  
+                </div>
+                <div className={ style.skillsBlockRight }>
+                  <div>
+                    Design
+                  </div>
+                  <div>
+                    Webflow Development
+                  </div>
+                </div>
+                
+              </div>
+            </div>
+
+          </div>
+
+          <div className={style.headline}>
+            A reliable partner for your digital success
+          </div>
+
+
         </div>
-        </div>
-        <div 
-          className={style.menuComp}
-        >
-          <SideMenu/>
-        </div>
-      
+        <SideMenu/>
     </section>
   );
 }

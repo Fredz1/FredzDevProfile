@@ -94,7 +94,7 @@ const Index = () => {
   }
 
   useEffect(() => {
-    hideAnimation()
+    /* hideAnimation() */
     /* if(window.sessionStorage.getItem("playAnimation" === true)){
       hideAnimation()
     } else {
@@ -108,7 +108,7 @@ const Index = () => {
   return (
     <>
       <div className={style.mainBody} >
-        <div 
+        {/* <div 
           ref={intro}
           className={style.introAnimation}
         >
@@ -184,7 +184,7 @@ const Index = () => {
             <path d="M78 162L130 210L180 162" stroke="#E79518" strokeWidth="10" strokeLinecap="round"/>
             <path d="M78 66L130 114L180 66" stroke="#E79518" strokeWidth="10" strokeLinecap="round"/>
           </motion.svg>
-        </div>
+        </div> */}
         <HeroSection/>
         <Footer />
       </div>

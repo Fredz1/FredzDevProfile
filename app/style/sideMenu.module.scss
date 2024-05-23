@@ -1,5 +1,5 @@
 .toggleButton {
-  position: absolute;
+  position: fixed;
   top: 10;
   right: 0;
 }
@@ -8,11 +8,10 @@
   position: relative;
   height: 100vh;
   background-color: #0C101E;
-  padding-top: 50px;
   z-index: 1000;
   padding-left: 0.10rem;
   display: flex;
-  width: fit-content;
+  width: max-content;
   flex-direction: column;
   overflow: hidden;
 
@@ -54,25 +53,16 @@
   padding-top: 50px;
   z-index: 1000;
   padding-left: 0rem;
-  display: flex;
-  width: max-content;
+  visibility: hidden;
   flex-direction: column;
+  width: 1rem;
   justify-content: space-between;
 
   .sideMenuText {
-    display: none;
+    visibility: hidden;
   }
 
   .menuItem {
-    display: none;
-  }
-
-  .toggle {
-    position: absolute;
-    top: 0;
-    right: 0;
-    color: #E79518;
-    width: 32px;
-    height: 32px;
+    visibility: hidden;
   }
 }

@@ -11,7 +11,7 @@
 
 /* Rest of your CSS code */
 html {
-  background-color: #E79518;
+  scroll-behavior: smooth;
 }
 
 /* custom styles for scrollbar */
@@ -36,7 +36,8 @@ html {
   display: flex;
   flex-direction: column;
   background-color: #E79518;
-  width: 100%;
+  width: 100vw;
+  overflow: hidden;
 }
 
 .introAnimation {
