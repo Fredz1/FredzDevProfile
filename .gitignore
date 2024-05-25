@@ -38,7 +38,7 @@ jspm_packages
 .next
 
 .env*
-.env
+*.env
 out
 
 service-worker.js
