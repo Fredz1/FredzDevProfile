@@ -1,65 +1,266 @@
 "use server"
 
-import PDFDocument from 'pdfkit'
-const fs = require('fs');
-/* import Helvetica from 'pdfkit/js/data/Helvetica.afm' */
-import Helvetica from './Helvetica.ttf'
-
-fs.writeFileSync('data/Helvetica.afm', Helvetica)
+import { PDFDocument, StandardFonts, rgb } from 'pdf-lib'
+import fs from 'fs'
 
 
 
-const createPDF = async (info) => {
+const createPDF = async (formInfo, servicesList) => {
 
-  const doc = new PDFDocument();
+  console.log(servicesList)
 
-  // Pipe its output somewhere
-  doc.pipe(fs.createWriteStream('./output.pdf'));
+  const pdfDoc = await PDFDocument.create()
 
-  // draw some text
-  doc.fontSize(25).text('Here is some vector graphics...', 100, 80);
-
-  // some vector graphics
-  doc
-    .save()
-    .moveTo(100, 150)
-    .lineTo(100, 250)
-    .lineTo(200, 250)
-    .fill('#FF3300');
-
-  doc.circle(280, 200, 50).fill('#6600FF');
-
-  // an SVG path
-  doc
-    .scale(0.6)
-    .translate(470, 130)
-    .path('M 250,75 L 323,301 131,161 369,161 177,301 z')
-    .fill('red', 'even-odd')
-    .restore();
-
-  // and some justified text wrapped into columns
-  doc
-    .text('And here is some wrapped text...', 100, 300)
-    .font('Times-Roman', 13)
-    .moveDown()
-    .text(lorem, {
-      width: 412,
-      align: 'justify',
-      indent: 30,
-      columns: 2,
-      height: 300,
-      ellipsis: true
-    });
-
-  // Finalize PDF file
-  // end and display the document in the iframe to the right
-  doc.end();
-
-  stream.on('finish', () => {
-    iframe.src = stream.toBlobURL('application/pdf');
-  });
+  // Embed the Times Roman font
+  const timesRomanFont = await pdfDoc.embedFont(StandardFonts.TimesRoman)
   
-  return "success"
+  // Add a blank page to the document
+  const page = pdfDoc.addPage()
+
+  // Get the width and height of the page
+  const { width, height } = page.getSize()
+
+  // Draw a string of text toward the top of the page
+  page.drawText(`Invoice: ${formInfo.month}-${formInfo.invoiceNumber}`, {
+    x: 10,
+    y: height-30,
+    size: 20,
+    font: timesRomanFont,
+    color: rgb(0.38, 0.353, 0.133) /* rgb(38%,35.3%,13.3%) */
+  })
+
+  page.drawText(`Michele Williams`, {
+    x: 10,
+    y: height-70,
+    size: 40,
+    font: timesRomanFont,
+    color: rgb(0.659, 0.349, 0.078) /* 65.9, 34.9, 7.8 */
+  })
+
+  page.drawText(`Address:`, {
+    x: 10,
+    y: height-110,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0.5, 0.5, 0.5)
+  })
+
+  page.drawText(`83 Heldersig Road, Thornton`, {
+    x: 10,
+    y: height-130,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0.5, 0.5, 0.5)
+  })
+
+  page.drawText(`7460`, {
+    x: 10,
+    y: height-150,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0.5, 0.5, 0.5)
+  })
+
+  page.drawText(`Phone: ${formInfo.phone}`, {
+    x: 10,
+    y: height-170,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0.5, 0.5, 0.5)
+  })
+
+  page.drawText(`Date: ${formInfo.date}`, {
+    x: 10,
+    y: height-190,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0.5, 0.5, 0.5)
+  })
+
+  page.drawText(`Bill To: ${formInfo.billTo.receiverName}`, {
+    x: 10,
+    y: height-210,
+    size: 18,
+    font: timesRomanFont,
+    color: rgb(0.659, 0.349, 0.078)
+  })
+
+  page.drawText(`Att: ${formInfo.billTo.attentionName}`, {
+    x: 10,
+    y: height-230,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0.5, 0.5, 0.5)
+  })
+
+  page.drawText(`Address: ${formInfo.billTo.receiverAddress}`, {
+    x: 10,
+    y: height-250,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0.5, 0.5, 0.5)
+  })
+
+  page.drawText(`Phone: ${formInfo.billTo.receiverPhone}`, {
+    x: 10,
+    y: height-270,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0.5, 0.5, 0.5)
+  })
+
+  page.drawText(`Email: ${formInfo.billTo.receiverEmail}`, {
+    x: 10,
+    y: height-290,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0.5, 0.5, 0.5)
+  })
+
+  page.drawText(`For Services:`, {
+    x: width/2,
+    y: height-210,
+    size: 20,
+    font: timesRomanFont,
+    color: rgb(0.659, 0.349, 0.078)
+  })
+
+  page.drawText(`${formInfo.forServices}`, {
+    x: width/2,
+    y: height-230,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0.5, 0.5, 0.5)
+  })
+
+  // Draw line under Bill To
+  page.drawLine({
+    start: { x: 10, y: height-300 },
+    end: { x: width-10, y: height-300 },
+    thickness: 0.5,
+    color: rgb(0.659, 0.349, 0.078)
+  })
+
+  
+  //Table Headings
+
+  let headingsHeight = height - 320
+
+
+  page.drawText(`Description`, {
+    x: 10,
+    y: headingsHeight,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0.5, 0.5, 0.5)
+  })
+  
+  page.drawText(`Date`, {
+    x: width/2,
+    y: headingsHeight,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0.5, 0.5, 0.5)
+  })
+
+  page.drawText(`Hours`, {
+    x: 450,
+    y: headingsHeight,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0.5, 0.5, 0.5)
+  })
+
+  page.drawText(`Amount`, {
+    x: width-75,
+    y: headingsHeight,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0.5, 0.5, 0.5)
+  })
+  
+  // Render Line Items
+  let y = height - 320
+  let total = 0
+
+  servicesList.forEach((service, index) => {
+
+    total += parseInt(service.serviceTotal)
+    y -= 20
+
+    page.drawText(`${service.serviceDescription}`, {
+      x: 10,
+      y: y,
+      size: 15,
+      font: timesRomanFont,
+      color: rgb(0.5, 0.5, 0.5)
+    })
+
+    page.drawText(`${service.serviceDate}`, {
+      x: width/2,
+      y: y,
+      size: 15,
+      font: timesRomanFont,
+      color: rgb(0.5, 0.5, 0.5)
+    })
+
+    page.drawText(`${service.serviceHours}`, {
+      x: 450,
+      y: y,
+      size: 15,
+      font: timesRomanFont,
+      color: rgb(0.5, 0.5, 0.5)
+    })
+
+    page.drawText(`R ${service.serviceTotal}`, {
+      x: width-75,
+      y: y,
+      size: 15,
+      font: timesRomanFont,
+      color: rgb(0.5, 0.5, 0.5)
+    })
+  })
+
+  // Draw line under Line Items Table
+  page.drawLine({
+    start: { x: 10, y: y-20 },
+    end: { x: width-10, y: y-20 },
+    thickness: 0.5,
+    color: rgb(0.659, 0.349, 0.078)
+  })
+
+  // Draw Total
+  page.drawText(`Total:`, {
+    x: 450,
+    y: y-40,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0.5, 0.5, 0.5)
+  })
+
+  page.drawText(`R ${total}`, {
+    x: width-75,
+    y: y-40,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0.5, 0.5, 0.5)
+  })
+
+
+
+  
+
+  
+
+
+
+  // Serialize the PDFDocument to bytes (a Uint8Array)
+  //const pdfBytes = await pdfDoc.save()
+  const pdfBytes = await pdfDoc.saveAsBase64({ dataUri: true })
+
+  //fs.writeFileSync('./output.pdf', pdfBytes)
+
+  return pdfBytes
 }
 
 export default createPDF
