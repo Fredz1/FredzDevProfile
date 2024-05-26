@@ -14,8 +14,7 @@
     "buildExport": "next build && next export",
     "start": "next start",
     "now-build": "next build",
-    "lint": "next lint",
-    "postbuild": "next-sitemap"
+    "lint": "next lint"
   },
   "keywords": [
     "Developer Profile"
