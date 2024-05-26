@@ -50,7 +50,7 @@ const createPDF = async (formInfo, servicesList) => {
     y: height-130,
     size: 15,
     font: timesRomanFont,
-    color: rgb(0.5, 0.5, 0.5)
+    color: rgb(0, 0, 0)
   })
 
   page.drawText(`7460`, {
@@ -58,10 +58,10 @@ const createPDF = async (formInfo, servicesList) => {
     y: height-150,
     size: 15,
     font: timesRomanFont,
-    color: rgb(0.5, 0.5, 0.5)
+    color: rgb(0, 0, 0)
   })
 
-  page.drawText(`Phone: ${formInfo.phone}`, {
+  page.drawText(`Phone:`, {
     x: 10,
     y: height-170,
     size: 15,
@@ -69,12 +69,28 @@ const createPDF = async (formInfo, servicesList) => {
     color: rgb(0.5, 0.5, 0.5)
   })
 
-  page.drawText(`Date: ${formInfo.date}`, {
+  page.drawText(`${formInfo.phone}`, {
+    x: 60,
+    y: height-170,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0, 0, 0)
+  })
+
+  page.drawText(`Date:`, {
     x: 10,
     y: height-190,
     size: 15,
     font: timesRomanFont,
     color: rgb(0.5, 0.5, 0.5)
+  })
+
+  page.drawText(` ${formInfo.date}`, {
+    x: 40,
+    y: height-190,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0, 0, 0)
   })
 
   page.drawText(`Bill To: ${formInfo.billTo.receiverName}`, {
@@ -150,7 +166,7 @@ const createPDF = async (formInfo, servicesList) => {
   page.drawText(`Description`, {
     x: 10,
     y: headingsHeight,
-    size: 15,
+    size: 16,
     font: timesRomanFont,
     color: rgb(0.5, 0.5, 0.5)
   })
@@ -158,7 +174,7 @@ const createPDF = async (formInfo, servicesList) => {
   page.drawText(`Date`, {
     x: width/2,
     y: headingsHeight,
-    size: 15,
+    size: 16,
     font: timesRomanFont,
     color: rgb(0.5, 0.5, 0.5)
   })
@@ -166,7 +182,7 @@ const createPDF = async (formInfo, servicesList) => {
   page.drawText(`Hours`, {
     x: 450,
     y: headingsHeight,
-    size: 15,
+    size: 16,
     font: timesRomanFont,
     color: rgb(0.5, 0.5, 0.5)
   })
@@ -174,18 +190,27 @@ const createPDF = async (formInfo, servicesList) => {
   page.drawText(`Amount`, {
     x: width-75,
     y: headingsHeight,
-    size: 15,
+    size: 16,
     font: timesRomanFont,
     color: rgb(0.5, 0.5, 0.5)
   })
+
+  // Draw line under Table Headings
+  page.drawLine({
+    start: { x: 10, y: headingsHeight-10 },
+    end: { x: width-10, y: headingsHeight-10 },
+    thickness: 0.5,
+    color: rgb(0.659, 0.349, 0.078)
+  })
   
   // Render Line Items
-  let y = height - 320
+  let y = height - 330
   let total = 0
 
   servicesList.forEach((service, index) => {
+    console.log(service.serviceTotal)
 
-    total += parseInt(service.serviceTotal)
+    service.serviceTotal ? total += parseInt(service.serviceTotal) : total += 0
     y -= 20
 
     page.drawText(`${service.serviceDescription}`, {
@@ -229,13 +254,13 @@ const createPDF = async (formInfo, servicesList) => {
     color: rgb(0.659, 0.349, 0.078)
   })
 
-  // Draw Total
+  // Draw Total 
   page.drawText(`Total:`, {
     x: 450,
     y: y-40,
     size: 15,
     font: timesRomanFont,
-    color: rgb(0.5, 0.5, 0.5)
+    color: rgb(0, 0, 0)
   })
 
   page.drawText(`R ${total}`, {
@@ -243,8 +268,34 @@ const createPDF = async (formInfo, servicesList) => {
     y: y-40,
     size: 15,
     font: timesRomanFont,
+    color: rgb(0, 0, 0)
+  })
+
+  // Draw line under Total
+  page.drawLine({
+    start: { x: 10, y: y-50 },
+    end: { x: width-10, y: y-50 },
+    thickness: 0.5,
+    color: rgb(0.659, 0.349, 0.078)
+  })
+
+  // Create banking details
+  page.drawText(`Banking Details:`, {
+    x: 10,
+    y: y-70,
+    size: 15,
+    font: timesRomanFont,
     color: rgb(0.5, 0.5, 0.5)
   })
+
+  page.drawText(`Bank: FNB`, {
+    x: 10,
+    y: y-90,
+    size: 15,
+    font: timesRomanFont,
+    color: rgb(0, 0, 0)
+  })
+  
 
 
 

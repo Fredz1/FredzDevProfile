@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://www.fredmadethis.co.za
+Host: https://fredmadethis.co.za
 
 # Sitemaps
-Sitemap: https://www.fredmadethis.co.za/sitemap.xml
+# Sitemap: https://www.fredmadethis.co.za/sitemap.xml

@@ -11,8 +11,8 @@ const Page = () => {
     {
       serviceDescription: 'Fred',
       serviceDate: '24 June 2021',
-      serviceHours: '',
-      serviceTotal: '',
+      serviceHours: '1',
+      serviceTotal: 150,
     },
   ]
   
@@ -39,7 +39,7 @@ const Page = () => {
 
   const [formInfo, setFormInfo] = useState(invoiceInfo)
   const [pdfUrl, setPdfUrl] = useState(null)
-  const [serviceList, setServiceList] = useState(services);
+  const [serviceList, setServiceList] = useState(services)
 
   const handleSubmit = async e => {
     e.preventDefault()
@@ -50,7 +50,7 @@ const Page = () => {
   }
 
   return (
-    <div className={ style.page } suppressHydrationWarning>
+    <div className={ style.page } >
       <div className={ style.lineItems }>
         <h1>Line Items</h1>
         {/* Details, Date, Hours Amount */ }
@@ -143,9 +143,9 @@ const Page = () => {
               e => {
                 setServiceList([...serviceList, {
                   serviceDescription: '',
-                  serviceAmount: '',
-                  serviceRate: '',
-                  serviceTotal: '',
+                  serviceDate: '',
+                  serviceHours: '',
+                  serviceTotal: 0,
                 }])
               }
             }
@@ -263,16 +263,6 @@ const Page = () => {
             id="forServices"
             value={formInfo.forServices}
             onChange={(e) => setFormInfo({ ...formInfo, forServices: e.target.value })}
-          />
-
-          <label htmlFor="servicesTotal">Services Total:</label>
-          <input
-            type="text"
-            id="servicesTotal"
-            value={formInfo.servicesTotal}
-            onChange={(e) =>
-              setFormInfo({ ...formInfo, servicesTotal: e.target.value })
-            }
           />
 
           <button onClick={handleSubmit }>Submit</button>
