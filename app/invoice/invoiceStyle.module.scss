@@ -1,6 +1,7 @@
 .page {
   display: grid;
   grid-template-columns: 3fr 1fr 4fr;
+  height: 100vh;
 
   .invoiceInput{
     margin: 0 20px;

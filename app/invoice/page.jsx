@@ -203,7 +203,7 @@ const Page = () => {
             }
           />
 
-          <label htmlFor="attentionName">Attention Name:</label>
+          <label htmlFor="attentionName">Company Name:</label>
           <input
             type="text"
             id="attentionName"
@@ -254,8 +254,6 @@ const Page = () => {
               })
             }
           />
-
-          
 
           <label htmlFor="forServices">For Services:</label>
           <input
