@@ -1,0 +1,33 @@
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 80vh;
+  padding: 0 2rem;
+
+  .left {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    border-right: 1px solid black;
+
+    h2 {
+      font-size: 60px;
+      font-weight: 400;
+      text-align: left;
+    }
+  }
+
+  .right {
+    display: grid;
+    grid-template-rows: min-content max-content;
+    justify-content: space-between;
+    align-content: space-between;
+    padding: 2rem;
+    width: 100%;
+
+    .visualContainer {
+      display: grid;
+      grid-template-rows: 1fr 2fr;
+    }
+  }
+}

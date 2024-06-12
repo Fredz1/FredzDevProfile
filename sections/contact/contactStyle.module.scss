@@ -1,0 +1,78 @@
+.section {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 75vh;
+  padding: 2rem;
+  background-color: black;
+  color: white;
+
+  .left {
+    display: grid;
+    grid-template-rows: 1fr min-content;
+    justify-content: space-between;
+
+    .contactLinks {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      width: 100%;
+      color: white;
+      padding: 4rem;
+      .link {
+        color: white;
+      }
+    }
+
+    .socialLinks {
+      display: flex;
+      flex-direction: row;
+      gap: 1rem;
+      width: 100%;
+      padding: 4rem;
+    }
+  }
+
+  .right {
+    display: grid;
+    grid-template-rows: 1fr min-content;
+    justify-content: space-between;
+    padding: 4rem;
+
+    .department {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      width: 100%;
+      color: white;
+      
+      div {
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+        align-items: center;
+        font-weight: 400;
+
+        h3 {
+          font-weight: 400;
+          font-size: 1.25rem;
+        }
+      }
+    }
+
+    .deptList {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+      width: 100%;
+      color: white;
+    }
+
+    .contact {
+      text-align: right;
+    }
+  }
+}
+
+.link {
+  color: white;
+}

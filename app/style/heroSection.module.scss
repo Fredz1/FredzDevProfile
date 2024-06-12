@@ -1,110 +1,35 @@
 .section{
-  display: grid;;
-  grid-template-columns: auto auto;
-  padding: 0 ;
-  max-width: 100vw;
   overflow: hidden;
-  justify-content: space-between;
+  
 
-  .logoText{
+  .mainText {
     display: grid;
-  }
+    grid-template-rows: auto auto;
+    align-content: space-between;
+    height: 100vh;
 
-  .leftSide {
-    display: grid;
-    grid-template-rows: max-content auto;
-    gap: 1rem;
-
-    .mainText {
-      display: grid;
-      grid-template-rows: auto auto;
-      align-content: space-between;
-      height: 100vh;
-      background-color: antiquewhite;
-
-      .mainTopText{
-        overflow: hidden;
-      }
-
-      .mainBottomText {
-        padding-bottom: 4rem;
-        h3 {
-          font-size: 24px;
-          font-weight: 400;
-        }
-      }
-
-      .heroVideo{
-
-      }
+    .mainTopText{
+      overflow: hidden;
+      padding: 4rem 2rem;
 
       h1{
-        font-size: 60px;
+        font-size: 72px;
+        font-weight: 400;
+        text-align: left;
+      }
+
+    }
+
+    .mainBottomText {
+      padding: 1rem 2rem;
+      
+      h3 {
+        font-size: 20px;
         font-weight: 400;
       }
     }
 
-    .pitch {
-      display: grid;
-      grid-template-rows: 1fr 1fr;
-      height: 100vh;
-      
-      .topBlock{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-
-        .leftBlock{
-          overflow: hidden;
-
-          img{
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-          }
-
-        }
-      }
-      .bottomBlock{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1rem;
-      }
-    }
-
-    .skills {
-      height: 100vh;
-
-      .blurb {
-        font-size: 4rem;
-        width: 20ch;
-      }
-
-
-      .skillsBlocks{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-
-        .skillsBlockLeft {
-          font-size: 2rem;
-          border: 1px solid black;
-          height: 10rem;
-          padding: 1rem;
-
-          
-        }
-
-        .skillsBlockRight {
-          display: grid;
-          grid-template-rows: 1fr 1fr;
-          font-size: 2rem;
-          border: 1px solid black;
-          height: 10rem;
-          padding: 1rem;
-        }
-      }
-
-    }
+    
 
     .headline{
       font-size: 2rem;

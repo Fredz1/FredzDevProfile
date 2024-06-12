@@ -3,28 +3,23 @@
 import { PDFDocument, StandardFonts, rgb } from 'pdf-lib'
 import fs from 'fs'
 
-//color
-//R 0.7584
-//G 0.1530
-//B 0.2687
-
-
 const createPDF = async (formInfo, servicesList) => {
-
-
 
   formInfo.bank =
     `Standard Bank\n123456789\n051001\n`
 
-  const colorBerry = rgb(0.7584, 0.1530, 0.2687)
+  const colorBerry = rgb(0.61, 0.16, 0.28)
   const colorBlack = rgb(0, 0, 0)
 
   const pdfDoc = await PDFDocument.create()
+  pdfDoc.setTitle('Invoice')
+  pdfDoc.setCreator('Fred of FredMadeThis')
+  pdfDoc.setSubject('Invoice')
+
 
   // Embed the Times Roman font
   const fontStyle = await pdfDoc.embedFont(StandardFonts.Helvetica)
   const fontStyleBold = await pdfDoc.embedFont(StandardFonts.HelveticaBold)
-  const fontStyleItalic = await pdfDoc.embedFont(StandardFonts.HelveticaOblique)
   
   // Add a blank page to the document
   const page = pdfDoc.addPage()
@@ -32,7 +27,6 @@ const createPDF = async (formInfo, servicesList) => {
   // Get the width and height of the page
   const { width, height } = page.getSize()
 
-  
   page.drawText(`Michéle Williams`, {
     x: 48,
     y: height-30,
@@ -68,33 +62,15 @@ const createPDF = async (formInfo, servicesList) => {
     color: colorBerry
   })
 
-  const invoiceLength = fontStyle.widthOfTextAtSize(`${formInfo.month}-${formInfo.invoiceNumber}`, 12)
+  const invoiceLength = fontStyle.widthOfTextAtSize(`${formInfo.month}#${formInfo.invoiceNumber}`, 12)
 
-  page.drawText(`${formInfo.month}-${formInfo.invoiceNumber}`, {
+  page.drawText(`${formInfo.month}#${formInfo.invoiceNumber}`, {
     x: width - invoiceLength - 48,
     y: height-62,
     size: 12,
     font: fontStyle,
     color: colorBlack
   })
-
-  /* page.drawText(`Phone:`, {
-    x: width/2,
-    y: height-62,
-    size: 12,
-    font: fontStyle,
-    color: colorBerry
-  }) */
-
-  /* page.drawText(`082 555 5555`, {
-    x: width - 120,
-    y: height - 62,
-    size: 12,
-    font: fontStyle,
-    color: colorBlack
-  }) */
-
-  
 
   page.drawText(`DATE:`, {
     x: width/2+50,
@@ -279,7 +255,7 @@ const createPDF = async (formInfo, servicesList) => {
   })
 
   //get length of Amount
-  const amountLength = fontStyle.widthOfTextAtSize(`AMOUNT`, 12)
+  const amountLength = fontStyleBold.widthOfTextAtSize(`AMOUNT`, 12)
 
   page.drawText(`AMOUNT`, {
     x: width - amountLength - 48,
@@ -297,7 +273,7 @@ const createPDF = async (formInfo, servicesList) => {
   servicesList.forEach((service, index) => {
 
     service.serviceTotal ? total += parseInt(service.serviceTotal) : total += 0
-    y -= 20
+    y -= 17
 
     page.drawText(`${index + 1}`, {
       x: 48,
@@ -352,8 +328,11 @@ const createPDF = async (formInfo, servicesList) => {
     color: colorBlack
   })
 
+  total = total.toString().replace(/\B(?=(\d{3})+(?!\d))/g, " ")
   //get length of Total
-  const totalLength = fontStyle.widthOfTextAtSize(`R ${total}`, 12)
+  const totalLength = fontStyleBold.widthOfTextAtSize(`R ${total}`, 12)
+
+  //formate total to space 1000s with a space
 
   page.drawText(`R ${total}`, {
     x: width - totalLength - 48,
@@ -400,7 +379,7 @@ const createPDF = async (formInfo, servicesList) => {
   //Reference number
 
   //get lenth of Reference Number
-  const refLength = fontStyle.widthOfTextAtSize(`REFERENCE NUMBER`, 12)
+  const refLength = fontStyleBold.widthOfTextAtSize(`REFERENCE NUMBER`, 12)
 
   page.drawText(`REFERENCE NUMBER`, {
     x: width - refLength - 48,
@@ -411,10 +390,10 @@ const createPDF = async (formInfo, servicesList) => {
   })
 
   //get length of Reference Number
-  const refNumberLength = fontStyle.widthOfTextAtSize(`${formInfo.month}-${formInfo.invoiceNumber}`, 12)
+  const refNumberLength = fontStyle.widthOfTextAtSize(`${formInfo.month}#${formInfo.invoiceNumber}`, 12)
 
   //add reference number again
-  page.drawText(`${formInfo.month}-${formInfo.invoiceNumber}`, {
+  page.drawText(`${formInfo.month}#${formInfo.invoiceNumber}`, {
     x: width - refNumberLength - 48,
     y: y-110,
     size: 12,
@@ -443,11 +422,16 @@ const createPDF = async (formInfo, servicesList) => {
     color: colorBlack,
   })
 
+  //get the height of the all text on the page
+  //console.log(page.getY())
+
+
+
   // Serialize the PDFDocument to bytes (a Uint8Array)
   //const pdfBytes = await pdfDoc.save()
   const pdfBytes = await pdfDoc.saveAsBase64({ dataUri: true })
 
-  fs.writeFileSync('./output.pdf', pdfBytes)
+  //fs.writeFileSync('./output.pdf', pdfBytes)
 
   return pdfBytes
 }

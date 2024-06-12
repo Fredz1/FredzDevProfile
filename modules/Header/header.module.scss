@@ -1,9 +1,41 @@
 .header {
   display: grid;
-  
-  div {
-    .logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-content: space-between;
 
+  .links {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0rem 2rem;
+    text-decoration: none;
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .logoContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0rem;
+  }
+
+  .contactMe {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0rem 2rem;
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
   }
 }

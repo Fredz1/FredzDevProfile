@@ -1,0 +1,114 @@
+.pitch {
+  display: grid;
+  grid-template-rows: 1fr 2fr;
+  height: 100vh;
+  padding: 2rem;
+  background-color: black;
+
+  .heroText {
+    width: 100%;
+    line-height: 3rem;
+    color: white;
+
+    h1 {
+      font-size: 64px;
+      font-weight: 400;
+      text-align: left;
+    }
+  }
+
+  .pitchBox{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 50%;
+    grid-template-areas: 
+      "leftBox rightTop"
+      "leftBox rightBottom"
+    ;
+    gap: 0rem;
+    background-color: black;
+    color: white;
+    overflow: hidden;
+    border: 1px solid gray;
+
+    h2 {
+      font-size: 32px;
+      font-weight: 400;
+      text-align: left;
+    }
+
+    .leftBox {
+      grid-area: leftBox;
+      display: grid;
+      grid-template-rows: min-content min-content;
+      align-content: space-between;
+      overflow: hidden;
+      padding: 2rem;
+      border: 1px solid gray;
+
+      .leftAnimationText {
+        text-align: left;
+        white-space: nowrap;
+        overflow: hidden;
+
+        div {
+          display: flex;
+          flex-direction: row;
+
+          p {
+            font-size: 1rem;
+            background-color: rgba(255, 255, 255, 0.75);
+            color: white;
+
+          }
+        }
+      }
+
+    }
+
+    .rightTop {
+      grid-area: rightTop;
+      display: grid;
+      grid-template-rows: min-content min-content;
+      align-content: space-between;
+      overflow: hidden;
+      padding: 2rem;
+      border-bottom: 1px solid gray;
+    }
+
+    .rightBottom {
+      grid-area: rightBottom;
+      display: grid;
+      grid-template-rows: min-content min-content;
+      align-content: space-between;
+      overflow: hidden;
+      margin: 2rem;
+    }
+
+
+  }
+}
+
+.taglist {
+  display: flex;
+  flex-direction: row;
+  column-gap: 1rem;
+
+  .tag {
+    background-color: #f0f0f0;
+    color: black;
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 1rem;
+  }
+}
+
+.marquee {
+  display: flex;
+  flex-direction: row;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 8rem;
+
+}
+

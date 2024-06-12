@@ -1,0 +1,21 @@
+.skills {
+  height: 80vh;
+  display: grid; 
+  grid-template-rows: 1fr 1fr;
+  grid-template-columns: 1fr 50%;
+  padding: 4rem 2rem;
+  position: relative;
+  gap: 2rem;
+
+
+  .curve {
+    width: auto;
+    height: 100%;
+    text-align: left;
+  }
+
+  .blurb2 {
+    font-size: 4.25rem;
+    max-width: 12ch;
+  }
+}

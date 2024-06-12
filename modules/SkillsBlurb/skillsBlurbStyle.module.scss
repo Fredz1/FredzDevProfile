@@ -1,0 +1,14 @@
+.container {
+
+  
+  p {
+    font-size: 4.25rem;
+    font-weight: 400;
+    width: fit-content;
+    max-width: 15ch;
+  }
+
+  p:nth-child(2) {
+    color: #7d7d7d;
+  }
+}

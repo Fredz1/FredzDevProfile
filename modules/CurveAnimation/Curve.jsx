@@ -1,69 +1,69 @@
 "use client"
 
 import React, { useState, useEffect, useRef } from 'react';
-import { useSpring } from "framer-motion"
+import { useScroll, useMotionValueEvent } from 'framer-motion';
 
+const Curve = () => {
 
-function Curve({scrollYProgress}) {
+  const curve = useRef(null);
+  const [elementProgress, setElementProgress] = useState(0);
+  const [curvePath, setCurvePath] = useState("M450,450 C440,440 10,440 10,10")
 
-  //register gsap
-  const [p1x, setp1x] = useState(0)
-  const [p1y, setp1y] = useState(0)
-  const [p2x, setp2x] = useState(200)
-  const [p2y, setp2y] = useState(200)
-  const [c1x, setc1x] = useState(100)
-  const [c1y, setc1y] = useState(100)
-  const [curveD, setcurveD] = useState("")
-  const [scroll, setScroll] = useState(0)
-  const animationContainer = useRef()
+  const { scrollYProgress } = useScroll(
+    {
+      target: curve,
+      offset: [0.1, 0.9]
+    }
+  );
 
-  /* const { scrollYProgress } = useScroll({
-    target: animationContainer,
-    offset: ["start end", "end start"]
-  }); */
+  useMotionValueEvent(
+    scrollYProgress,
+    "change",
+    (latest) => {
+      setElementProgress(latest)
+    }
+  )
 
-  const offsetSpring = useSpring(scrollYProgress, {
-    stiffness: 100,
-    damping: 30,
-    restDelta: 0.001
-  });
+  const circleSize = 10;
 
-  // position -140 to 140
+  const x = 10 + (440 - circleSize) * elementProgress;
+  const y = 440 - (440 - circleSize) * elementProgress;
 
   useEffect(() => {
+    //console.log(elementProgress)
+    setCurvePath(`M450,450 C450,450 ${x},${y} 10,10`)
 
-    // mid-point of line:
-    let mpx = (p2x + p1x) * 0.5
-    let mpy = (p2y + p1y) * 0.5
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [elementProgress])
 
-    // angle of perpendicular to line:
-    let theta = Math.atan2(p2y - p1y, p2x - p1x) - Math.PI / 2
-
-    // distance of control point from mid-point of line:
-    let offset = offsetSpring.get() * 280 - 140
-
-    // location of control point:
-    setc1x(mpx + offset * Math.cos(theta))
-    setc1y(mpy + offset * Math.sin(theta))
-
-    // construct the command to draw a quadratic curve
-    let curve = "M" + p1x + " " + p1y + " Q " + c1x + " " + c1y + " " + p2x + " " + p2y;
-    setcurveD(curve)
-    
-    return () => {
-      setcurveD(0)
-    };
-  }, [scroll]);
-  
   return (
-    <>
-      <svg ref={animationContainer} width="200" height="200" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <g clipPath="url(#clip0_3_2)">
-          <path d="M0 200H200V0" stroke="black"/>
-        </g>
-    		<path id="curve" d={curveD} stroke="black" strokeWidth="1" strokeLinecap="round" fill="transparent"></path>
-    	</svg>
-    </>
+    <div ref={curve} >
+      <svg
+        width="460"
+        height="460"
+        viewBox="0 0 460 460"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+        style={ {
+          width: "auto",
+          height: "100%",
+          //max height should be height of parent
+          maxHeight: "33vh",
+        } }
+      >
+        {/* <path d="M450 10V450H10" stroke="black"/> */}
+        <path
+          d={curvePath}
+          stroke="black"
+          strokeWidth={ 5 }
+        />
+        <rect x="5" y="5" width={25} height={25} fill="#E79518" />
+        <rect x="440" y="440" width={25} height={25} fill="#E79518" />
+        <circle cx={x} cy={y} r={circleSize} fill="#E79518" />
+      </svg>
+
+
+    </div>
     
   );
 }
