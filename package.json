@@ -8,8 +8,6 @@
   },
   "scripts": {
     "dev": "next",
-    "server": "nodemon server.js",
-    "app": "concurrently \"npm run server\" \"npm run dev\" ",
     "build": "next build",
     "buildExport": "next build && next export",
     "start": "next start",
