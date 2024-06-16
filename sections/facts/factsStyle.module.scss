@@ -2,13 +2,13 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   height: 80vh;
-  padding: 0 2rem;
+  padding: 2rem;
 
   .left {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
-    border-right: 1px solid black;
+    border-right: 1px solid rgba(0, 0, 0, 0.5);
 
     h2 {
       font-size: 60px;
@@ -28,6 +28,24 @@
     .visualContainer {
       display: grid;
       grid-template-rows: 1fr 2fr;
+
+      .legend {
+
+        .legendItem {
+          display: flex;
+          justify-content: flex-start;
+          align-items: center;
+          gap: 1rem;
+          padding: 0.5rem;
+          color: black;
+
+          .legendColor {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+          }
+        }
+      }
     }
   }
 }

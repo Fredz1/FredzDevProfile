@@ -1,12 +1,11 @@
-.section{
-  overflow: hidden;
-  
+.hero{
+  height: 100vh;
 
   .mainText {
     display: grid;
+    height: 80%;
     grid-template-rows: auto auto;
     align-content: space-between;
-    height: 80vh;
 
     .mainTopText{
       overflow: hidden;
@@ -17,28 +16,20 @@
         font-weight: 400;
         text-align: left;
       }
-
     }
 
     .mainBottomText {
       padding: 1rem 2rem;
-      
+
       h3 {
         font-size: 20px;
         font-weight: 400;
       }
     }
 
-    
-
     .headline{
       font-size: 2rem;
     }
 
-      
-    
-
-    
   }
-
 }

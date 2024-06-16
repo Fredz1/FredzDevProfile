@@ -1,19 +1,20 @@
 .header {
   display: grid;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
   width: 100%;
   grid-template-columns: 1fr 1fr 1fr;
   justify-content: space-between;
+  padding: 2rem 2rem;
 
   .links {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
     align-items: center;
     padding: 0rem 2rem;
     text-decoration: none;
-    
+    gap: 1rem;
     a {
       text-decoration: none;
       color: inherit;
@@ -22,9 +23,14 @@
 
   .logoContainer {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     padding: 0rem;
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 400;
+    }
   }
 
   .contactMe {

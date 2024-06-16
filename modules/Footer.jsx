@@ -7,21 +7,9 @@ const Footer = () => {
 
   const currentYear = new Date().getFullYear()
 
-
-
   return (
     <footer className={style.footer}>
-      <div className={style.copyDisclaimers}>
-        <p>&copy; fredmadethis {currentYear}</p>
-      </div>
-      <div >
-        <Image src={fmtLogo} alt='footer logo' className={style.logo} />
-      </div>
-      <div className={style.links}>
-        <Link href="/">
-          Home
-        </Link>
-      </div>
+      <Image src={fmtLogo} alt='footer logo' className={style.logo} />
     </footer>
   )
 }

@@ -5,10 +5,9 @@ const SEOGraph = ({ data }) => {
 
   const barsRef = useRef(null);
   const isInView = useInView(barsRef)
-  console.log(isInView)
 
   return (
-    <AnimatePresence mode="wait" ref={barsRef}>
+    <AnimatePresence mode="wait">
       <svg width="882" height="367" viewBox="0 0 882 367" fill="none" xmlns="http://www.w3.org/2000/svg">
         {/* Y-axis lines */}
         <path d="M34 1L66 1.5" stroke="#AFAFAF"/>

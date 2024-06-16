@@ -10,10 +10,6 @@ const Pitch = () => {
   const [box2Switch, setBox2Switch] = useState(false);
   const [box3Switch, setBox3Switch] = useState(false);
 
-  const triggerSwapBox1 = value => {
-    setBox1Switch(value)
-  }
-
   return (
     <div className={style.pitch}>
       <div className={style.heroText}>
@@ -25,12 +21,11 @@ const Pitch = () => {
         </h1>
       </div>
       <div className={ style.pitchBox } >
-        
-          <div
-            className={ style.leftBox }
-            onMouseEnter={ () => setBox1Switch(true) }
-            onMouseLeave={ () => setBox1Switch(false) }
-          >
+        <div
+          className={ style.leftBox }
+          onMouseEnter={ () => setBox1Switch(true) }
+          onMouseLeave={ () => setBox1Switch(false) }
+        >
           <h2>Web Development</h2>
           <AnimatePresence
             mode='popLayout'
@@ -47,21 +42,16 @@ const Pitch = () => {
               className={ style.leftAnimationText }
             >
               <div className={ style.leftAnimationText } >
-
               {
-                  box1Switch ?
-                    <Marquee text="Web Development" />
-                  : 
-                  <Tags list={tags.webflowDev}  />
+                box1Switch ?
+                  <Marquee text="Web Development" />
+                : 
+                <Tags list={tags.webflowDev}  />
               }
               </div>
-              
             </motion.div>
           </AnimatePresence>
-          
-          </div>
-          
-
+        </div>
         <div
           className={ style.rightTop }
           onMouseEnter={ () => setBox2Switch(!box2Switch) }
@@ -73,7 +63,6 @@ const Pitch = () => {
             initial={ false }
             presenceAffectsLayout={ false }
           >
-
             <motion.div
               layout
                 key={box2Switch}
@@ -95,7 +84,6 @@ const Pitch = () => {
             </motion.div>
           </AnimatePresence>
         </div>
-
         <div
           className={ style.rightBottom }
           onMouseEnter={ () => setBox3Switch(!box3Switch) }
@@ -125,15 +113,9 @@ const Pitch = () => {
                   }
               </div>
             </motion.div>
-
           </AnimatePresence>
-          
         </div>
       </div>
-
-
-
-
     </div>
   )
 }
@@ -155,24 +137,17 @@ const Tags = ({ list }) => {
   )
 }
 
-const Marquee = ({text}) => {
-
+const Marquee = ({ text }) => {
   
-
   return (
     <div className={style.marquee}>
       <motion.div
         className="marquee"
-        /* onWheel={onWheel} */
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
-        /* onDragStart={onDragStart} */
-        /* onDrag={onDrag} */
-        /* onDragEnd={onDragEnd} */
       >
         {text}
       </motion.div>
-
     </div>
   )
 }

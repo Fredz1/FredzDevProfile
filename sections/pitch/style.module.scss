@@ -44,7 +44,7 @@
       align-content: space-between;
       overflow: hidden;
       padding: 2rem;
-      border: 1px solid gray;
+      border-right: 1px solid gray;
 
       .leftAnimationText {
         text-align: left;
@@ -82,7 +82,7 @@
       grid-template-rows: min-content min-content;
       align-content: space-between;
       overflow: hidden;
-      margin: 2rem;
+      padding: 2rem;
     }
 
 
@@ -108,7 +108,7 @@
   flex-direction: row;
   overflow: hidden;
   white-space: nowrap;
-  font-size: 8rem;
+  font-size: 4rem;
 
 }
 

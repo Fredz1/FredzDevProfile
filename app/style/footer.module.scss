@@ -1,19 +1,23 @@
 .footer {
   display: grid;
   grid-auto-flow: column;
-  grid-template-columns: 1fr 1fr 1fr;
-  justify-items: space-around;
-  padding: 2rem;
+  grid-template-columns: 1fr;
   place-items: center;
+  height: 15vh;
+  overflow: hidden;
+  cursor: url('/images/scrolltotopcursor.svg'), auto;
+  transition: ease-in-out 0.5s;
+  
 
   .logo {
     object-fit: contain;
-    width: 75%;
+    width: 100%;
     height: auto;
+    transform:translateY(5%);
+    margin: 0 auto;
+    cursor: url('/images/scrolltotopcursor.svg'), auto;
+    transition: ease-in-out 0.5s;
   }
 
-  .links > *{
-    text-decoration: none;
-    color: inherit;
-  }
+  
 }

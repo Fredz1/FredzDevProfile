@@ -21,25 +21,25 @@
   "license": "ISC",
   "dependencies": {
     "@gsap/react": "^2.1.1",
-    "framer-motion": "^11.0.20",
+    "framer-motion": "^11.2.10",
     "gsap": "^3.12.5",
-    "next": "^14.1.4",
+    "next": "^14.2.4",
     "nodemailer": "^6.9.13",
     "pdf-lib": "^1.17.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "sass": "^1.77.5",
-    "sharp": "^0.33.3",
+    "sharp": "^0.33.4",
     "svg-path-morph": "^1.0.5",
-    "three": "^0.164.1"
+    "three": "^0.165.0"
   },
   "devDependencies": {
     "@types/node": "^20.14.2",
     "@types/pdfkit": "^0.13.4",
-    "@types/react": "^18.2.78",
-    "eslint": "8.57.0",
-    "eslint-config-next": "14.1.4",
-    "tailwindcss": "^3.4.3",
+    "@types/react": "^18.3.3",
+    "eslint": "9.4.0",
+    "eslint-config-next": "14.2.4",
+    "tailwindcss": "^3.4.4",
     "typescript": "^5.4.5"
   }
 }

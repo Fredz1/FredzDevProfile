@@ -16,10 +16,10 @@ const Contact = () => {
           </Link>
         </div>
         <div className={style.socialLinks}>
-          <Link href="https://www.linkedin.com/in/fredmadethis/" className={style.link}>
+          <Link href="https://www.linkedin.com/in/fredmadethis/" className={style.link} target='_blank'>
             <p>LinkedIn</p>
           </Link>
-          <Link href="https://www.facebook.com" className={style.link}>
+          <Link href="https://www.facebook.com" className={style.link} target='_blank'>
             Facebook
           </Link>
         </div>
