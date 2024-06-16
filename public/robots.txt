@@ -7,3 +7,5 @@ Host: https://fredmadethis.co.za
 
 # Sitemaps
 # Sitemap: https://www.fredmadethis.co.za/sitemap.xml
+
+Disallow: /invoice
