@@ -112,3 +112,36 @@
 
 }
 
+@media screen and (max-width: 768px){
+  .pitch {
+    .heroText{
+      h1 {
+        font-size: 32px;
+      }
+    }
+
+    .pitchBox{
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+        "leftBox"
+        "rightTop"
+        "rightBottom"
+      ;
+
+      .leftBox{
+        border-right: none;
+        border-bottom: 1px solid gray;
+      }
+    }
+  }
+
+  .taglist {
+      
+    .tag {
+      color: black;
+      padding: 0.25rem 0.5rem;
+      border-radius: 2rem;
+      font-size: 0.5rem;
+    }
+  }
+}

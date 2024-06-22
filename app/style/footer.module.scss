@@ -13,11 +13,23 @@
     object-fit: contain;
     width: 100%;
     height: auto;
-    transform:translateY(5%);
+    transform: translateY(5%);
     margin: 0 auto;
     cursor: url('/images/scrolltotopcursor.svg'), auto;
     transition: ease-in-out 0.5s;
+    z-index: 0;
   }
 
   
+}
+
+.footer:hover {
+  cursor: url('/images/scrolltotopcursor.svg'), auto;
+  transition: ease-in-out 0.5s;
+
+  .logo {
+    cursor: url('/images/scrolltotopcursor.svg'), auto;
+    transform: translateY(0%);
+    transition: ease-in-out 0.5s;
+  }
 }

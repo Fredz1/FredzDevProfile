@@ -34,3 +34,20 @@
 
   }
 }
+
+@media screen and (max-width: 768px){
+  .hero {
+    .mainText{
+      .mainTopText{
+        h1{
+          font-size: 48px;
+        }
+      }
+      .mainBottomText{
+        h3{
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}

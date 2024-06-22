@@ -45,3 +45,18 @@
     }
   }
 }
+
+@media screen and (max-width: 768px){
+  .header {
+    grid-template-columns: 1fr 1fr;
+    .links {
+      display: none;
+    }
+    .logoContainer{
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+}

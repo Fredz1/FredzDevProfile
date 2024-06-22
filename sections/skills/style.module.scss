@@ -19,3 +19,14 @@
     max-width: 12ch;
   }
 }
+
+@media screen and (max-width: 768px){
+  .skills{
+    height: 100%;
+    grid-template-columns: 1fr;
+
+    .blurb2 {
+      font-size: 2rem;
+    }
+  }
+}

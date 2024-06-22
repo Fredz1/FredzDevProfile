@@ -1,6 +1,4 @@
 .container {
-
-  
   p {
     font-size: 4.25rem;
     font-weight: 400;
@@ -10,5 +8,14 @@
 
   p:nth-child(2) {
     color: #7d7d7d;
+  }
+}
+
+@media screen and (max-width: 768px){
+  .container {
+    p {
+      font-size: 2rem;
+      max-width: 12ch;
+    }
   }
 }
