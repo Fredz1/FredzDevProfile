@@ -19,14 +19,6 @@ const Skills = () => {
         <Curve />
       </div>
 
-      <div >
-        {/* <Bounce /> */}
-      </div>
-
-      <div className={style.blurb2}>
-        <p>Let me simplify it for you</p>
-      </div>
-
     </div>
   )
 }

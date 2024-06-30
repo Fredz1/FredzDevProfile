@@ -23,7 +23,7 @@ const SkillsBlurb = () => {
 
   return (
     <div ref={text} className={style.container}>
-      <p>Creating a great website is hard</p>
+      <p>I create</p>
       <AnimatePresence mode='wait'>
         <motion.p
           layout layoutRoot
@@ -31,10 +31,10 @@ const SkillsBlurb = () => {
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           exit={{ opacity: 0 }}
-          transition={{ duration: 0.25 }}
+          transition={{ duration: 0.15 }}
         >
           {
-            elementProgress > 0.5 ?  "I know" : "Let me help"
+            elementProgress > 0.5 ? "Attractive" : "Simplicity"
           }
         </motion.p>
       </AnimatePresence>

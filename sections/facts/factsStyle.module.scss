@@ -51,5 +51,40 @@
 }
 
 @media screen and (max-width: 768px){
-  
+  .section {
+    grid-template-columns: 1fr;
+    grid-template-rows: min-content 1fr;
+    height: 100%;
+    
+
+    .left{
+      border-right: none;
+      width: 100vw;
+
+      h2 {
+        font-size: 40px;
+      }
+    }
+
+    .right{
+      grid-template-rows: min-content 1fr;
+      grid-template-columns: 1fr;
+      width: 100vw;
+      padding: 0.5rem;
+
+      h2{
+        font-size: 28px;
+        max-width: 100vw;
+      }
+
+      .visualContainer{
+        grid-template-rows: min-content 1fr;
+
+        .graphBox{
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+  }
 }

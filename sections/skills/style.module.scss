@@ -1,11 +1,12 @@
 .skills {
-  height: 80vh;
+  height: fit-content;
   display: grid; 
-  grid-template-rows: 1fr 1fr;
+  grid-template-rows: 1fr;
   grid-template-columns: 1fr 50%;
   padding: 4rem 2rem;
   position: relative;
   gap: 2rem;
+  background-color: #d9d9d9;
 
 
   .curve {

@@ -27,7 +27,7 @@ const SEOGraph = ({ data }) => {
         {/* <path d="M123 61H385V365H123V61Z" fill="url(#paint0_linear_167_241)"/> */ }
         
             <>
-              <rect
+              <motion.rect
                 initial={ { height: 0 } }
                 animate={ { height: 270 } }
                 key="barone"
