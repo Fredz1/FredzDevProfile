@@ -8,7 +8,7 @@ const SEOGraph = ({ data }) => {
 
   return (
     <AnimatePresence mode="wait">
-      <svg width="882" height="367" viewBox="0 0 882 367" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <svg className="max-w-full" width="882" height="367" viewBox="0 0 882 367" fill="none" xmlns="http://www.w3.org/2000/svg">
         {/* Y-axis lines */}
         <path d="M34 1L66 1.5"      stroke="#AFAFAF"  />
         <path d="M34 41.5L66 42"    stroke="#AFAFAF"  />

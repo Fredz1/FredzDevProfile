@@ -70,10 +70,28 @@
 
     .contact {
       text-align: right;
+      color: inherit;
     }
   }
 }
 
 .link {
-  color: white;
+  color: inherit;
+}
+
+@media screen and (max-width: 768px){
+  .section {
+    grid-template-columns: 1fr;
+    height: fit-content;
+    padding: 1rem;
+
+    .left {
+      border-right: none;
+    }
+
+    .right {
+      padding: 4rem;
+      justify-items: start;
+    }
+  }
 }
