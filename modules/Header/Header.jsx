@@ -18,11 +18,11 @@ function Header() {
       <div className={ style.links }>
         <Link href="/">Home</Link>
         <Link href="/about">About</Link>
-        <Link href="/contact">Contact</Link>
+        <Link href="#contact">Contact</Link>
       </div>
-      <div className={style.contactMe}>
+      <Link href="mailto:fred@fredmadethis.co.za" className={style.contactMe}>
         <p>get in touch</p>
-      </div>
+      </Link>
     </div>
   );
 }

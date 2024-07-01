@@ -5,7 +5,7 @@ import Image from 'next/image'
 
 const Contact = () => {
   return (
-    <section className={style.section}>
+    <section id="contact" className={style.section}>
       <div className={ style.left }>
         <div className={style.contactLinks}>
           <Link href="mailto:fred@fredmadethis.co.za" className={style.link}>
@@ -31,9 +31,9 @@ const Contact = () => {
           <Department headline="Product" description="Get an awesome UI/UX designed" />
           <Department headline="Brand" description="Get a solution that just works" />
         </div>
-        <div className={style.contact}>
+        <Link href="mailto:fred@fredmadethis.co.za" className={style.contact}>
           Get in touch
-        </div>
+        </Link>
       </div>
     </section>
   );
